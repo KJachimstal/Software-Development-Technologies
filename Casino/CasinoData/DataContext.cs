@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,12 @@ namespace CasinoData
             set { games = value; }
         }
 
+        private ObservableCollection<GameDetails> gameDetails;
+
+        public ObservableCollection<GameDetails> GameDetails {
+            get { return gameDetails; }
+            set { gameDetails = value; }
+        }
 
 
     }
