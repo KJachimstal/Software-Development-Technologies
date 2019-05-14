@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    class GameDetails
+    public class GameDetails
     {
         private Game game;
 
