@@ -22,6 +22,18 @@ namespace Casino
             set { startTime = value; }
         }
 
-        
+        private double minimalBet;
+
+        public double MinimalBet {
+            get { return minimalBet; }
+            set { minimalBet = value; }
+        }
+
+        public GameDetails(Game game, DateTimeOffset startTime, double minimalBet)
+        {
+            this.game = game;
+            this.startTime = startTime;
+            this.minimalBet = minimalBet;
+        }
     }
 }
