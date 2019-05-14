@@ -25,4 +25,10 @@ public class Game
         set { type = value; }
     }
 
+    public Game(int id, string name, GameType type)
+    {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+    }
 }
