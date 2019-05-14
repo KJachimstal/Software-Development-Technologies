@@ -8,6 +8,14 @@ namespace Casino
 {
     public class Client
     {
+        private int clientNumber;
+
+        public int ClientNumber {
+            get { return clientNumber; }
+            set { clientNumber = value; }
+        }
+
+
         private string firstName;
 
         public string FirstName {
