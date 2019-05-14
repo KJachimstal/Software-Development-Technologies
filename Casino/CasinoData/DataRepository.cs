@@ -8,5 +8,12 @@ namespace CasinoData
 {
     class DataRepository
     {
+        private DataContext dataContext;
+
+        public DataContext DataContext {
+            get { return dataContext; }
+            set { dataContext = value; }
+        }
+
     }
 }
