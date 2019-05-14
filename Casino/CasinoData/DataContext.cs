@@ -31,19 +31,19 @@ namespace CasinoData
             set { gameDetails = value; }
         }
 
-        private List<Participation> participation;
+        private List<Participation> participations;
 
-        public List<Participation> Participation {
-            get { return participation; }
-            set { participation = value; }
+        public List<Participation> Participations {
+            get { return participations; }
+            set { participations = value; }
         }
 
-        public DataContext(List<Client> clients, Dictionary<int, Game> games, ObservableCollection<GameDetail> gameDetails, List<Participation> participation)
+        public DataContext(List<Client> clients, Dictionary<int, Game> games, ObservableCollection<GameDetail> gameDetails, List<Participation> participations)
         {
             this.clients = clients;
             this.games = games;
             this.gameDetails = gameDetails;
-            this.participation = participation;
+            this.participations = participations;
         }
     }
 }
