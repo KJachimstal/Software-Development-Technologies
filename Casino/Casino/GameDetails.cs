@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    public class GameDetails
+    public class GameDetail
     {
         private Game game;
 
@@ -29,7 +29,7 @@ namespace CasinoLibrary
             set { minimalBet = value; }
         }
 
-        public GameDetails(Game game, DateTimeOffset startTime, double minimalBet)
+        public GameDetail(Game game, DateTimeOffset startTime, double minimalBet)
         {
             this.game = game;
             this.startTime = startTime;
