@@ -2,65 +2,43 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CasinoLibrary;
+using CasinoData;
+using System.Collections.ObjectModel;
 
 namespace CasinoTests
 {
-    /// <summary>
-    /// Opis podsumowujący elementu DataRepositoryTest
-    /// </summary>
     [TestClass]
     public class DataRepositoryTest
     {
-        public DataRepositoryTest()
-        {
-            //
-            // TODO: Dodaj tutaj logikę konstruktora
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Pobiera lub ustawia kontekst testu, który udostępnia
-        ///funkcjonalność i informację o bieżącym przebiegu testu.
-        ///</summary>
-        public TestContext TestContext {
-            get {
-                return testContextInstance;
-            }
-            set {
-                testContextInstance = value;
-            }
-        }
-
-        #region Dodatkowe atrybuty testu
-        //
-        // Można użyć następujących dodatkowych atrybutów w trakcie pisania testów:
-        //
-        // Użyj ClassInitialize do uruchomienia kodu przed uruchomieniem pierwszego testu w klasie
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Użyj ClassCleanup do uruchomienia kodu po wykonaniu wszystkich testów w klasie
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Użyj TestInitialize do uruchomienia kodu przed uruchomieniem każdego testu 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Użyj TestCleanup do uruchomienia kodu po wykonaniu każdego testu
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
         [TestMethod]
-        public void TestMethod1()
+        public void TestDataRepository()
         {
-            //
-            // TODO: Dodaj logikę testu tutaj
-            //
+            DateTimeOffset date = new DateTimeOffset();
+            Client client1 = new Client(1, "Adam", "Mały");
+            Game game = new Game(4, "Poker królewski", Game.GameType.POKER);
+            GameDetail gameDetail = new GameDetail(game, date, 400d);
+            Participation participation = new Participation(client1, gameDetail, 500);
+
+            List<Client> clients = new List<Client>();
+            clients.Add(client1);
+
+            Dictionary<int, Game> games = new Dictionary<int, Game>();
+            games.Add(1, game);
+
+            ObservableCollection<GameDetail> gameDetails = new ObservableCollection<GameDetail>();
+            gameDetails.Add(gameDetail);
+
+            List<Participation> participations = new List<Participation>();
+            participations.Add(participation);
+
+            DataContext dataContext = new DataContext(clients, games, gameDetails, participations);
+
+            IDataSource dataSource;
+
+            DataRepository dataRepository = new DataRepository(dataContext);
+
+
         }
     }
 }
