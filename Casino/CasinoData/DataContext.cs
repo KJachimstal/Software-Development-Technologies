@@ -24,9 +24,9 @@ namespace CasinoData
             set { games = value; }
         }
 
-        private ObservableCollection<GameDetails> gameDetails;
+        private ObservableCollection<GameDetail> gameDetails;
 
-        public ObservableCollection<GameDetails> GameDetails {
+        public ObservableCollection<GameDetail> GameDetails {
             get { return gameDetails; }
             set { gameDetails = value; }
         }
