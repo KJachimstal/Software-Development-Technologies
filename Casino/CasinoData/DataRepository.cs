@@ -11,8 +11,7 @@ namespace CasinoData
         private DataContext dataContext;
 
         public DataContext DataContext {
-            get { return dataContext; }
-            set { dataContext = value; }
+            set => dataContext = value; 
         }
 
         public DataRepository(DataContext dataContext)
