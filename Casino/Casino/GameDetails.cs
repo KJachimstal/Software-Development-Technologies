@@ -14,5 +14,14 @@ namespace Casino
             get { return game; }
             set { game = value; }
         }
+
+        private DateTimeOffset startTime;
+
+        public DateTimeOffset StartTime {
+            get { return startTime; }
+            set { startTime = value; }
+        }
+
+        
     }
 }
