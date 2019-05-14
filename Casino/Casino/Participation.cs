@@ -15,5 +15,25 @@ namespace Casino
             set { client = value; }
         }
 
+        private GameDetails gameDetails;
+
+        public GameDetails GameDetails {
+            get { return gameDetails; }
+            set { gameDetails = value; }
+        }
+
+        private double bet;
+
+        public double Bet {
+            get { return bet; } 
+            set { bet = value; }
+        }
+
+        public Participation(Client client, GameDetails gameDetails, double bet)
+        {
+            this.client = client;
+            this.gameDetails = gameDetails;
+            this.bet = bet;
+        }
     }
 }
