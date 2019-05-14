@@ -8,5 +8,6 @@ namespace CasinoData
 {
     interface IDataSource
     {
+        void Fill(DataContext dataContext);
     }
 }
