@@ -19,5 +19,17 @@ namespace CasinoData
         {
             this.dataContext = dataContext;
         }
+
+        private IDataSource dataSource;
+
+        public IDataSource DataSource {
+            get { return dataSource; }
+            set { dataSource = value; }
+        }
+
+        public DataRepository(IDataSource dataSource)
+        {
+            this.dataSource = dataSource;
+        }
     }
 }
