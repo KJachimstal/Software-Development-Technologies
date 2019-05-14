@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    class Participation
+    public class Participation
     {
         private Client client;
 
