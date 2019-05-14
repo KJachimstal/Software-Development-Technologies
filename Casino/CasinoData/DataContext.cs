@@ -16,5 +16,14 @@ namespace CasinoData
             set { clients = value; }
         }
 
+        private Dictionary<int, Game> games;
+
+        public Dictionary<int, Game> Games {
+            get { return games; }
+            set { games = value; }
+        }
+
+
+
     }
 }
