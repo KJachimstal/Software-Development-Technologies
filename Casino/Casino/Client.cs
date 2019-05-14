@@ -30,5 +30,11 @@ namespace Casino
             set { lastName = value; }
         }
 
+        public Client(int clientNumber, string firstName, string lastName)
+        {
+            this.clientNumber = clientNumber;
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
     }
 }
