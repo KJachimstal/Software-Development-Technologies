@@ -15,5 +15,9 @@ namespace CasinoData
             set { dataContext = value; }
         }
 
+        public DataRepository(DataContext dataContext)
+        {
+            this.dataContext = dataContext;
+        }
     }
 }
