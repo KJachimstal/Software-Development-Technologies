@@ -8,7 +8,7 @@ using CasinoLibrary;
 
 namespace CasinoData
 {
-    class DataContext
+    public class DataContext
     {
         private List<Client> clients;
 
