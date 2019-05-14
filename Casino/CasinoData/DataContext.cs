@@ -31,6 +31,13 @@ namespace CasinoData
             set { gameDetails = value; }
         }
 
+        private List<Participation> participation;
+
+        public List<Participation> Participation {
+            get { return participation; }
+            set { participation = value; }
+        }
+
 
     }
 }
