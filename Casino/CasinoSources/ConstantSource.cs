@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace CasinoSources
 {
-    class ConstantSource : IDataSource
+    public class ConstantSource : IDataSource
     {
         public void Fill(DataContext dataContext)
         {
