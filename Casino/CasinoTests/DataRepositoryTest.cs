@@ -25,7 +25,7 @@ namespace CasinoTests
         }
 
         [TestMethod]
-        public void ClientTest()
+        public void ClientsRepositoryTest()
         {
             //GetAllClient test
             Assert.AreEqual(10, dataRepository.GetAllClients().Count);
@@ -33,7 +33,6 @@ namespace CasinoTests
             //AddClient test
             Client client = new Client(11, "Anna", "Hanna");
             dataRepository.AddClient(client);
-
             Assert.AreEqual(11, dataRepository.GetAllClients().Count);
 
             //GetClient test
@@ -47,6 +46,31 @@ namespace CasinoTests
             //DeleteClient test 
             dataRepository.DeleteClient(newClient);
             Assert.IsNull(dataRepository.GetClient(11));
+        }
+
+        [TestMethod]
+        public void GamesRepositoryTest()
+        {
+            //GetAllGames test
+            Assert.AreEqual(3, dataRepository.GetAllGames().Count);
+
+            //AddGame test
+            Game game = new Game(4, "Poker królewski", Game.GameType.POKER);
+            dataRepository.AddGame(game);
+            Assert.AreEqual(4, dataRepository.GetAllGames().Count);
+
+            //GetGame test
+            Assert.AreEqual("Poker królewski", dataRepository.GetGame(4).Name);
+
+            //UpdateGame test
+            Game newGame = new Game(4, "Pokerek", Game.GameType.POKER);
+            dataRepository.UpdateGame(game, newGame);
+            Assert.AreEqual("Pokerek", dataRepository.GetGame(4).Name);
+
+            //DeleteGame test
+            Assert.AreEqual(4, dataRepository.GetAllGames().Count);
+            dataRepository.DeleteGame(newGame);
+            Assert.AreEqual(3, dataRepository.GetAllGames().Count);
         }
     }
 }
