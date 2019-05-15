@@ -35,5 +35,14 @@ namespace CasinoLibrary
             this.startTime = startTime;
             this.minimalBet = minimalBet;
         }
+
+        public override bool Equals(object obj)
+        {
+            var state = obj as GameDetails;
+            return state != null &&
+                game == state.Game &&
+                startTime == state.StartTime &&
+                minimalBet == state.MinimalBet;
+        }
     }
 }
