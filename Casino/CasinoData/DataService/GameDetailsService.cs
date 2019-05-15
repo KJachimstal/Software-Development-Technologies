@@ -61,5 +61,20 @@ namespace CasinoData
                 throw new Exception("GameDetails does not exists!");
             }
         }
+
+        public List<GameDetails> GameDetailsBetweenDateTime(DateTimeOffset beginDate, DateTimeOffset endDate)
+        {
+            List<GameDetails> gameDetailsList = new List<GameDetails>();
+
+            foreach (GameDetails gameDetails in dataRepository.GetAllGameDetails())
+            {
+                if (gameDetails.StartTime >= beginDate && gameDetails.StartTime <= endDate)
+                {
+                    gameDetailsList.Add(gameDetails);
+                }
+            }
+
+            return gameDetailsList;
+        }
     }
 }
