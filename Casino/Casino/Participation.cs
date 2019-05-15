@@ -35,5 +35,14 @@ namespace CasinoLibrary
             this.gameDetail = gameDetail;
             this.bet = bet;
         }
+
+        public override bool Equals(object obj)
+        {
+            var state = obj as Participation;
+            return state != null &&
+                client == state.Client &&
+                gameDetail == state.GameDetail &&
+                bet == state.Bet;
+        }
     }
 }
