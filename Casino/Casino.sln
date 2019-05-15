@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoData", "CasinoData\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoTests", "CasinoTests\CasinoTests.csproj", "{CA5001F0-601D-44AE-84CB-DB98B181B419}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasionSources", "CasionSources\CasionSources.csproj", "{906CAC55-5932-464A-977C-693F4E1E0625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoSources", "CasionSources\CasinoSources.csproj", "{906CAC55-5932-464A-977C-693F4E1E0625}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

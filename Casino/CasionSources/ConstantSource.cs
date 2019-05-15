@@ -7,7 +7,7 @@ using CasinoData;
 using CasinoLibrary;
 using System.Collections.ObjectModel;
 
-namespace CasionSources
+namespace CasinoSources
 {
     class ConstantSource : IDataSource
     {
