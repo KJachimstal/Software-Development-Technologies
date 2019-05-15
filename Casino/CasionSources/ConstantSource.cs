@@ -34,7 +34,7 @@ namespace CasionSources
             Game game2 = new Game(2, "Bridge", Game.GameType.BRIDGE);
             Game game3 = new Game(3, "Ruletka", Game.GameType.ROULETTE);
 
-            DateTimeOffset date = new DateTimeOffset();
+            DateTimeOffset date = new DateTimeOffset(2019, 05, 15, 10, 15, 0, new TimeSpan(1, 0, 0));
 
             GameDetail gameDetail1 = new GameDetail(game1, date, 500);
             GameDetail gameDetail2 = new GameDetail(game2, date, 100);
