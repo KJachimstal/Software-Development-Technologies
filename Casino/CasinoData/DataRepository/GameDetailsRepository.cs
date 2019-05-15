@@ -35,5 +35,10 @@ namespace CasinoData
                 item.MinimalBet = newGameDetails.MinimalBet;
             }
         }
+
+        public void DeleteGameDetails(GameDetails gameDetails)
+        {
+            dataContext.GameDetails.Remove(gameDetails);
+        }
     }
 }
