@@ -18,5 +18,10 @@ namespace CasinoData
         {
             return dataContext.Clients.FirstOrDefault(c => c.ClientNumber == clientNumber);
         }
+
+        public IEnumerable<Client> getAllClients()
+        {
+            return dataContext.Clients;
+        }
     }
 }
