@@ -9,17 +9,11 @@ namespace CasinoData
     public class DataRepository
     {
         private DataContext dataContext;
+        private IDataSource dataSource;
 
         public DataContext DataContext {
             set => dataContext = value; 
         }
-
-        public DataRepository(DataContext dataContext)
-        {
-            this.dataContext = dataContext;
-        }
-
-        private IDataSource dataSource;
 
         public IDataSource DataSource {
             get { return dataSource; }
@@ -29,6 +23,11 @@ namespace CasinoData
         public DataRepository(IDataSource dataSource)
         {
             this.dataSource = dataSource;
+        }
+
+        public void Fill()
+        {
+            dataSource.Fill(dataContext);
         }
     }
 }
