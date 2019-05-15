@@ -13,5 +13,10 @@ namespace CasinoData
         {
             dataContext.Participations.Add(participation);
         }
+
+        public Participation GetParticipation(Client client)
+        {
+            return dataContext.Participations.Single(p => p.Client == client);
+        }
     }
 }
