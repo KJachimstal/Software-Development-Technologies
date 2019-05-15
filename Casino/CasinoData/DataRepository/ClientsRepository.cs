@@ -29,6 +29,11 @@ namespace CasinoData
             oldClient.ClientNumber = newClient.ClientNumber;
             oldClient.FirstName = newClient.FirstName;
             oldClient.LastName = newClient.LastName;
-        } 
+        }
+
+        public void DeleteClient(Client client)
+        {
+            dataContext.Clients.Remove(client);
+        }
     }
 }
