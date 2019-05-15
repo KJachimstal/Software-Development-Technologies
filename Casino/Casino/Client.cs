@@ -36,5 +36,14 @@ namespace CasinoLibrary
             this.firstName = firstName;
             this.lastName = lastName;
         }
+
+        public override bool Equals(object obj)
+        {
+            var state = obj as Client;
+            return state != null &&
+                clientNumber == state.ClientNumber &&
+                firstName == state.FirstName &&
+                lastName == state.LastName;
+        }
     }
 }
