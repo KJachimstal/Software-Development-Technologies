@@ -14,12 +14,12 @@ namespace CasinoData
             dataContext.Games.Add(game.Id, game);
         }
 
-        public Game getGame(int id)
+        public Game GetGame(int id)
         {
             return dataContext.Games[id];
         }
 
-        public Dictionary<int, Game> getAllGames()
+        public Dictionary<int, Game> GetAllGames()
         {
             return dataContext.Games;
         }
