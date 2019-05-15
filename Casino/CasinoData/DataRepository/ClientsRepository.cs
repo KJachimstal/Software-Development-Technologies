@@ -23,5 +23,12 @@ namespace CasinoData
         {
             return dataContext.Clients;
         }
+
+        public void UpdateClient(Client oldClient, Client newClient)
+        {
+            oldClient.ClientNumber = newClient.ClientNumber;
+            oldClient.FirstName = newClient.FirstName;
+            oldClient.LastName = newClient.LastName;
+        } 
     }
 }
