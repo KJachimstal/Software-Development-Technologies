@@ -44,6 +44,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DataRepository.cs" />
     <Compile Include="DataRepository\ClientsRepository.cs" />
+    <Compile Include="DataRepository\GameDetails.cs" />
     <Compile Include="DataRepository\GamesRepository.cs" />
     <Compile Include="DataRepository\ParticipationsRepository.cs" />
     <Compile Include="IDataSource.cs" />
