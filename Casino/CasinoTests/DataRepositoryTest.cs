@@ -5,40 +5,35 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CasinoLibrary;
 using CasinoData;
 using System.Collections.ObjectModel;
+using CasinoSources;
 
 namespace CasinoTests
 {
     [TestClass]
     public class DataRepositoryTest
     {
-        [TestMethod]
-        public void TestDataRepository()
+
+        public static ConstantSource constantSource = new ConstantSource();
+        public static DataRepository dataRepository = new DataRepository(constantSource);
+        public static DataContext dataContext = new DataContext();
+        
+        [TestInitialize]
+        public void TestInitialize()
         {
-            DateTimeOffset date = new DateTimeOffset();
-            Client client1 = new Client(1, "Adam", "Mały");
-            Game game = new Game(4, "Poker królewski", Game.GameType.POKER);
-            GameDetail gameDetail = new GameDetail(game, date, 400d);
-            Participation participation = new Participation(client1, gameDetail, 500);
+            dataRepository.DataContext = dataContext;
+            dataRepository.Fill();
+        }
 
-            List<Client> clients = new List<Client>();
-            clients.Add(client1);
+        [TestMethod]
+        public void ClientTest()
+        {
+            //Add test
+            Assert.AreEqual(10, dataRepository.GetAllClients().Count);
 
-            Dictionary<int, Game> games = new Dictionary<int, Game>();
-            games.Add(1, game);
+            Client client = new Client(11, "Anna", "Hanna");
+            dataRepository.AddClient(client);
 
-            ObservableCollection<GameDetail> gameDetails = new ObservableCollection<GameDetail>();
-            gameDetails.Add(gameDetail);
-
-            List<Participation> participations = new List<Participation>();
-            participations.Add(participation);
-
-            DataContext dataContext = new DataContext(clients, games, gameDetails, participations);
-
-            IDataSource dataSource;
-
-            DataRepository dataRepository = new DataRepository(dataContext);
-
-
+            Assert.AreEqual(11, dataRepository.GetAllClients().Count);
         }
     }
 }

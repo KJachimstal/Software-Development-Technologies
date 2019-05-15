@@ -18,7 +18,7 @@ namespace CasinoTests
             Client client1 = new Client(1, "Adam", "Mały");
             Client client2 = new Client(2, "Michał", "Spory");
             Game game = new Game(4, "Poker królewski", Game.GameType.POKER);
-            GameDetail gameDetail = new GameDetail(game, date, 400d);
+            GameDetails gameDetail = new GameDetails(game, date, 400d);
             Participation participation = new Participation(client1, gameDetail, 500);
 
             List<Client> clients = new List<Client>();
@@ -28,7 +28,7 @@ namespace CasinoTests
             Dictionary<int, Game> games = new Dictionary<int, Game>();
             games.Add(1, game);
 
-            ObservableCollection<GameDetail> gameDetails = new ObservableCollection<GameDetail>();
+            ObservableCollection<GameDetails> gameDetails = new ObservableCollection<GameDetails>();
             gameDetails.Add(gameDetail);
 
             List<Participation> participations = new List<Participation>();
