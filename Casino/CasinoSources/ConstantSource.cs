@@ -15,7 +15,7 @@ namespace CasinoSources
         {
             List<Client> clients = new List<Client>();
             Dictionary<int, Game> games = new Dictionary<int, Game>();
-            ObservableCollection<GameDetail> gameDetails = new ObservableCollection<GameDetail>();
+            ObservableCollection<GameDetails> gameDetails = new ObservableCollection<GameDetails>();
             List<Participation> participations = new List<Participation>();
 
 
@@ -36,9 +36,9 @@ namespace CasinoSources
 
             DateTimeOffset date = new DateTimeOffset(2019, 05, 15, 10, 15, 0, new TimeSpan(1, 0, 0));
 
-            GameDetail gameDetail1 = new GameDetail(game1, date, 500);
-            GameDetail gameDetail2 = new GameDetail(game2, date, 100);
-            GameDetail gameDetail3 = new GameDetail(game3, date, 300);
+            GameDetails gameDetail1 = new GameDetails(game1, date, 500);
+            GameDetails gameDetail2 = new GameDetails(game2, date, 100);
+            GameDetails gameDetail3 = new GameDetails(game3, date, 300);
 
             Participation participation1 = new Participation(client1, gameDetail1, 600);
             Participation participation2 = new Participation(client2, gameDetail2, 130);

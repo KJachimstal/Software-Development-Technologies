@@ -15,9 +15,9 @@ namespace CasinoLibrary
             set { client = value; }
         }
 
-        private GameDetail gameDetail;
+        private GameDetails gameDetail;
 
-        public GameDetail GameDetail {
+        public GameDetails GameDetail {
             get { return gameDetail; }
             set { gameDetail = value; }
         }
@@ -29,7 +29,7 @@ namespace CasinoLibrary
             set { bet = value; }
         }
 
-        public Participation(Client client, GameDetail gameDetail, double bet)
+        public Participation(Client client, GameDetails gameDetail, double bet)
         {
             this.client = client;
             this.gameDetail = gameDetail;
