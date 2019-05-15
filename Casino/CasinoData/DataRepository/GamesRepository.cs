@@ -14,5 +14,9 @@ namespace CasinoData
             dataContext.Games.Add(game.Id, game);
         }
 
+        public Game getGame(int id)
+        {
+            return dataContext.Games[id];
+        }
     }
 }
