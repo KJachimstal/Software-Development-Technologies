@@ -48,6 +48,7 @@
     <Compile Include="DataRepository\GamesRepository.cs" />
     <Compile Include="DataRepository\ParticipationsRepository.cs" />
     <Compile Include="DataService.cs" />
+    <Compile Include="DataService\ClientService.cs" />
     <Compile Include="IDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,5 +58,6 @@
       <Name>CasinoLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
