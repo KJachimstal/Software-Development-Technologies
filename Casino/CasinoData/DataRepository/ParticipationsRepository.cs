@@ -16,7 +16,7 @@ namespace CasinoData
 
         public Participation GetParticipation(Client client)
         {
-            return dataContext.Participations.Single(p => p.Client == client);
+            return dataContext.Participations.Single(p => p.Client.Equals(client));
         }
 
         public IEnumerable<Participation> GetAllParticipations()

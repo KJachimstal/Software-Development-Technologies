@@ -16,7 +16,9 @@ namespace CasinoData
 
         public GameDetails GetGameDetails(Game game)
         {
-            return dataContext.GameDetails.Single(gd => gd.Game == game);
+            return dataContext.GameDetails.Single(gd => gd.Game.Equals(game));
         }
+
+
     }
 }
