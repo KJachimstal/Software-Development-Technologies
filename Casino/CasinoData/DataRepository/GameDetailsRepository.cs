@@ -13,5 +13,10 @@ namespace CasinoData
         {
             dataContext.GameDetails.Add(gameDetails);
         }
+
+        public GameDetails GetGameDetails(Game game)
+        {
+            return dataContext.GameDetails.Single(gd => gd.Game == game);
+        }
     }
 }
