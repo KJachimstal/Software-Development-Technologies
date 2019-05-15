@@ -47,6 +47,7 @@
     <Compile Include="DataRepository\GameDetailsRepository.cs" />
     <Compile Include="DataRepository\GamesRepository.cs" />
     <Compile Include="DataRepository\ParticipationsRepository.cs" />
+    <Compile Include="DataService.cs" />
     <Compile Include="IDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
