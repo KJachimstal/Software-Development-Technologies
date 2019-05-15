@@ -30,5 +30,10 @@ namespace CasinoData
             oldGame.Name = newGame.Name;
             oldGame.Type = newGame.Type;
         }
+
+        public void DeleteGame(Game game)
+        {
+            dataContext.Games.Remove(game.Id);
+        }
     }
 }
