@@ -49,6 +49,7 @@
     <Compile Include="DataRepository\ParticipationsRepository.cs" />
     <Compile Include="DataService.cs" />
     <Compile Include="DataService\ClientService.cs" />
+    <Compile Include="DataService\GameDetailsService.cs" />
     <Compile Include="DataService\GameService.cs" />
     <Compile Include="IDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
