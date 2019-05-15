@@ -33,5 +33,14 @@ namespace CasinoLibrary
             this.name = name;
             this.type = type;
         }
+
+        public override bool Equals(object obj)
+        {
+            var state = obj as Game;
+            return state != null &&
+                id == state.Id &&
+                name == state.Name &&
+                type == state.Type;
+        }
     }
 }
