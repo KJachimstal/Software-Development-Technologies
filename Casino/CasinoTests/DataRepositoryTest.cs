@@ -82,8 +82,8 @@ namespace CasinoTests
             // AddGameDetails test
             Game game = new Game(4, "Pokerek", Game.GameType.POKER);
             DateTimeOffset date = new DateTimeOffset(DateTime.Now);
-            GameDetails gameDetails = new GameDetails(game, date, 300);
-            dataRepository.AddGameDetails(gameDetails);
+            GameDetails gameDetail = new GameDetails(game, date, 300);
+            dataRepository.AddGameDetails(gameDetail);
             Assert.AreEqual(4, dataRepository.GetAllGameDetails().Count);
 
             // GetGameDetails test
@@ -91,12 +91,40 @@ namespace CasinoTests
 
             // UpdateGameDetails test
             GameDetails newGameDetails = new GameDetails(game, date, 400);
-            dataRepository.UpdateGameDetails(gameDetails, newGameDetails);
+            dataRepository.UpdateGameDetails(gameDetail, newGameDetails);
             Assert.AreEqual(400, dataRepository.GetGameDetails(game).MinimalBet);
 
             // DeleteGameDetails test
             dataRepository.DeleteGameDetails(newGameDetails);
             Assert.AreEqual(3, dataRepository.GetAllGameDetails().Count);
+        }
+
+        [TestMethod]
+        public void ParticipationsRepositoryTest()
+        {
+            // GetAllPerticipations test
+            Assert.AreEqual(3, dataRepository.GetAllParticipations().Count);
+
+            // AddParticipation test
+            Client client = new Client(11, "Anna", "Hanna");
+            Game game = new Game(4, "Pokerek", Game.GameType.POKER);
+            DateTimeOffset date = new DateTimeOffset(DateTime.Now);
+            GameDetails gameDetail = new GameDetails(game, date, 300);
+            Participation participation = new Participation(client, gameDetail, 450);
+            dataRepository.AddParticipation(participation);
+            Assert.AreEqual(4, dataRepository.GetAllParticipations().Count);
+
+            // GetParticipation test
+            Assert.AreEqual(450, dataRepository.GetParticipation(client).Bet);
+
+            // UpdateParticipation test
+            Participation newParticipation = new Participation(client, gameDetail, 550);
+            dataRepository.UpdateParticipation(participation, newParticipation);
+            Assert.AreEqual(550, dataRepository.GetParticipation(client).Bet);
+
+            // DeleteParticipations test
+            dataRepository.DeleteParticipation(newParticipation);
+            Assert.AreEqual(3, dataRepository.GetAllParticipations().Count);
         }
     }
 }
