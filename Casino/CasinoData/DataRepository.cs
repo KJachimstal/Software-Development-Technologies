@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoData
 {
-    public class DataRepository
+    public partial class DataRepository
     {
         private DataContext dataContext;
         private IDataSource dataSource;
