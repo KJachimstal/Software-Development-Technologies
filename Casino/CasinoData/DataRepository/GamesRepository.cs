@@ -23,5 +23,12 @@ namespace CasinoData
         {
             return dataContext.Games;
         }
+
+        public void UpdateGame(Game oldGame, Game newGame)
+        {
+            oldGame.Id = newGame.Id;
+            oldGame.Name = newGame.Name;
+            oldGame.Type = newGame.Type;
+        }
     }
 }
