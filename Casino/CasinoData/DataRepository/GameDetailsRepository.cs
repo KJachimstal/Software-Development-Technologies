@@ -24,5 +24,16 @@ namespace CasinoData
         {
             return dataContext.GameDetails;
         }
+
+        public void UpdateGameDetails(GameDetails oldGameDetails, GameDetails newGameDetails)
+        {
+            GameDetails gameDetails = oldGameDetails;
+            var item = dataContext.GameDetails.FirstOrDefault(gd => gd.Equals(oldGameDetails));
+            if (item != null)
+            {
+                item.StartTime = newGameDetails.StartTime;
+                item.MinimalBet = newGameDetails.MinimalBet;
+            }
+        }
     }
 }
