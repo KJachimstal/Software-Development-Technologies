@@ -18,5 +18,10 @@ namespace CasinoData
         {
             return dataContext.Games[id];
         }
+
+        public Dictionary<int, Game> getAllGames()
+        {
+            return dataContext.Games;
+        }
     }
 }
