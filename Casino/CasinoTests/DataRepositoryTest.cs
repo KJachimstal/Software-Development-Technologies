@@ -27,13 +27,26 @@ namespace CasinoTests
         [TestMethod]
         public void ClientTest()
         {
-            //Add test
+            //GetAllClient test
             Assert.AreEqual(10, dataRepository.GetAllClients().Count);
 
+            //AddClient test
             Client client = new Client(11, "Anna", "Hanna");
             dataRepository.AddClient(client);
 
             Assert.AreEqual(11, dataRepository.GetAllClients().Count);
+
+            //GetClient test
+            Assert.AreEqual(11, dataRepository.GetClient(11).ClientNumber);
+
+            //UpdateClient test
+            Client newClient = new Client(11, "Józek", "Daniel");
+            dataRepository.UpdateClient(client, newClient);
+            Assert.AreEqual("Józek", dataRepository.GetClient(11).FirstName);
+
+            //DeleteClient test 
+            dataRepository.DeleteClient(newClient);
+            Assert.IsNull(dataRepository.GetClient(11));
         }
     }
 }
