@@ -13,10 +13,10 @@ namespace CasinoSources
     {
         public void Fill(DataContext dataContext)
         {
-            List<Client> clients = dataContext.Clients;
-            Dictionary<int, Game> games = dataContext.Games;
-            ObservableCollection<GameDetail> gameDetails = dataContext.GameDetails;
-            List<Participation> participations = dataContext.Participations;
+            List<Client> clients = new List<Client>();
+            Dictionary<int, Game> games = new Dictionary<int, Game>();
+            ObservableCollection<GameDetail> gameDetails = new ObservableCollection<GameDetail>();
+            List<Participation> participations = new List<Participation>();
 
 
             Client client1 = new Client(1, "Jennifer", "Bender");
@@ -66,6 +66,11 @@ namespace CasinoSources
             participations.Add(participation1);
             participations.Add(participation2);
             participations.Add(participation3);
+
+            dataContext.Clients = clients;
+            dataContext.Games = games;
+            dataContext.GameDetails = gameDetails;
+            dataContext.Participations = participations;
         }
     }
 
