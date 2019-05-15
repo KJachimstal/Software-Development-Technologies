@@ -14,12 +14,12 @@ namespace CasinoData
             dataContext.Clients.Add(client);
         }
 
-        public Client getClient(int clientNumber)
+        public Client GetClient(int clientNumber)
         {
             return dataContext.Clients.FirstOrDefault(c => c.ClientNumber == clientNumber);
         }
 
-        public IEnumerable<Client> getAllClients()
+        public IEnumerable<Client> GetAllClients()
         {
             return dataContext.Clients;
         }
