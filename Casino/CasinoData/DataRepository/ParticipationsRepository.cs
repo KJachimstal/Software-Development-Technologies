@@ -23,5 +23,12 @@ namespace CasinoData
         {
             return dataContext.Participations;
         }
+
+        public void UpdateParticipation(Participation oldParticipation, Participation newParticipation)
+        {
+            oldParticipation.Client = newParticipation.Client;
+            oldParticipation.GameDetail = newParticipation.GameDetail;
+            oldParticipation.Bet = newParticipation.Bet;
+        }
     }
 }
