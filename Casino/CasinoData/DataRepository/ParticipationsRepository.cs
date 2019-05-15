@@ -18,5 +18,10 @@ namespace CasinoData
         {
             return dataContext.Participations.Single(p => p.Client == client);
         }
+
+        public IEnumerable<Participation> GetAllParticipations()
+        {
+            return dataContext.Participations;
+        }
     }
 }
