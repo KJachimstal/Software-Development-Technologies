@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GamesList>
+  <Game>
+    <Id>1</Id>
+    <Name>Texas Holdem</Name>
+    <Type>POKER</Type>
+  </Game>
+</GamesList>
