@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CasinoLibrary;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace CasinoData
 {
@@ -75,6 +76,11 @@ namespace CasinoData
             }
 
             return gameDetailsList;
+        }
+
+        public void HandleGameDetailsChange(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            Console.WriteLine("Game details list was changed!");
         }
     }
 }
