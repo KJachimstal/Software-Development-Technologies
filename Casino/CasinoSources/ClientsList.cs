@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace CasionSources
 {
     [XmlRoot("ClientsList")]
-    class ClientsList
+    public class ClientsList
     {
         public ClientsList()
         {

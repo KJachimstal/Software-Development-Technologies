@@ -1,6 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<ClientsList>
   <Client>
     <ClientNumber>1213</ClientNumber>
     <FirstName>Steve</FirstName>
     <LastName>Works</LastName>
   </Client>
+  <Client>
+    <ClientNumber>5431</ClientNumber>
+    <FirstName>Peter</FirstName>
+    <LastName>Rush</LastName>
+  </Client>  
+  <Client>
+    <ClientNumber>7731</ClientNumber>
+    <FirstName>Mary</FirstName>
+    <LastName>Ortiz</LastName>
+  </Client>
+  <Client>
+    <ClientNumber>411</ClientNumber>
+    <FirstName>John</FirstName>
+    <LastName>Herring</LastName>
+  </Client>
+  <Client>
+    <ClientNumber>211951</ClientNumber>
+    <FirstName>William</FirstName>
+    <LastName>Ewing</LastName>
+  </Client>
+  <Client>
+    <ClientNumber>807211</ClientNumber>
+    <FirstName>Susan</FirstName>
+    <LastName>Hernandez</LastName>
+  </Client>
+</ClientsList>
