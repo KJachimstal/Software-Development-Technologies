@@ -90,6 +90,14 @@ namespace CasinoData
                     Console.WriteLine(string.Format("|-- {0}", gameDetails));
                 }
             }
+            if (e.OldItems != null)
+            {
+                Console.WriteLine(string.Format("|- Game details removed: {0}", e.OldItems.Count));
+                foreach (GameDetails gameDetails in e.OldItems)
+                {
+                    Console.WriteLine(string.Format("|-- {0}", gameDetails));
+                }
+            }
         }
     }
 }
