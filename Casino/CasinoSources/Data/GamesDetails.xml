@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<GamesDetails>
+<GamesDetailsList>
   <GameDetails>
     <Game>
       <Id>1</Id>
@@ -9,4 +9,4 @@
     <StartTime>2011-11-11T15:05:46.4733406+01:00</StartTime>
     <MinimalBet>10.5</MinimalBet>
   </GameDetails>
-</GamesDetails>
+</GamesDetailsList>

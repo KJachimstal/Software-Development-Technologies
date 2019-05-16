@@ -62,7 +62,9 @@
     <Content Include="Data\Clients.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\GamesDetails.xml" />
+    <Content Include="Data\GamesDetails.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Games.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

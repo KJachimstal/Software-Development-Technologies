@@ -41,6 +41,8 @@ namespace CasinoLibrary
             this.minimalBet = minimalBet;
         }
 
+        public GameDetails() { }
+
         public override bool Equals(object obj)
         {
             var state = obj as GameDetails;

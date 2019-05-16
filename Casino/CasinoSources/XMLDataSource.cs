@@ -2,6 +2,7 @@
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -48,17 +49,16 @@ namespace CasionSources
 
         private void FillGamesDetails()
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(GamesList));
+            XmlSerializer deserializer = new XmlSerializer(typeof(GamesDetailsList));
             TextReader reader = new StreamReader(@"Data\GamesDetails.xml");
             object obj = deserializer.Deserialize(reader);
-            GamesList games = (GamesList)obj;
+            GamesDetailsList gamesDetails = (GamesDetailsList)obj;
 
-            Dictionary<int, Game> gamesDictionary = new Dictionary<int, Game>();
-            foreach (Game game in games.Games)
+            dataContext.GameDetails = new ObservableCollection<GameDetails>();
+            foreach (GameDetails gameDetails in gamesDetails.GamesDetails)
             {
-                gamesDictionary.Add(game.Id, game);
+                dataContext.GameDetails.Add(gameDetails);
             }
-            dataContext.Games = gamesDictionary;
         }
     }
 }
