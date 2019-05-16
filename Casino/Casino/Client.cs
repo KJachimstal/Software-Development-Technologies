@@ -42,6 +42,8 @@ namespace CasinoLibrary
             this.lastName = lastName;
         }
 
+        public Client() { }
+
         public override bool Equals(object obj)
         {
             var state = obj as Client;
@@ -49,6 +51,11 @@ namespace CasinoLibrary
                 clientNumber == state.ClientNumber &&
                 firstName == state.FirstName &&
                 lastName == state.LastName;
+        }
+
+        public override string ToString()
+        {
+            return firstName + " " + lastName;
         }
     }
 }
