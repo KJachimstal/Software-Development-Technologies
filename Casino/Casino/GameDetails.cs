@@ -44,5 +44,10 @@ namespace CasinoLibrary
                 startTime == state.StartTime &&
                 minimalBet == state.MinimalBet;
         }
+
+        public override string ToString()
+        {
+            return game.Name + " " + startTime.ToString() + " [min-bet: " + minimalBet + "]";
+        }
     }
 }
