@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GamesDetails>
+  <GameDetails>
+    <Game>
+      <Id>1</Id>
+      <Name>Texas Holdem</Name>
+      <Type>POKER</Type>
+    </Game>
+    <StartTime>2011-11-11T15:05:46.4733406+01:00</StartTime>
+    <MinimalBet>10.5</MinimalBet>
+  </GameDetails>
+</GamesDetails>

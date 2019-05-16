@@ -19,6 +19,7 @@ namespace CasionSources
             this.dataContext = dataContext;
             FillClients();
             FillGames();
+            FillGamesDetails();
         }
 
         private void FillClients()
@@ -44,5 +45,6 @@ namespace CasionSources
             }
             dataContext.Games = gamesDictionary;
         }
+
     }
 }
