@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CasinoLibrary
 {
+    [Serializable()]
     public class GameDetails
     {
         private Game game;
 
+        [XmlElement("Game")]
         public Game Game {
             get { return game; }
             set { game = value; }
@@ -17,6 +20,7 @@ namespace CasinoLibrary
 
         private DateTimeOffset startTime;
 
+        [XmlElement("StartTime")]
         public DateTimeOffset StartTime {
             get { return startTime; }
             set { startTime = value; }
@@ -24,6 +28,7 @@ namespace CasinoLibrary
 
         private double minimalBet;
 
+        [XmlElement("MinimalBet")]
         public double MinimalBet {
             get { return minimalBet; }
             set { minimalBet = value; }
