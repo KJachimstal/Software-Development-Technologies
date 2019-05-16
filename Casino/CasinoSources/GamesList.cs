@@ -9,11 +9,11 @@ using System.Xml.Serialization;
 namespace CasionSources
 {
     [XmlRoot("GamesList")]
-    class GamesList
+    public class GamesList
     {
-        public GamesList(List<Game> games)
+        public GamesList()
         {
-            Games = games;
+            Games = new List<Game>();
         }
 
         [XmlElement("Game")]

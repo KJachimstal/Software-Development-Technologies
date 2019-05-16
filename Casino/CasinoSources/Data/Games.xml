@@ -4,5 +4,15 @@
     <Id>1</Id>
     <Name>Texas Holdem</Name>
     <Type>POKER</Type>
+  </Game>  
+  <Game>
+    <Id>2</Id>
+    <Name>Chinese Poker</Name>
+    <Type>POKER</Type>
+  </Game>  
+  <Game>
+    <Id>3</Id>
+    <Name>Roulette</Name>
+    <Type>ROULETTE</Type>
   </Game>
 </GamesList>
