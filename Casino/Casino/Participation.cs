@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CasinoLibrary
 {
+    [Serializable()]
     public class Participation
     {
         private Client client;
 
+        [XmlElement("Client")]
         public Client Client {
             get { return client; }
             set { client = value; }
@@ -17,13 +20,15 @@ namespace CasinoLibrary
 
         private GameDetails gameDetail;
 
-        public GameDetails GameDetail {
+        [XmlElement("GameDetails")]
+        public GameDetails GameDetails {
             get { return gameDetail; }
             set { gameDetail = value; }
         }
 
         private double bet;
 
+        [XmlElement("Bet")]
         public double Bet {
             get { return bet; } 
             set { bet = value; }
@@ -41,7 +46,7 @@ namespace CasinoLibrary
             var state = obj as Participation;
             return state != null &&
                 client == state.Client &&
-                gameDetail == state.GameDetail &&
+                gameDetail == state.GameDetails &&
                 bet == state.Bet;
         }
     }

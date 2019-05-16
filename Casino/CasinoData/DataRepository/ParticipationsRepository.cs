@@ -27,7 +27,7 @@ namespace CasinoData
         public void UpdateParticipation(Participation oldParticipation, Participation newParticipation)
         {
             oldParticipation.Client = newParticipation.Client;
-            oldParticipation.GameDetail = newParticipation.GameDetail;
+            oldParticipation.GameDetails = newParticipation.GameDetails;
             oldParticipation.Bet = newParticipation.Bet;
         }
 
