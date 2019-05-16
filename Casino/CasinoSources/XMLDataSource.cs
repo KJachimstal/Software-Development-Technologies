@@ -46,5 +46,19 @@ namespace CasionSources
             dataContext.Games = gamesDictionary;
         }
 
+        private void FillGamesDetails()
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(GamesList));
+            TextReader reader = new StreamReader(@"Data\GamesDetails.xml");
+            object obj = deserializer.Deserialize(reader);
+            GamesList games = (GamesList)obj;
+
+            Dictionary<int, Game> gamesDictionary = new Dictionary<int, Game>();
+            foreach (Game game in games.Games)
+            {
+                gamesDictionary.Add(game.Id, game);
+            }
+            dataContext.Games = gamesDictionary;
+        }
     }
 }
