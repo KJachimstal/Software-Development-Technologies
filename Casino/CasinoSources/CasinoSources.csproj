@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientsList.cs" />
     <Compile Include="ConstantSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLDataSource.cs" />
@@ -54,6 +55,11 @@
       <Project>{6a6c07dc-fbb8-42ff-8c56-e4978491f06f}</Project>
       <Name>CasinoLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Clients.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

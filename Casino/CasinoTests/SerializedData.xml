@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+
+    <Client>
+      <ClientNumber>1213</ClientNumber>
+      <FirstName>Steve</FirstName>
+      <LastName>Works</LastName>
+    </Client>
+
+</Root>
