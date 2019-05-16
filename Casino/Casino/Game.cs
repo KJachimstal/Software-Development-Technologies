@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace CasinoLibrary
 {
+    [Serializable()]
     public class Game
     {
         public enum GameType { POKER, BRIDGE, ROULETTE }
 
         private int id;
 
+        [XmlElement("Id")]
         public int Id {
             get { return id; }
             set { id = value; }
@@ -15,6 +18,7 @@ namespace CasinoLibrary
 
         private string name;
 
+        [XmlElement("Name")]
         public string Name {
             get { return name; }
             set { name = value; }
@@ -22,6 +26,7 @@ namespace CasinoLibrary
 
         private GameType type;
 
+        [XmlElement("Type")]
         public GameType Type {
             get { return type; }
             set { type = value; }
