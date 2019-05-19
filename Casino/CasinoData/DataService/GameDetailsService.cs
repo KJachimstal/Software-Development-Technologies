@@ -69,7 +69,7 @@ namespace CasinoData
 
             foreach (GameDetails gameDetails in dataRepository.GetAllGameDetails())
             {
-                if (gameDetails.StartTime >= beginDate && gameDetails.StartTime <= endDate)
+                if (gameDetails.startTime >= beginDate && gameDetails.startTime <= endDate)
                 {
                     gameDetailsList.Add(gameDetails);
                 }

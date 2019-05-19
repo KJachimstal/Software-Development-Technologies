@@ -16,6 +16,7 @@ namespace CasionSources
             GamesDetails = new List<GameDetails>();
         }
 
+        [XmlElement("GameDetails")]
         public List<GameDetails> GamesDetails { get; set; }
     }
 }

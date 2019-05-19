@@ -12,18 +12,18 @@ namespace CasinoLibrary
     {
         private Game game;
 
-        [XmlElement("Game")]
+        [XmlIgnore]
         public Game Game {
             get { return game; }
             set { game = value; }
         }
 
-        private DateTimeOffset startTime;
+        public DateTimeOffset startTime;
 
         [XmlElement("StartTime")]
-        public DateTimeOffset StartTime {
-            get { return startTime; }
-            set { startTime = value; }
+        public string StartTime {
+            get { return startTime.ToString("o"); }
+            set { startTime = DateTimeOffset.Parse(value); }
         }
 
         private double minimalBet;
@@ -48,7 +48,7 @@ namespace CasinoLibrary
             var state = obj as GameDetails;
             return state != null &&
                 game == state.Game &&
-                startTime == state.StartTime &&
+                startTime == state.startTime &&
                 minimalBet == state.MinimalBet;
         }
 
