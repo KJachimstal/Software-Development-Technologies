@@ -12,10 +12,18 @@ namespace CasinoLibrary
     {
         private Game game;
 
-        [XmlElement("Game")]
+        [XmlIgnore]
         public Game Game {
             get { return game; }
             set { game = value; }
+        }
+
+        private int gameId;
+
+        [XmlAttribute("GameId")]
+        public int GameId {
+            get { return gameId; }
+            set { gameId = value; }
         }
 
         public DateTimeOffset startTime;

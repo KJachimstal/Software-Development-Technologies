@@ -57,6 +57,8 @@ namespace CasionSources
             dataContext.GameDetails = new ObservableCollection<GameDetails>();
             foreach (GameDetails gameDetails in gamesDetails.GamesDetails)
             {
+                Game game = dataContext.Games[gameDetails.GameId];
+                gameDetails.Game = game;
                 dataContext.GameDetails.Add(gameDetails);
             }
         }
