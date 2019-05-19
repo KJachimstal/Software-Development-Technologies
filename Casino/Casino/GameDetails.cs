@@ -12,7 +12,7 @@ namespace CasinoLibrary
     {
         private Game game;
 
-        [XmlIgnore]
+        [XmlElement("Game")]
         public Game Game {
             get { return game; }
             set { game = value; }
