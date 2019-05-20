@@ -50,5 +50,16 @@ namespace CasinoTests
             Assert.AreEqual("Texas Holdem", game.Name);
             Assert.AreEqual(Game.GameType.POKER, game.Type);
         }
+
+        [TestMethod]
+        public void ValidGamesDetails()
+        {
+            GameDetails gameDetails = dataContext.GameDetails[0];
+            Assert.AreEqual(1, gameDetails.GameId);
+            Assert.AreEqual(1, gameDetails.Id);
+            Assert.AreEqual(10.5, gameDetails.MinimalBet, 0.00001);
+            DateTimeOffset datetime = DateTimeOffset.Parse("2011-11-11T15:05:46.4733406+01:00");
+            Assert.AreEqual(datetime, gameDetails.startTime);
+        }
     }
 }
