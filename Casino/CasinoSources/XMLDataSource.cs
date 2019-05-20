@@ -71,12 +71,12 @@ namespace CasionSources
             object obj = deserializer.Deserialize(reader);
             ParticipationsList participations = (ParticipationsList)obj;
 
-            dataContext.GameDetails = new ObservableCollection<GameDetails>();
+            dataContext.Participations = new List<Participation>();
             foreach (Participation participation in participations.Participations)
             {
                 Client client = dataContext.Clients[participation.ClientId];
                 participation.Client = client;
-                GameDetails gameDetails = dataContext.GameDetails[participation.GameDetailsId];
+                GameDetails gameDetails = dataContext.GameDetails.FirstOrDefault(e => e.Id == participation.GameDetailsId);
                 participation.GameDetails = gameDetails;
                 dataContext.Participations.Add(participation);
             }

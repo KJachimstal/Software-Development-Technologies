@@ -26,10 +26,10 @@ namespace CasinoLibrary
             set { gameDetail = value; }
         }
 
-        [XmlElement("ClientId")]
+        [XmlAttribute("ClientId")]
         public int ClientId { get; set; }
 
-        [XmlElement("GameDetailsId")]
+        [XmlAttribute("GameDetailsId")]
         public int GameDetailsId { get; set; }
 
         private double bet;
@@ -46,6 +46,8 @@ namespace CasinoLibrary
             this.gameDetail = gameDetail;
             this.bet = bet;
         }
+
+        public Participation() { }
 
         public override bool Equals(object obj)
         {
