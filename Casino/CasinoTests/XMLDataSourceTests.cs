@@ -55,11 +55,23 @@ namespace CasinoTests
         public void ValidGamesDetails()
         {
             GameDetails gameDetails = dataContext.GameDetails[0];
-            Assert.AreEqual(1, gameDetails.GameId);
             Assert.AreEqual(1, gameDetails.Id);
+            Assert.AreEqual(1, gameDetails.GameId);
+            Assert.AreEqual(dataContext.Games[1], gameDetails.Game);
             Assert.AreEqual(10.5, gameDetails.MinimalBet, 0.00001);
             DateTimeOffset datetime = DateTimeOffset.Parse("2011-11-11T15:05:46.4733406+01:00");
             Assert.AreEqual(datetime, gameDetails.startTime);
+        }
+
+        [TestMethod]
+        public void ValidParticipations()
+        {
+            Participation participation = dataContext.Participations[0];
+            Assert.AreEqual(1213, participation.ClientId);
+            Assert.AreEqual(1, participation.GameDetailsId);
+            Assert.AreEqual(dataContext.Clients[0], participation.Client);
+            Assert.AreEqual(dataContext.GameDetails[0], participation.GameDetails);
+            Assert.AreEqual(15.2, participation.Bet, 0.00001);
         }
     }
 }
