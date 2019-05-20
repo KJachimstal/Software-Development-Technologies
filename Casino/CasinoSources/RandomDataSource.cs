@@ -63,7 +63,7 @@ namespace CasionSources
         private void FillGamesDetails()
         {
             dataContext.GameDetails = new ObservableCollection<GameDetails>();
-            for (int i = 1; i <= 800 * multiplier; i++)
+            for (int i = 1; i <= 300 * multiplier; i++)
             {
                 Game game = dataContext.Games[random.Next(1, 400 * multiplier)];
                 GameDetails gameDetails = new GameDetails()
@@ -79,7 +79,19 @@ namespace CasionSources
 
         private void FillParticipations()
         {
-
+            dataContext.Participations = new List<Participation>();
+            for (int i = 1; i <= 800; i++)
+            {
+                Client client = dataContext.Clients[random.Next(1, 500 * multiplier)];
+                GameDetails gameDetails = dataContext.GameDetails[random.Next(1, 300 * multiplier)];
+                Participation participation = new Participation()
+                {
+                    Client = client,
+                    GameDetails = gameDetails,
+                    Bet = random.NextDouble() * 20,
+                };
+                dataContext.Participations.Add(participation);
+            }
         }
 
         private string GetRandomString(int length)
