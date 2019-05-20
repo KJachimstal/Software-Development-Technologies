@@ -12,7 +12,7 @@ namespace CasinoLibrary
     {
         private Client client;
 
-        [XmlElement("Client")]
+        [XmlIgnore]
         public Client Client {
             get { return client; }
             set { client = value; }
@@ -20,11 +20,17 @@ namespace CasinoLibrary
 
         private GameDetails gameDetail;
 
-        [XmlElement("GameDetails")]
+        [XmlIgnore]
         public GameDetails GameDetails {
             get { return gameDetail; }
             set { gameDetail = value; }
         }
+
+        [XmlElement("ClientId")]
+        public int ClientId { get; set; }
+
+        [XmlElement("GameDetailsId")]
+        public int GameDetailsId { get; set; }
 
         private double bet;
 

@@ -21,6 +21,7 @@ namespace CasionSources
             FillClients();
             FillGames();
             FillGamesDetails();
+            FillParticipations();
         }
 
         private void FillClients()
@@ -60,6 +61,24 @@ namespace CasionSources
                 Game game = dataContext.Games[gameDetails.GameId];
                 gameDetails.Game = game;
                 dataContext.GameDetails.Add(gameDetails);
+            }
+        }
+
+        private void FillParticipations()
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(ParticipationsList));
+            TextReader reader = new StreamReader(@"Data\Participations.xml");
+            object obj = deserializer.Deserialize(reader);
+            ParticipationsList participations = (ParticipationsList)obj;
+
+            dataContext.GameDetails = new ObservableCollection<GameDetails>();
+            foreach (Participation participation in participations.Participations)
+            {
+                Client client = dataContext.Clients[participation.ClientId];
+                participation.Client = client;
+                GameDetails gameDetails = dataContext.GameDetails[participation.GameDetailsId];
+                participation.GameDetails = gameDetails;
+                dataContext.Participations.Add(participation);
             }
         }
     }
