@@ -41,5 +41,14 @@ namespace CasinoTests
             Assert.AreEqual("Steve", client.FirstName);
             Assert.AreEqual("Works", client.LastName);
         }
+
+        [TestMethod]
+        public void ValidGames()
+        {
+            Game game = dataContext.Games[1];
+            Assert.AreEqual(1, game.Id);
+            Assert.AreEqual("Texas Holdem", game.Name);
+            Assert.AreEqual(Game.GameType.POKER, game.Type);
+        }
     }
 }
