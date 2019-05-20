@@ -45,6 +45,7 @@
     <Compile Include="ConstantSource.cs" />
     <Compile Include="GamesDetailsList.cs" />
     <Compile Include="GamesList.cs" />
+    <Compile Include="ParticipationsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLDataSource.cs" />
   </ItemGroup>
