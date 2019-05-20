@@ -74,7 +74,7 @@ namespace CasionSources
             dataContext.Participations = new List<Participation>();
             foreach (Participation participation in participations.Participations)
             {
-                Client client = dataContext.Clients.FirstOrDefault(e => e.ClientNumber == participation.ClientId);
+                Client client = dataContext.Clients.FirstOrDefault(e => e.ClientNumber == participation.ClientNumber);
                 participation.Client = client;
                 GameDetails gameDetails = dataContext.GameDetails.FirstOrDefault(e => e.Id == participation.GameDetailsId);
                 participation.GameDetails = gameDetails;

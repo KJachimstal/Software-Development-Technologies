@@ -67,7 +67,7 @@ namespace CasinoTests
         public void ValidParticipations()
         {
             Participation participation = dataContext.Participations[0];
-            Assert.AreEqual(1213, participation.ClientId);
+            Assert.AreEqual(1213, participation.ClientNumber);
             Assert.AreEqual(1, participation.GameDetailsId);
             Assert.AreEqual(dataContext.Clients[0], participation.Client);
             Assert.AreEqual(dataContext.GameDetails[0], participation.GameDetails);

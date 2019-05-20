@@ -26,8 +26,8 @@ namespace CasinoLibrary
             set { gameDetail = value; }
         }
 
-        [XmlAttribute("ClientId")]
-        public int ClientId { get; set; }
+        [XmlAttribute("ClientNumber")]
+        public int ClientNumber { get; set; }
 
         [XmlAttribute("GameDetailsId")]
         public int GameDetailsId { get; set; }
