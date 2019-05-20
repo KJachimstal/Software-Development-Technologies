@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CasionSources
 {
-    class RandomDataSource : IDataSource
+    public class RandomDataSource : IDataSource
     {
         private DataContext dataContext;
         private int multiplier = 1;
@@ -20,6 +20,8 @@ namespace CasionSources
         {
             this.multiplier = multiplier;
         }
+
+        public RandomDataSource() { }
 
         public void Fill(DataContext dataContext)
         {
