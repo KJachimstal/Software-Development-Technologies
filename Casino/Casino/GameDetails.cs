@@ -10,6 +10,14 @@ namespace CasinoLibrary
     [Serializable()]
     public class GameDetails
     {
+        private int id;
+
+        [XmlElement("Id")]
+        public int Id {
+            get { return id; }
+            set { id = value; }
+        }
+
         private Game game;
 
         [XmlIgnore]
