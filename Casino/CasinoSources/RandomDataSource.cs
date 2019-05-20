@@ -2,6 +2,7 @@
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,11 @@ namespace CasionSources
         private int multiplier = 1;
         private static Random random = new Random();
         const string chars = "abcdefghijklmnopqrstuvwxyz";
+
+        public RandomDataSource(int multiplier)
+        {
+            this.multiplier = multiplier;
+        }
 
         public void Fill(DataContext dataContext)
         {
@@ -56,17 +62,24 @@ namespace CasionSources
 
         private void FillGamesDetails()
         {
-
+            dataContext.GameDetails = new ObservableCollection<GameDetails>();
+            for (int i = 1; i <= 800 * multiplier; i++)
+            {
+                Game game = dataContext.Games[random.Next(1, 400 * multiplier)];
+                GameDetails gameDetails = new GameDetails()
+                {
+                    Id = i,
+                    Game = game,
+                    startTime = DateTimeOffset.Now,
+                    MinimalBet = random.NextDouble() * 10,
+                };
+                dataContext.GameDetails.Add(gameDetails);
+            }
         }
 
         private void FillParticipations()
         {
 
-        }
-
-        public void SetMultiplier(int multiplier)
-        {
-            this.multiplier = multiplier;
         }
 
         private string GetRandomString(int length)
