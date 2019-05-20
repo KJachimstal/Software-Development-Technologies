@@ -43,8 +43,8 @@ namespace CasinoTests
         [TestMethod]
         public void HugeMultiplier()
         {
-            // 5 000 000x clients, 4 000 000x games, 3 000 000x games details, 8 000 000x participations
-            IDataSource dataSource = new RandomDataSource(10000);
+            // 1 000 000x clients, 800 000x games, 600 000x games details, 1 600 000x participations
+            IDataSource dataSource = new RandomDataSource(2000);
             dataSource.Fill(dataContext);
         }
     }
