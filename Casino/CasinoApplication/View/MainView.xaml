@@ -12,14 +12,13 @@
     <Window.Resources>
         <DataTemplate x:Key="RowButtons">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Edit" />
-                <Button Content="Delete" />
+                <Button Content="Edit" Margin="2" />
+                <Button Content="Delete" Margin="2" />
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -38,9 +37,9 @@
                     <ListView ItemsSource="{Binding ClientsList}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="#CN" />
-                                <GridViewColumn Header="First name" />
-                                <GridViewColumn Header="Last name" />
+                                <GridViewColumn Header="#CN" DisplayMemberBinding="{Binding ClientNumber}" />
+                                <GridViewColumn Header="First name" DisplayMemberBinding="{Binding FirstName}" />
+                                <GridViewColumn Header="Last name" DisplayMemberBinding="{Binding LastName}" />
                                 <GridViewColumn CellTemplate="{StaticResource RowButtons}" />
                             </GridView>
                         </ListView.View>
@@ -50,6 +49,5 @@
         </Border>
         <StackPanel Grid.Column="1"/>
         <StackPanel Grid.Column="2"/>
-        <StackPanel Grid.Column="3"/>
     </Grid>
 </Window>
