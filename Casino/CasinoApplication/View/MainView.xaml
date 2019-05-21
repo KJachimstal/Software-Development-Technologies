@@ -20,6 +20,10 @@
         <DataTemplate x:Key="ClientsListView" >
             <View:ClientsListView/>
         </DataTemplate>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="Padding" Value="6, 3" />
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>

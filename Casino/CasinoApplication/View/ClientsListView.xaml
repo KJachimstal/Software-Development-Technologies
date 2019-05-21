@@ -6,26 +6,22 @@
              xmlns:local="clr-namespace:CasinoApplication.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <DataTemplate x:Key="RowButtons">
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Edit" Margin="2" />
-                <Button Content="Delete" Margin="2" />
-            </StackPanel>
-        </DataTemplate>
-    </UserControl.Resources>
     <Grid>
         <StackPanel Margin="5" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientsList}">
+            <ListView ItemsSource="{Binding ClientsList}" SelectedItem="{Binding SelectedClient}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="#CN" DisplayMemberBinding="{Binding ClientNumber}" />
-                        <GridViewColumn Header="First name" DisplayMemberBinding="{Binding FirstName}" />
-                        <GridViewColumn Header="Last name" DisplayMemberBinding="{Binding LastName}" />
-                        <GridViewColumn CellTemplate="{StaticResource RowButtons}" />
+                        <GridViewColumn Width="50" Header="#CN" DisplayMemberBinding="{Binding ClientNumber}" />
+                        <GridViewColumn Width="100" Header="First name" DisplayMemberBinding="{Binding FirstName}" />
+                        <GridViewColumn Width="100" Header="Last name" DisplayMemberBinding="{Binding LastName}" />
                     </GridView>
                 </ListView.View>
             </ListView>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Add client" />
+                <Button Content="Edit client" />
+                <Button Content="Remove client" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

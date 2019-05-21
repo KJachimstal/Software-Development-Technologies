@@ -10,6 +10,14 @@ namespace CasinoApplication.ViewModel
 {
     class MainViewModel : ViewModel
     {
+
+        private Client selectedClient;
+
+        public Client SelectedClient {
+            get { return selectedClient; }
+            set { selectedClient = value; }
+        }
+
         private List<Client> clients;
 
         public List<Client> ClientsList {
