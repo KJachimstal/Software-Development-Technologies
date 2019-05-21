@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        xmlns:View="clr-namespace:CasinoApplication.View"
         xmlns:ViewModel="clr-namespace:CasinoApplication.ViewModel"
         Title="MainWindow" Height="500" Width="1000">
     <Window.DataContext>
@@ -16,6 +17,9 @@
                 <Button Content="Delete" Margin="2" />
             </StackPanel>
         </DataTemplate>
+        <DataTemplate x:Key="ClientsListView" >
+            <View:ClientsListView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,28 +28,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" BorderThickness="1" BorderBrush="LightBlue" Margin="5">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="10" />
-                </Grid.RowDefinitions>
-                <Border Background="LightBlue" Grid.Row="0">
-                    <Label FontSize="16" FontWeight="Bold">Clients</Label>
-                </Border>
-                <StackPanel Margin="5" Grid.Row="1">
-                    <ListView ItemsSource="{Binding ClientsList}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="#CN" DisplayMemberBinding="{Binding ClientNumber}" />
-                                <GridViewColumn Header="First name" DisplayMemberBinding="{Binding FirstName}" />
-                                <GridViewColumn Header="Last name" DisplayMemberBinding="{Binding LastName}" />
-                                <GridViewColumn CellTemplate="{StaticResource RowButtons}" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </StackPanel>
-            </Grid>
+            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ClientsListView}" />
         </Border>
         <StackPanel Grid.Column="1"/>
         <StackPanel Grid.Column="2"/>
