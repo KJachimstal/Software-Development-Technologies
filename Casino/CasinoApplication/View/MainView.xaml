@@ -35,7 +35,7 @@
                     <Label FontSize="16" FontWeight="Bold">Clients</Label>
                 </Border>
                 <StackPanel Margin="5" Grid.Row="1">
-                    <ListView>
+                    <ListView ItemsSource="{Binding ClientsList}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="#CN" />
