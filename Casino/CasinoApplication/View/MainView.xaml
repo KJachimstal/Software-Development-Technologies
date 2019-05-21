@@ -5,19 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:ViewModel="clr-namespace:CasinoApplication.ViewModel"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000">
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="RowButtons">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Edit" />
+                <Button Content="Delete" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-        </TabControl>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" BorderThickness="1" BorderBrush="LightBlue" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Border Background="LightBlue" Grid.Row="0">
+                    <Label FontSize="16" FontWeight="Bold">Clients</Label>
+                </Border>
+                <StackPanel Margin="5" Grid.Row="1">
+                    <ListView>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="#CN" />
+                                <GridViewColumn Header="First name" />
+                                <GridViewColumn Header="Last name" />
+                                <GridViewColumn CellTemplate="{StaticResource RowButtons}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Column="1"/>
+        <StackPanel Grid.Column="2"/>
+        <StackPanel Grid.Column="3"/>
     </Grid>
 </Window>
