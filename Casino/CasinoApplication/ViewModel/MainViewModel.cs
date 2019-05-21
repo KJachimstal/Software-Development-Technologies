@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace CasinoApplication.ViewModel
 {
-    class MainViewModel
+    class MainViewModel : ViewModel
     {
 
     }
