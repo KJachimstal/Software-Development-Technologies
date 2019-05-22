@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel.Commands
 {
-    class RemoveCommand : ICommand
+    public class RemoveCommand : ICommand
     {
         readonly Action<object> execute;
         readonly Predicate<object> canExecute;

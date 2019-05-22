@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
-    class MainViewModel : ViewModel
+    public partial class MainViewModel : ViewModel
     {
 
         private Client selectedClient;
