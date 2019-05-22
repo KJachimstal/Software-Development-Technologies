@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         xmlns:View="clr-namespace:CasinoApplication.View"
         xmlns:ViewModel="clr-namespace:CasinoApplication.ViewModel"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="Casino" Height="500" Width="1000" Icon="/CasinoApplication;component/Resources/roulette.png">
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
