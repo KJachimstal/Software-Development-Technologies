@@ -1,4 +1,7 @@
-﻿using CasinoApplication.ViewModel.Commands;
+﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Services;
+using CasinoApplication.View;
+using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -12,6 +15,5 @@ namespace CasinoApplication.ViewModel
 {
     public partial class MainViewModel : ViewModel
     {
-
     }
 }

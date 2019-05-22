@@ -1,4 +1,7 @@
-﻿using CasinoApplication.ViewModel.Commands;
+﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Services;
+using CasinoApplication.View;
+using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -39,6 +42,9 @@ namespace CasinoApplication.ViewModel
                 new Client(0, "Example", "Example")
             };
             ClientsList = clients;
+
+            ServiceProvider.RegisterServiceLocator(new UnityServiceLocator());
+            ServiceProvider.Instance.Register<IModalDialog, ClientViewDialog>();
         }
 
         // ------------------------ Commands
@@ -78,7 +84,11 @@ namespace CasinoApplication.ViewModel
         // ------------------------ Actions
         public void AddClient()
         {
+            ClientViewModel viewModel = new ClientViewModel();
 
+            IModalDialog dialog = ServiceProvider.Instance.Get<IModalDialog>();
+            dialog.BindViewModel(viewModel);
+            dialog.ShowDialog();
         }
 
         public void EditClient(Client client)
