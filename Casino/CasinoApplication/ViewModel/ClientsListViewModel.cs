@@ -1,6 +1,4 @@
-﻿using CasinoApplication.Interfaces;
-using CasinoApplication.Services;
-using CasinoApplication.ViewModel.Commands;
+﻿using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
