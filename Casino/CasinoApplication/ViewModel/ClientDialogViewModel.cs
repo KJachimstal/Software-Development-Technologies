@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CasinoApplication.ViewModel
 {
-    class ClientViewModel : ViewModelDialog
+    class ClientDialogViewModel : ViewModelDialog
     {
 
     }

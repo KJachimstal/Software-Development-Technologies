@@ -59,6 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\ClientDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ClientsListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -72,14 +76,17 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interfaces\IDialog.cs" />
-    <Compile Include="Common\ViewModelDialog.cs" />
+    <Compile Include="Common\DialogViewModel.cs" />
     <Compile Include="ViewModel\ClientsListViewModel.cs" />
-    <Compile Include="ViewModel\ClientViewModel.cs" />
+    <Compile Include="ViewModel\ClientDialogViewModel.cs" />
     <Compile Include="ViewModel\Commands\AddCommand.cs" />
     <Compile Include="ViewModel\Commands\EditCommand.cs" />
     <Compile Include="ViewModel\Commands\RemoveCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Common\ViewModel.cs" />
+    <Compile Include="View\ClientDialog.xaml.cs">
+      <DependentUpon>ClientDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientsListView.xaml.cs">
       <DependentUpon>ClientsListView.xaml</DependentUpon>
     </Compile>

@@ -79,7 +79,8 @@ namespace CasinoApplication.ViewModel
         // ------------------------ Actions
         public void AddClient()
         {
-            ClientViewModel clientViewModel = new ClientViewModel();
+            ClientDialogViewModel clientViewModel = new ClientDialogViewModel();
+            clientViewModel.DialogMode = ViewModelDialog.Mode.ADD;
             IDialog dialog;
         }
         public void EditClient(Client client)
