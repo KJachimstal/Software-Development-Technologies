@@ -17,7 +17,11 @@ namespace CasinoApplication.ViewModel
 
         public Client SelectedClient {
             get { return selectedClient; }
-            set { selectedClient = value; }
+            set 
+            {
+                selectedClient = value;
+                RemoveClientCommand.RaiseCanExecuteChanged();
+            }
         }
 
         private List<Client> clients;
@@ -40,12 +44,12 @@ namespace CasinoApplication.ViewModel
         }
 
         // ------------------------ Commands
-        private ICommand removeClientCommand;
-        public ICommand RemoveClientCommand {
+        private RemoveClientCommand removeClientCommand;
+        public RemoveClientCommand RemoveClientCommand {
             get {
                 if (removeClientCommand == null)
                 {
-                    removeClientCommand = new RemoveClientCommand(e => OnClientRemove(), null);
+                    removeClientCommand = new RemoveClientCommand(e => OnClientRemove(), e => SelectedClient != null);
                 }
                 return removeClientCommand;
             }
