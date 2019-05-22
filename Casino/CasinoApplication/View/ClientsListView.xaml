@@ -7,21 +7,27 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Margin="5" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientsList}" SelectedItem="{Binding SelectedClient}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Width="50" Header="#CN" DisplayMemberBinding="{Binding ClientNumber}" />
-                        <GridViewColumn Width="100" Header="First name" DisplayMemberBinding="{Binding FirstName}" />
-                        <GridViewColumn Width="100" Header="Last name" DisplayMemberBinding="{Binding LastName}" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Add client" />
-                <Button Content="Edit client" Command="{Binding EditClientCommand}" />
-                <Button Content="Remove client" Command="{Binding RemoveClientCommand}"/>
-            </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Background="LightBlue" Grid.Row="0">
+            <Label FontSize="16" FontWeight="Bold">Clients</Label>
+        </Border>
+        <ListView ItemsSource="{Binding ClientsList}" SelectedItem="{Binding SelectedClient}" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="#CN" DisplayMemberBinding="{Binding ClientNumber}" />
+                    <GridViewColumn Width="100" Header="First name" DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Width="100" Header="Last name" DisplayMemberBinding="{Binding LastName}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Content="Add client" />
+            <Button Content="Edit client" Command="{Binding EditClientCommand}" />
+            <Button Content="Remove client" Command="{Binding RemoveClientCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
