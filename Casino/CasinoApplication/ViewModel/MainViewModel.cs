@@ -44,12 +44,12 @@ namespace CasinoApplication.ViewModel
         }
 
         // ------------------------ Commands
-        private RemoveClientCommand removeClientCommand;
-        public RemoveClientCommand RemoveClientCommand {
+        private RemoveCommand removeClientCommand;
+        public RemoveCommand RemoveClientCommand {
             get {
                 if (removeClientCommand == null)
                 {
-                    removeClientCommand = new RemoveClientCommand(e => OnClientRemove(), e => SelectedClient != null);
+                    removeClientCommand = new RemoveCommand(e => OnClientRemove(), e => SelectedClient != null);
                 }
                 return removeClientCommand;
             }
