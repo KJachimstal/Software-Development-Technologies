@@ -22,7 +22,7 @@ namespace CasinoApplication.ViewModel.Commands
 
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return canExecute(this);
         }
 
         public void RaiseCanExecuteChanged()
@@ -32,7 +32,7 @@ namespace CasinoApplication.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            execute(this);
         }
     }
 }

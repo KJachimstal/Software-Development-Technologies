@@ -19,7 +19,7 @@
             </ListView>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Add client" />
-                <Button Content="Edit client" />
+                <Button Content="Edit client" Command="{Binding EditClientCommand}" />
                 <Button Content="Remove client" Command="{Binding RemoveClientCommand}"/>
             </StackPanel>
         </StackPanel>

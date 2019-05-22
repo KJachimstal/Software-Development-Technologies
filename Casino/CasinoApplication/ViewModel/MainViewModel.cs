@@ -20,6 +20,7 @@ namespace CasinoApplication.ViewModel
             set 
             {
                 selectedClient = value;
+                EditClientCommand.RaiseCanExecuteChanged();
                 RemoveClientCommand.RaiseCanExecuteChanged();
             }
         }
