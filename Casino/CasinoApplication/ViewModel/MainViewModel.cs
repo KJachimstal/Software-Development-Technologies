@@ -45,6 +45,17 @@ namespace CasinoApplication.ViewModel
         }
 
         // ------------------------ Commands
+        private AddCommand addClientCommand;
+        public AddCommand AddClientCommand {
+            get {
+                if (addClientCommand == null)
+                {
+                    addClientCommand = new AddCommand(e => AddClient());
+                }
+                return addClientCommand;
+            }
+        }
+        
         private EditCommand editClientCommand;
         public EditCommand EditClientCommand {
             get {
@@ -68,6 +79,10 @@ namespace CasinoApplication.ViewModel
         }
 
         // ------------------------ Actions
+        public void AddClient()
+        {
+            MessageBox.Show("Add client");
+        }
         public void EditClient(Client client)
         {
             MessageBox.Show(client.ToString());
