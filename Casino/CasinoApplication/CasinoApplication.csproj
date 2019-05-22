@@ -71,6 +71,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\Commands\AddCommand.cs" />
     <Compile Include="ViewModel\Commands\EditCommand.cs" />
     <Compile Include="ViewModel\Commands\RemoveCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
