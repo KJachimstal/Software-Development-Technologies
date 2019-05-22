@@ -26,6 +26,18 @@ namespace CasinoApplication.ViewModel
             set { lastName = value; }
         }
 
+        private ICommand saveCommand;
+
+        public ICommand SaveCommand {
+            get {
+                if (saveCommand == null)
+                {
+                    saveCommand = new DefaultCommand(e => { MessageBox.Show("Save"); }, null);
+                }
+                return saveCommand;
+            }
+        }
+            
         private ICommand cancelCommand;
 
         public ICommand CancelCommand 
