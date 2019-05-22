@@ -84,6 +84,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\Mode.cs" />
     <Compile Include="Interfaces\IModalDialog.cs" />
     <Compile Include="Interfaces\IServiceLocator.cs" />
     <Compile Include="Services\ServiceProvider.cs" />
