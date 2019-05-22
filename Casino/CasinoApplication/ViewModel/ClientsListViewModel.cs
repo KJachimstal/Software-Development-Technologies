@@ -1,4 +1,5 @@
 ﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Services;
 using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
@@ -79,10 +80,9 @@ namespace CasinoApplication.ViewModel
         // ------------------------ Actions
         public void AddClient()
         {
-            ClientDialogViewModel clientViewModel = new ClientDialogViewModel();
-            clientViewModel.DialogMode = ViewModelDialog.Mode.ADD;
-            IDialog dialog;
+
         }
+
         public void EditClient(Client client)
         {
             MessageBox.Show(client.ToString());
