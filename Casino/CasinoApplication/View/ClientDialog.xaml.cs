@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CasinoApplication.View
@@ -17,7 +18,7 @@ namespace CasinoApplication.View
     /// <summary>
     /// Logika interakcji dla klasy ClientDialog.xaml
     /// </summary>
-    public partial class ClientDialog : Window
+    public partial class ClientDialog : UserControl
     {
         public ClientDialog()
         {
