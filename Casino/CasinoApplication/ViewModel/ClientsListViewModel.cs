@@ -85,6 +85,7 @@ namespace CasinoApplication.ViewModel
         public void AddClient()
         {
             ClientViewModel viewModel = new ClientViewModel();
+            viewModel.Mode = Common.Mode.ADD;
 
             IModalDialog dialog = ServiceProvider.Instance.Get<IModalDialog>();
             dialog.BindViewModel(viewModel);
