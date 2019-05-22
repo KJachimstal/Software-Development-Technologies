@@ -92,6 +92,7 @@
     <Compile Include="ViewModel\ClientsListViewModel.cs" />
     <Compile Include="ViewModel\ClientViewModel.cs" />
     <Compile Include="ViewModel\Commands\AddCommand.cs" />
+    <Compile Include="ViewModel\Commands\DefaultCommand.cs" />
     <Compile Include="ViewModel\Commands\EditCommand.cs" />
     <Compile Include="ViewModel\Commands\RemoveCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
