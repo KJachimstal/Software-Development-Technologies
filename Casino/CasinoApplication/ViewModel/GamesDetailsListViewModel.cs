@@ -1,4 +1,5 @@
-﻿using CasinoLibrary;
+﻿using CasinoApplication.ViewModel.Commands;
+using CasinoLibrary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,6 +24,15 @@ namespace CasinoApplication.ViewModel
             get { return gameDetails; }
             set { gameDetails = value; }
         }
+
+        // ---------------------------- Commands
+        private AddCommand addGameDetailsCommand;
+
+        public AddCommand AddGameDetailsCommand {
+            get { return addGameDetailsCommand; }
+            set { addGameDetailsCommand = value; }
+        }
+
 
 
     }
