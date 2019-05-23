@@ -17,7 +17,14 @@ namespace CasinoApplication.ViewModel
         public int Id {
             get { return id; }
             set { id = value; }
-        }   
+        }
 
+        private Game game;
+
+        public Game Game {
+            get { return game; }
+            set { game = value; }
+        }
+            
     }
 }
