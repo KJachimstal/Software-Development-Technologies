@@ -30,5 +30,10 @@ namespace CasinoApplication.View
         {
             return null;
         }
+
+        void view_Closed(object sender, EventArgs e)
+        {
+            view = null;
+        } 
     }
 }
