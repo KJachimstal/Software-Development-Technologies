@@ -100,6 +100,7 @@
     <Compile Include="Interfaces\IModalDialog.cs" />
     <Compile Include="Interfaces\IServiceLocator.cs" />
     <Compile Include="Model\Data.cs" />
+    <Compile Include="Services\GameProvider.cs" />
     <Compile Include="Services\ServiceProvider.cs" />
     <Compile Include="Services\UnityServiceLocator.cs" />
     <Compile Include="ViewModel\ClientsListViewModel.cs" />
