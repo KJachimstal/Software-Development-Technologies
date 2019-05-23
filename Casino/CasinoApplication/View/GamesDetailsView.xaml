@@ -37,13 +37,13 @@
                             <DataTrigger.Value>
                                 <comm:Mode>ADD</comm:Mode>
                             </DataTrigger.Value>
-                            <Setter Property="Content" Value="Add game"/>
+                            <Setter Property="Content" Value="Add game details"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Mode}">
                             <DataTrigger.Value>
                                 <comm:Mode>EDIT</comm:Mode>
                             </DataTrigger.Value>
-                            <Setter Property="Content" Value="Edit game"/>
+                            <Setter Property="Content" Value="Edit game details"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
