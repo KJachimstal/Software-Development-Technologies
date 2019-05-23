@@ -46,12 +46,15 @@ namespace CasinoApplication.ViewModel
             {
                 if (cancelCommand == null)
                 {
-                    cancelCommand = new DefaultCommand(e => { MessageBox.Show("Cancel"); }, null);
+                    cancelCommand = new DefaultCommand(e => OnCancel(), null);
                 }
                 return cancelCommand;
             }
         }
 
+        private void OnCancel()
+        {
 
+        }
     }
 }

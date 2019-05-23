@@ -23,5 +23,10 @@ namespace CasinoApplication.View
         {
             InitializeComponent();
         }
+
+        public void OnCancel(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

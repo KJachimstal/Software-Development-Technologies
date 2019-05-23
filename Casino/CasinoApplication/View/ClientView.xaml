@@ -83,7 +83,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Command="{Binding CancelCommand}" Content="Cancel" Margin="10" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Command="{Binding CancelCommand}" Content="Cancel" Margin="10" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center" Click="OnCancel" />
         </StackPanel>
     </Grid>
 </Window>
