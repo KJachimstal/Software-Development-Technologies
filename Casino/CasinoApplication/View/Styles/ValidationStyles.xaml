@@ -14,5 +14,20 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>    
+    <Style x:Key="validationComboBoxStyles" TargetType="ComboBox">
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="*" Foreground="Red"/>
+                            <AdornedElementPlaceholder/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding ErrorContent}" Foreground="Red" Margin="15 0 0 0"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

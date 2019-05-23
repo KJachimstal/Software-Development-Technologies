@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CasinoApplication.ViewModel
 {
@@ -26,12 +27,23 @@ namespace CasinoApplication.ViewModel
             set { name = value; }
         }
 
-        private Game.GameType type;
+        private Game.GameType type = Game.GameType.EMPTY;
 
         public Game.GameType Type {
             get { return type; }
             set { type = value; }
         }
+
+        public List<Game.GameType> GameTypes {
+            get {
+                return new List<Game.GameType> {
+                    Game.GameType.POKER,
+                    Game.GameType.BRIDGE,
+                    Game.GameType.ROULETTE
+                };
+            }
+        }
+
 
         public GameViewModel(Game game)
         {
@@ -56,6 +68,12 @@ namespace CasinoApplication.ViewModel
                     else if (Name.Trim() == string.Empty)
                     {
                         return "Game name is required";
+                    }
+                } else if (columnName == "GameType")
+                {
+                    if (Type == Game.GameType.EMPTY)
+                    {
+                        return "Please select game type";
                     }
                 }
                 return null;

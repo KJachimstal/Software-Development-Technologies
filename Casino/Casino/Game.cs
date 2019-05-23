@@ -7,7 +7,7 @@ namespace CasinoLibrary
     [Serializable()]
     public class Game : INotifyPropertyChanged
     {
-        public enum GameType { POKER, BRIDGE, ROULETTE }
+        public enum GameType { EMPTY, POKER = 1, BRIDGE = 2, ROULETTE = 3 }
 
         private int id;
 
