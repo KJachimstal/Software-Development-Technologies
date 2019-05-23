@@ -1,6 +1,8 @@
 ﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Model;
 using CasinoApplication.Services;
 using CasinoApplication.ViewModel.Commands;
+using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CasinoApplication.ViewModel
 {
@@ -86,7 +89,20 @@ namespace CasinoApplication.ViewModel
 
         private void RemoveGameDetails()
         {
-
+            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (result == MessageBoxResult.Cancel)
+            {
+                return;
+            }
+            DataRepository dataRepository = Data.DataRepository;
+            if (dataRepository.DeleteGameDetails(gameDetails))
+            {
+                MessageBox.Show(string.Format("Game details {0} successfully removed.", gameDetails), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Couldn't remove game details {0}.", gameDetails), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
     }
