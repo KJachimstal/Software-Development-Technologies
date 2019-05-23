@@ -23,7 +23,7 @@ namespace CasinoApplication.View
 
         public void ShowDialog()
         {
-            throw new NotImplementedException();
+            GetDialog().Show();
         }
 
         private GameDetailsView GetDialog()
