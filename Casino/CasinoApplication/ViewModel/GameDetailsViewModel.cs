@@ -70,5 +70,10 @@ namespace CasinoApplication.ViewModel
 
         }
 
+        public void OnCancel()
+        {
+
+        }
+
     }
 }
