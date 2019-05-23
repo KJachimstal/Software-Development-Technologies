@@ -1,4 +1,5 @@
-﻿using CasinoLibrary;
+﻿using CasinoApplication.ViewModel.Commands;
+using CasinoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
@@ -55,6 +57,29 @@ namespace CasinoApplication.ViewModel
 
         public GameViewModel() { }
 
+        private Action<object> closeDelegate;
+
+        public void SetCloseAction(Action<object> closeDelegate)
+        {
+            this.closeDelegate = closeDelegate;
+        }
+
+        private ICommand cancelCommand;
+
+        public ICommand CancelCommand {
+            get {
+                if (cancelCommand == null)
+                {
+                    cancelCommand = new DefaultCommand(e => OnCancel(), null);
+                }
+                return cancelCommand;
+            }
+        }
+
+        private void OnCancel()
+        {
+            closeDelegate(this);
+        }
 
         #region IDataErrorInfo Members
         string IDataErrorInfo.this[string columnName] {

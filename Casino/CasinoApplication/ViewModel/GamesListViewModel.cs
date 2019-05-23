@@ -82,13 +82,20 @@ namespace CasinoApplication.ViewModel
             viewModel.Mode = Common.Mode.ADD;
 
             IModalDialog dialog = GameProvider.Instance.Get<IModalDialog>();
+            viewModel.SetCloseAction(e => dialog.Close());
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }
 
         private void EditGame(Game game)
         {
+            GameViewModel viewModel = new GameViewModel(game);
+            viewModel.Mode = Common.Mode.EDIT;
 
+            IModalDialog dialog = GameProvider.Instance.Get<IModalDialog>();
+            viewModel.SetCloseAction(e => dialog.Close());
+            dialog.BindViewModel(viewModel);
+            dialog.ShowDialog();
         }
 
         private void RemoveGame(Game game)
