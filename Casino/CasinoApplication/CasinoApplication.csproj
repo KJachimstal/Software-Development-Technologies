@@ -113,6 +113,7 @@
     <Compile Include="ViewModel\Commands\DefaultCommand.cs" />
     <Compile Include="ViewModel\Commands\EditCommand.cs" />
     <Compile Include="ViewModel\Commands\RemoveCommand.cs" />
+    <Compile Include="ViewModel\GamesDetailsListViewModel.cs" />
     <Compile Include="ViewModel\GamesListViewModel.cs" />
     <Compile Include="ViewModel\GameViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
