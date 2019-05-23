@@ -33,6 +33,9 @@ namespace CasinoApplication.ViewModel
 
             GameProvider.RegisterServiceLocator(new UnityServiceLocator());
             GameProvider.Instance.Register<IModalDialog, GameViewDialog>();
+
+            GameDetailsProvider.RegisterServiceLocator(new UnityServiceLocator());
+            GameDetailsProvider.Instance.Register<IModalDialog, GameViewDialog>();
         }
     }
 }
