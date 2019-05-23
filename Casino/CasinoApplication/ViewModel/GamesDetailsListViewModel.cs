@@ -12,7 +12,7 @@ namespace CasinoApplication.ViewModel
     {
         private ObservableCollection<GameDetails> gamesDetails;
 
-        public ObservableCollection<GameDetails> GamesDetails {
+        public ObservableCollection<GameDetails> GamesDetailsList {
             get { return gamesDetails; }
             set { gamesDetails = value; }
         }
