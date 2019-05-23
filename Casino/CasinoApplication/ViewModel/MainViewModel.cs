@@ -1,4 +1,5 @@
 ﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Model;
 using CasinoApplication.Services;
 using CasinoApplication.View;
 using CasinoApplication.ViewModel.Commands;
@@ -19,13 +20,10 @@ namespace CasinoApplication.ViewModel
     {
         public MainViewModel()
         {
-            DataContext dataContext = new DataContext();
             XMLDataSource dataSource = new XMLDataSource();
+            Data.RegisterDataRepository(new DataRepository(dataSource));
 
-            DataRepository dataRepository = new DataRepository(dataSource);
-            dataRepository.DataContext = dataContext;
-            dataRepository.Fill();
-
+            DataRepository dataRepository = Data.DataRepository;
             ClientsList = dataRepository.GetAllClients();
 
             ServiceProvider.RegisterServiceLocator(new UnityServiceLocator());

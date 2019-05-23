@@ -25,6 +25,7 @@ namespace CasinoApplication.Model
         {
             dataRepository = _dataRepository;
             dataRepository.DataContext = new DataContext();
+            dataRepository.Fill();
             dataService = new DataService(dataRepository);
         }
     }
