@@ -134,6 +134,7 @@
     <Compile Include="View\GameDetailsView.xaml.cs">
       <DependentUpon>GameDetailsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\GameDetailsViewDialog.cs" />
     <Compile Include="View\GamesDetailsListView.xaml.cs">
       <DependentUpon>GamesDetailsListView.xaml</DependentUpon>
     </Compile>
