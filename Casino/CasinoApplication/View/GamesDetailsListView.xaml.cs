@@ -18,9 +18,9 @@ namespace CasinoApplication.View
     /// <summary>
     /// Logika interakcji dla klasy GameDetailsListView.xaml
     /// </summary>
-    public partial class GameDetailsListView : UserControl
+    public partial class GamesDetailsListView : UserControl
     {
-        public GameDetailsListView()
+        public GamesDetailsListView()
         {
             InitializeComponent();
         }
