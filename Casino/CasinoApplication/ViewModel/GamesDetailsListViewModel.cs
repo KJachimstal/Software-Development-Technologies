@@ -58,5 +58,10 @@ namespace CasinoApplication.ViewModel
 
         }
 
+        private void RemoveGameDetails()
+        {
+
+        }
+
     }
 }
