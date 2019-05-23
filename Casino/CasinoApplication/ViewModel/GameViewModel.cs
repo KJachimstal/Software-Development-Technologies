@@ -1,4 +1,7 @@
-﻿using CasinoApplication.ViewModel.Commands;
+﻿using CasinoApplication.Common;
+using CasinoApplication.Model;
+using CasinoApplication.ViewModel.Commands;
+using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -64,6 +67,18 @@ namespace CasinoApplication.ViewModel
             this.closeDelegate = closeDelegate;
         }
 
+        private ICommand saveCommand;
+
+        public ICommand SaveCommand {
+            get {
+                if (saveCommand == null)
+                {
+                    saveCommand = new DefaultCommand(e => OnSave(), null);
+                }
+                return saveCommand;
+            }
+        }
+
         private ICommand cancelCommand;
 
         public ICommand CancelCommand {
@@ -74,6 +89,33 @@ namespace CasinoApplication.ViewModel
                 }
                 return cancelCommand;
             }
+        }
+
+        public void OnSave()
+        {
+            DataRepository dataRepository = Data.DataRepository;
+
+            if (Mode == Mode.ADD)
+            {
+                Game game = new Game()
+                {
+                    Name = Name,
+                    Type = Type,
+                };
+                dataRepository.AddGame(game);
+            }
+            else
+            {
+                Game modified = new Game()
+                {
+                    Id = Id,
+                    Name = Name,
+                    Type = Type,
+                };
+                dataRepository.UpdateGame(game, modified);
+            }
+
+            closeDelegate(this);
         }
 
         private void OnCancel()
