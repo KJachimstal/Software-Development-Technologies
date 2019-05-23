@@ -1,5 +1,6 @@
 ﻿using CasinoApplication.Model;
 using CasinoApplication.ViewModel.Commands;
+using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
-    class GameDetailsViewModel : ViewModel
+    class GameDetailsViewModel : ViewModel, IDataErrorInfo
     {
         private ObservableCollection<Game> games;
 
@@ -101,6 +102,39 @@ namespace CasinoApplication.ViewModel
         {
 
         }
+
+        #region IDataErrorInfo Members
+        string IDataErrorInfo.this[string columnName] {
+            get {
+                if (columnName == "Game")
+                {
+                    if (Game == null)
+                    {
+                        return "Please select Game";
+                    }
+                }
+                else if (columnName == "StartTime")
+                {
+                    if (StartTime == null)
+                    {
+                        return "Please choose start time";
+                    }
+                }
+                else if (columnName == "MinimalBet")
+                {
+                    if (MinimalBet == 0)
+                    {
+                        return "Please enter minimal bet";
+                    }
+                }
+                return null;
+            }
+        }
+
+        string IDataErrorInfo.Error {
+            get { return string.Empty; }
+        }
+        #endregion
 
     }
 }
