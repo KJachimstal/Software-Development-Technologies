@@ -51,8 +51,12 @@ namespace CasinoApplication.ViewModel
         private RemoveCommand removeGameDetailsCommand;
 
         public RemoveCommand RemoveGameDetailsCommand {
-            get { return removeGameDetailsCommand; }
-            set { removeGameDetailsCommand = value; }   
+            get {
+                if (removeGameDetailsCommand == null)
+                {
+                    removeGameDetailsCommand = new RemoveCommand(e => RemoveGameDetails(), e => SelectedGameDetails != null);
+                }
+                return removeGameDetailsCommand; } 
         }
 
         //------------------- Action
