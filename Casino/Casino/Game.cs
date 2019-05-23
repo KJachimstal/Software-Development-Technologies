@@ -1,10 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Xml.Serialization;
 
 namespace CasinoLibrary
 {
     [Serializable()]
-    public class Game
+    public class Game : INotifyPropertyChanged
     {
         public enum GameType { POKER, BRIDGE, ROULETTE }
 
@@ -21,7 +22,11 @@ namespace CasinoLibrary
         [XmlElement("Name")]
         public string Name {
             get { return name; }
-            set { name = value; }
+            set 
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
         }
 
         private GameType type;
@@ -29,7 +34,11 @@ namespace CasinoLibrary
         [XmlElement("Type")]
         public GameType Type {
             get { return type; }
-            set { type = value; }
+            set 
+            {
+                type = value;
+                OnPropertyChanged("Type");
+            }
         }
 
         public Game(int id, string name, GameType type)
@@ -48,6 +57,14 @@ namespace CasinoLibrary
                 id == state.Id &&
                 name == state.Name &&
                 type == state.Type;
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
