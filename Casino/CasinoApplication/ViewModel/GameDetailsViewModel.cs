@@ -66,8 +66,12 @@ namespace CasinoApplication.ViewModel
         private ICommand saveCommand;
 
         public ICommand SaveCommand {
-            get { return saveCommand; }
-            set { saveCommand = value; }
+            get {
+                if (saveCommand == null)
+                {
+                    saveCommand = new DefaultCommand(e => OnSave(), null);
+                }
+                return saveCommand; }
         }
 
 
