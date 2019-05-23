@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CasinoApplication.Common;
 
 namespace CasinoApplication.ViewModel
 {
@@ -24,6 +25,8 @@ namespace CasinoApplication.ViewModel
             }
 
         }
+
+        private GameDetails gameDetails;
 
         private int id;
 
@@ -63,6 +66,18 @@ namespace CasinoApplication.ViewModel
 
         public GameDetailsViewModel() { }
 
+        private ICommand saveCommand;
+
+        public ICommand SaveCommand {
+            get {
+                if (saveCommand == null)
+                {
+                    saveCommand = new DefaultCommand(e => OnSave(), null);
+                }
+                return saveCommand;
+            }
+        }
+
         private ICommand cancelCommand;
 
         public ICommand CancelCommand {
@@ -74,18 +89,6 @@ namespace CasinoApplication.ViewModel
                 return cancelCommand; }
         }
 
-        private ICommand saveCommand;
-
-        public ICommand SaveCommand {
-            get {
-                if (saveCommand == null)
-                {
-                    saveCommand = new DefaultCommand(e => OnSave(), null);
-                }
-                return saveCommand; }
-        }
-
-
         private Action<object> closeDelegate;
         
         public void SetCloseAction(Action<object> closeDelegate)
@@ -95,12 +98,36 @@ namespace CasinoApplication.ViewModel
 
         public void OnSave()
         {
+            DataRepository dataRepository = Data.DataRepository;
 
+            if (Mode == Mode.ADD)
+            {
+                GameDetails gameDetails = new GameDetails()
+                {
+                    Game = Game,
+                    MinimalBet = MinimalBet,
+                    StartTime = StartTime,
+                };
+                dataRepository.AddGameDetails(gameDetails);
+            }
+            else
+            {
+                GameDetails gameDetailsModified = new GameDetails()
+                {
+                    Id = Id,
+                    Game = Game,
+                    MinimalBet = MinimalBet,
+                    StartTime = StartTime,
+                };
+                dataRepository.UpdateGameDetails(gameDetails, gameDetailsModified);
+            }
+
+            closeDelegate(this);
         }
 
-        public void OnCancel()
+        private void OnCancel()
         {
-
+            closeDelegate(this);
         }
 
         #region IDataErrorInfo Members
