@@ -97,6 +97,11 @@ namespace CasinoApplication.ViewModel
 
         public void RemoveClient(Client client)
         {
+            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (result == MessageBoxResult.Cancel)
+            {
+                return;
+            }
             DataRepository dataRepository = Data.DataRepository;
             if (dataRepository.DeleteClient(client))
             {
