@@ -1,7 +1,9 @@
 ﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Model;
 using CasinoApplication.Services;
 using CasinoApplication.View;
 using CasinoApplication.ViewModel.Commands;
+using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -89,7 +91,15 @@ namespace CasinoApplication.ViewModel
 
         public void RemoveClient(Client client)
         {
-            MessageBox.Show(client.ToString());
+            DataRepository dataRepository = Data.DataRepository;
+            if (dataRepository.DeleteClient(client))
+            {
+                MessageBox.Show(string.Format("Client {0} successfully removed.", client), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Couldn't remove client {0}.", client), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
     }
