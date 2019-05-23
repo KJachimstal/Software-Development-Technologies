@@ -39,16 +39,19 @@ namespace CasinoData
             }
         }
 
-        public void DeleteGameDetails(GameDetails gameDetails)
+        public bool DeleteGameDetails(GameDetails gameDetails)
         {
             if (dataRepository.GetAllGameDetails().Contains(gameDetails))
             {
                 dataRepository.DeleteGameDetails(gameDetails);
+                return true;
             }
             else
             {
                 throw new Exception("GameDetails does not exists!");
             }
+
+            return false;
         }
 
         public void UpdateGameDetails(GameDetails oldGameDetails, GameDetails newGameDetails)
