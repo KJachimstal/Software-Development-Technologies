@@ -58,5 +58,12 @@ namespace CasinoApplication.ViewModel
             set { cancelCommand = value; }
         }
 
+        private Action<object> closeDelegate;
+        
+        public void SetCloseAction(Action<object> closeDelegate)
+        {
+            this.closeDelegate = closeDelegate;
+        }
+
     }
 }
