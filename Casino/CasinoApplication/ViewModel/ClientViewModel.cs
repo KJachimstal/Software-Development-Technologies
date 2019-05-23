@@ -5,6 +5,7 @@ using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
-    class ClientViewModel : ViewModel
+    class ClientViewModel : ViewModel, IDataErrorInfo
     {
         private Client client;
 
@@ -112,5 +113,42 @@ namespace CasinoApplication.ViewModel
         {
             closeDelegate(this);
         }
+
+        #region IDataErrorInfo Members
+        string IDataErrorInfo.this[string columnName] 
+        {
+            get 
+            {
+                if (columnName == "FirstName")
+                {
+                    if (FirstName == null)
+                    {
+                        return "Please enter first name";
+                    }
+                    else if (FirstName.Trim() == string.Empty)
+                    {
+                        return "First name is required";
+                    }
+                }
+                else if (columnName == "LastName")
+                {
+                    if (LastName == null)
+                    {
+                        return "Please enter last name";
+                    }
+                    else if (LastName.Trim() == string.Empty)
+                    {
+                        return "Last name is required";
+                    }
+                }
+                return null;
+            }
+        }
+
+        string IDataErrorInfo.Error 
+        {
+            get { return string.Empty; }
+        }
+        #endregion
     }
 }
