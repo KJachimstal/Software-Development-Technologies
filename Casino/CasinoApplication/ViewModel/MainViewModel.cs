@@ -26,6 +26,7 @@ namespace CasinoApplication.ViewModel
             DataRepository dataRepository = Data.DataRepository;
             ClientsList = dataRepository.GetAllClients();
             GamesList = dataRepository.GetAllGames();
+            GamesDetailsList = dataRepository.GetAllGameDetails();
 
             ClientProvider.RegisterServiceLocator(new UnityServiceLocator());
             ClientProvider.Instance.Register<IModalDialog, ClientViewDialog>();
