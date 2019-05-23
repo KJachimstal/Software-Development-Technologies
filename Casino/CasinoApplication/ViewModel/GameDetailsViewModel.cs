@@ -147,6 +147,16 @@ namespace CasinoApplication.ViewModel
                     {
                         return "Please choose start time";
                     }
+                    else if (true)
+                    {
+                        try
+                        {
+                            DateTimeOffset.Parse(StartTime);
+                        } catch
+                        {
+                            return "Correct date format";
+                        }
+                    }
                 }
                 else if (columnName == "MinimalBet")
                 {
