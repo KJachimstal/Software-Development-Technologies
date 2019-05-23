@@ -33,7 +33,15 @@ namespace CasinoApplication.ViewModel
             set { addGameDetailsCommand = value; }
         }
 
+        private EditCommand editGameDetailsCommand;
 
+        public EditCommand EditGameDetailsCommand {
+            get { return editGameDetailsCommand; }
+            set { editGameDetailsCommand = value; }
+        }
+
+
+            
 
     }
 }
