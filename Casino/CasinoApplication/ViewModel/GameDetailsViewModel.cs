@@ -58,6 +58,7 @@ namespace CasinoApplication.ViewModel
             
         public GameDetailsViewModel(Game game, GameDetails gameDetails)
         {
+            this.gameDetails = gameDetails;
             this.game = game;
             this.id = gameDetails.Id;
             this.startTime = gameDetails.StartTime;
