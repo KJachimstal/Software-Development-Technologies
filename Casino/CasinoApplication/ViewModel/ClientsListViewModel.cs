@@ -88,6 +88,7 @@ namespace CasinoApplication.ViewModel
             viewModel.Mode = Common.Mode.ADD;
 
             IModalDialog dialog = ServiceProvider.Instance.Get<IModalDialog>();
+            viewModel.SetCloseAction(e => dialog.Close());
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }

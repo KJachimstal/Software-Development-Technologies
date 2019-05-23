@@ -52,9 +52,16 @@ namespace CasinoApplication.ViewModel
             }
         }
 
+        private Action<object> closeDelegate;
+
+        public void SetCloseAction(Action<object> closeDelegate)
+        {
+            this.closeDelegate = closeDelegate;
+        }
+
         private void OnCancel()
         {
-
+            closeDelegate(this);
         }
     }
 }
