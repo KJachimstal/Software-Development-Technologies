@@ -32,7 +32,7 @@ namespace CasinoApplication.ViewModel
             get {
                 if (addGameDetailsCommand == null)
                 {
-                    addGameDetailsCommand = new AddCommand(e => AddGame());
+                    addGameDetailsCommand = new AddCommand(e => AddGameDetails());
                 }
                 return addGameDetailsCommand; }
         }
@@ -40,8 +40,12 @@ namespace CasinoApplication.ViewModel
         private EditCommand editGameDetailsCommand;
 
         public EditCommand EditGameDetailsCommand {
-            get { return editGameDetailsCommand; }
-            set { editGameDetailsCommand = value; }
+            get {
+                if (editGameDetailsCommand == null)
+                {
+                    editGameDetailsCommand = new EditCommand(e => EditGameDetails(), e => SelectedGameDetails != null);
+                }
+                return editGameDetailsCommand; }
         }
 
         private RemoveCommand removeGameDetailsCommand;
