@@ -32,6 +32,13 @@ namespace CasinoApplication.ViewModel
             get { return startTime; }
             set { startTime = value; }
         }
-        
+
+        private double minimalBet;
+
+        public double MinimalBet {
+            get { return minimalBet; }
+            set { minimalBet = value; }
+        }
+            
     }
 }
