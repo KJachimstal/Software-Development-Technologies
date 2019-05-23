@@ -19,6 +19,9 @@
         </DataTemplate>
         <DataTemplate x:Key="ClientsListView" >
             <View:ClientsListView/>
+        </DataTemplate>        
+        <DataTemplate x:Key="GamesListView" >
+            <View:GamesListView/>
         </DataTemplate>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="2" />
@@ -33,6 +36,9 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" BorderThickness="1" BorderBrush="LightBlue" Margin="5">
             <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ClientsListView}" />
+        </Border>        
+        <Border Grid.Column="1" BorderThickness="1" BorderBrush="LightCoral" Margin="5">
+            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource GamesListView}" />
         </Border>
         <StackPanel Grid.Column="1"/>
         <StackPanel Grid.Column="2"/>
