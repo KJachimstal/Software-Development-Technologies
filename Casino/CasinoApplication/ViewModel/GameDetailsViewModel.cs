@@ -47,5 +47,9 @@ namespace CasinoApplication.ViewModel
             this.startTime = gameDetails.StartTime;
             this.minimalBet = gameDetails.MinimalBet;
         }
+
+        public GameDetailsViewModel() { }
+
+
     }
 }
