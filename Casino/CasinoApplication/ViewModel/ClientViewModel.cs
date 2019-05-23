@@ -32,7 +32,7 @@ namespace CasinoApplication.ViewModel
             get {
                 if (saveCommand == null)
                 {
-                    saveCommand = new DefaultCommand(e => { MessageBox.Show("Save"); }, null);
+                    saveCommand = new DefaultCommand(e => OnSave(), null);
                 }
                 return saveCommand;
             }
@@ -57,6 +57,12 @@ namespace CasinoApplication.ViewModel
         public void SetCloseAction(Action<object> closeDelegate)
         {
             this.closeDelegate = closeDelegate;
+        }
+
+        public void OnSave()
+        {
+            MessageBox.Show(FirstName + " " + LastName);
+            closeDelegate(this);
         }
 
         private void OnCancel()

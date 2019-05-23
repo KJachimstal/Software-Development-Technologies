@@ -35,18 +35,6 @@ namespace CasinoApplication.ViewModel
             }
         }
 
-        public MainViewModel()
-        {
-            List<Client> clients = new List<Client>
-            {
-                new Client(0, "Example", "Example")
-            };
-            ClientsList = clients;
-
-            ServiceProvider.RegisterServiceLocator(new UnityServiceLocator());
-            ServiceProvider.Instance.Register<IModalDialog, ClientViewDialog>();
-        }
-
         // ------------------------ Commands
         private AddCommand addClientCommand;
         public AddCommand AddClientCommand {
