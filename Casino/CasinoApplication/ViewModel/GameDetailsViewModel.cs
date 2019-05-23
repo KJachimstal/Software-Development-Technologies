@@ -1,4 +1,5 @@
-﻿using CasinoLibrary;
+﻿using CasinoApplication.ViewModel.Commands;
+using CasinoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,8 +55,12 @@ namespace CasinoApplication.ViewModel
         private ICommand cancelCommand;
 
         public ICommand CancelCommand {
-            get { return cancelCommand; }
-            set { cancelCommand = value; }
+            get {
+                if (cancelCommand == null)
+                {
+                    cancelCommand = new DefaultCommand(e => OnCancel(), null);
+                }
+                return cancelCommand; }
         }
 
         private ICommand saveCommand;
