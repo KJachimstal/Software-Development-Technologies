@@ -32,9 +32,9 @@ namespace CasinoData
             oldGame.Type = newGame.Type;
         }
 
-        public void DeleteGame(Game game)
+        public bool DeleteGame(Game game)
         {
-            dataContext.Games.Remove(game);
+            return dataContext.Games.Remove(game);
         }
     }
 }

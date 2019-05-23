@@ -50,6 +50,11 @@ namespace CasinoLibrary
 
         public Game() { }
 
+        public override string ToString()
+        {
+            return name + " (" + type.ToString() + ")";
+        }
+
         public override bool Equals(object obj)
         {
             var state = obj as Game;
