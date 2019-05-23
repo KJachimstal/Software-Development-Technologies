@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CasinoApplication.Services
 {
-    class ServiceProvider
+    class ClientProvider
     {
         public static IServiceLocator Instance { get; private set; }
 
