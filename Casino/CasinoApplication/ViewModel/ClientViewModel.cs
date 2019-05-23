@@ -15,6 +15,8 @@ namespace CasinoApplication.ViewModel
 {
     class ClientViewModel : ViewModel
     {
+        private Client client;
+
         private int clientNumber = 0;
 
         public int ClientNumber {
@@ -38,6 +40,7 @@ namespace CasinoApplication.ViewModel
 
         public ClientViewModel(Client client)
         {
+            this.client = client;
             ClientNumber = client.ClientNumber;
             FirstName = client.FirstName;
             LastName = client.LastName;
@@ -81,12 +84,27 @@ namespace CasinoApplication.ViewModel
         public void OnSave()
         {
             DataRepository dataRepository = Data.DataRepository;
-            Client client = new Client()
+
+            if (Mode == Mode.ADD)
             {
-                FirstName = FirstName,
-                LastName = LastName,
-            };
-            dataRepository.AddClient(client);
+                Client client = new Client()
+                {
+                    FirstName = FirstName,
+                    LastName = LastName,
+                };
+                dataRepository.AddClient(client);
+            } 
+            else
+            {
+                Client modified = new Client()
+                {
+                    ClientNumber = ClientNumber,
+                    FirstName = FirstName,
+                    LastName = LastName,
+                };
+                dataRepository.UpdateClient(client, modified);
+            }
+
             closeDelegate(this);
         }
 
