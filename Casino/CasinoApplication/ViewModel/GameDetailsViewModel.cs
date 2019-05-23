@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
@@ -50,6 +51,12 @@ namespace CasinoApplication.ViewModel
 
         public GameDetailsViewModel() { }
 
+        private ICommand cancelCommand;
+
+        public ICommand CancelCommand {
+            get { return cancelCommand; }
+            set { cancelCommand = value; }
+        }
 
     }
 }
