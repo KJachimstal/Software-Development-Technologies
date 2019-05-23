@@ -68,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\GameDetailsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\GamesListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +124,9 @@
       <DependentUpon>ClientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ClientViewDialog.cs" />
+    <Compile Include="View\GameDetailsListView.xaml.cs">
+      <DependentUpon>GameDetailsListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GamesListView.xaml.cs">
       <DependentUpon>GamesListView.xaml</DependentUpon>
     </Compile>
