@@ -14,7 +14,7 @@ namespace CasinoSources
         public void Fill(DataContext dataContext)
         {
             ObservableCollection<Client> clients = new ObservableCollection<Client>();
-            Dictionary<int, Game> games = new Dictionary<int, Game>();
+            ObservableCollection<Game> games = new ObservableCollection<Game>();
             ObservableCollection<GameDetails> gameDetails = new ObservableCollection<GameDetails>();
             List<Participation> participations = new List<Participation>();
 
@@ -55,9 +55,9 @@ namespace CasinoSources
             clients.Add(client9);
             clients.Add(client10);
 
-            games.Add(1, game1);
-            games.Add(2, game2);
-            games.Add(3, game3);
+            games.Add(game1);
+            games.Add(game2);
+            games.Add(game3);
 
             gameDetails.Add(gameDetail1);
             gameDetails.Add(gameDetail2);

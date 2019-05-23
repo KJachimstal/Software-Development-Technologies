@@ -40,10 +40,10 @@ namespace CasionSources
             object obj = deserializer.Deserialize(reader);
             GamesList games = (GamesList)obj;
 
-            Dictionary<int, Game> gamesDictionary = new Dictionary<int, Game>();
+            ObservableCollection<Game> gamesDictionary = new ObservableCollection<Game>();
             foreach (Game game in games.Games)
             {
-                gamesDictionary.Add(game.Id, game);
+                gamesDictionary.Add(game);
             }
             dataContext.Games = gamesDictionary;
         }

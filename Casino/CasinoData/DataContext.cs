@@ -17,9 +17,9 @@ namespace CasinoData
             set { clients = value; }
         }
 
-        private Dictionary<int, Game> games;
+        private ObservableCollection<Game> games;
 
-        public Dictionary<int, Game> Games {
+        public ObservableCollection<Game> Games {
             get { return games; }
             set { games = value; }
         }
@@ -38,7 +38,7 @@ namespace CasinoData
             set { participations = value; }
         }
 
-        public DataContext(ObservableCollection<Client> clients, Dictionary<int, Game> games, ObservableCollection<GameDetails> gameDetails, List<Participation> participations)
+        public DataContext(ObservableCollection<Client> clients, ObservableCollection<Game> games, ObservableCollection<GameDetails> gameDetails, List<Participation> participations)
         {
             this.clients = clients;
             this.games = games;

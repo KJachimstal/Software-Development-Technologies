@@ -1,6 +1,7 @@
 ﻿using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace CasinoData
     {
         public void AddGame(Game game)
         {
-            dataContext.Games.Add(game.Id, game);
+            dataContext.Games.Add(game);
         }
 
         public Game GetGame(int id)
@@ -19,7 +20,7 @@ namespace CasinoData
             return dataContext.Games[id];
         }
 
-        public Dictionary<int, Game> GetAllGames()
+        public ObservableCollection<Game> GetAllGames()
         {
             return dataContext.Games;
         }
@@ -33,7 +34,7 @@ namespace CasinoData
 
         public void DeleteGame(Game game)
         {
-            dataContext.Games.Remove(game.Id);
+            dataContext.Games.Remove(game);
         }
     }
 }

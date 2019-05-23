@@ -49,7 +49,7 @@ namespace CasionSources
 
         private void FillGames()
         {
-            dataContext.Games = new Dictionary<int, Game>();
+            dataContext.Games = new ObservableCollection<Game>();
             for (int i = 1; i <= 400 * multiplier; i++)
             {
                 Game game = new Game()
@@ -58,7 +58,7 @@ namespace CasionSources
                     Name = GetRandomString(random.Next(5, 10)),
                     Type = Game.GameType.POKER,
                 };
-                dataContext.Games.Add(i, game);
+                dataContext.Games.Add(game);
             }
         }
 

@@ -28,7 +28,7 @@ namespace CasinoData
 
         public void AddGame(Game game)
         {
-            if(!dataRepository.GetAllGames().ContainsValue(game))
+            if(!dataRepository.GetAllGames().Contains(game))
             {
                 dataRepository.AddGame(game);
             } else
@@ -39,7 +39,7 @@ namespace CasinoData
 
         public void DeleteGame(Game game)
         {
-            if (dataRepository.GetAllGames().ContainsValue(game))
+            if (dataRepository.GetAllGames().Contains(game))
             {
                 dataRepository.DeleteGame(game);
             }
@@ -51,7 +51,7 @@ namespace CasinoData
 
         public void UpdateGame(Game oldGame, Game newGame)
         {
-            if (dataRepository.GetAllGames().ContainsValue(oldGame))
+            if (dataRepository.GetAllGames().Contains(oldGame))
             {
                 dataRepository.UpdateGame(oldGame, newGame);
             }
