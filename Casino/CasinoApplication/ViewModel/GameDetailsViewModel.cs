@@ -12,8 +12,6 @@ namespace CasinoApplication.ViewModel
 {
     class GameDetailsViewModel : ViewModel
     {
-        private GameDetails gameDetails;
-
         private int id;
 
         public int Id {
