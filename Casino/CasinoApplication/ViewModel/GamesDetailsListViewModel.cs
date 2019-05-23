@@ -47,7 +47,11 @@ namespace CasinoApplication.ViewModel
             set { removeGameDetailsCommand = value; }   
         }
 
+        //------------------- Action
+        private void AddGameDetails()
+        {
 
+        }
 
     }
 }
