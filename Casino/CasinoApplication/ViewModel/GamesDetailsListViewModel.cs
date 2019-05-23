@@ -53,5 +53,10 @@ namespace CasinoApplication.ViewModel
 
         }
 
+        private void EditGameDetails()
+        {
+
+        }
+
     }
 }
