@@ -1,5 +1,8 @@
 ﻿using CasinoApplication.Common;
+using CasinoApplication.Model;
 using CasinoApplication.ViewModel.Commands;
+using CasinoData;
+using CasinoLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,7 +64,13 @@ namespace CasinoApplication.ViewModel
 
         public void OnSave()
         {
-            MessageBox.Show(FirstName + " " + LastName);
+            DataRepository dataRepository = Data.DataRepository;
+            Client client = new Client()
+            {
+                FirstName = FirstName,
+                LastName = LastName,
+            };
+            dataRepository.AddClient(client);
             closeDelegate(this);
         }
 

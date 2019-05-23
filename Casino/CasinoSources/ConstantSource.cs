@@ -13,7 +13,7 @@ namespace CasinoSources
     {
         public void Fill(DataContext dataContext)
         {
-            List<Client> clients = new List<Client>();
+            ObservableCollection<Client> clients = new ObservableCollection<Client>();
             Dictionary<int, Game> games = new Dictionary<int, Game>();
             ObservableCollection<GameDetails> gameDetails = new ObservableCollection<GameDetails>();
             List<Participation> participations = new List<Participation>();

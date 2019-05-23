@@ -1,6 +1,7 @@
 ﻿using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace CasinoData
             return dataContext.Clients.FirstOrDefault(c => c.ClientNumber == clientNumber);
         }
 
-        public List<Client> GetAllClients()
+        public ObservableCollection<Client> GetAllClients()
         {
             return dataContext.Clients;
         }

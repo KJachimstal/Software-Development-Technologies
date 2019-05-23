@@ -34,7 +34,7 @@ namespace CasionSources
 
         private void FillClients()
         {
-            dataContext.Clients = new List<Client>();
+            dataContext.Clients = new ObservableCollection<Client>();
             for (int i = 1; i <= 500 * multiplier; i++)
             {
                 Client client = new Client()

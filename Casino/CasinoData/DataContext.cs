@@ -10,9 +10,9 @@ namespace CasinoData
 {
     public class DataContext
     {
-        private List<Client> clients;
+        private ObservableCollection<Client> clients;
 
-        public List<Client> Clients {
+        public ObservableCollection<Client> Clients {
             get { return clients; }
             set { clients = value; }
         }
@@ -38,7 +38,7 @@ namespace CasinoData
             set { participations = value; }
         }
 
-        public DataContext(List<Client> clients, Dictionary<int, Game> games, ObservableCollection<GameDetails> gameDetails, List<Participation> participations)
+        public DataContext(ObservableCollection<Client> clients, Dictionary<int, Game> games, ObservableCollection<GameDetails> gameDetails, List<Participation> participations)
         {
             this.clients = clients;
             this.games = games;

@@ -1,6 +1,7 @@
 ﻿using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace CasionSources
     {
         public ClientsList()
         {
-            Clients = new List<Client>();
+            Clients = new ObservableCollection<Client>();
         }
 
         [XmlElement("Client")]
-        public List<Client> Clients { get; set; }
+        public ObservableCollection<Client> Clients { get; set; }
     }
 }

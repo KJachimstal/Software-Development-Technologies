@@ -5,6 +5,7 @@ using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +26,13 @@ namespace CasinoApplication.ViewModel
             }
         }
 
-        private List<Client> clients;
+        private ObservableCollection<Client> clients;
 
-        public List<Client> ClientsList {
+        public ObservableCollection<Client> ClientsList {
             get => clients;
             set {
                 clients = value;
-                OnPropertyChanged("ClientsCollection");
+                OnPropertyChanged("ClientsList");
             }
         }
 
