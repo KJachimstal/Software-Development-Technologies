@@ -19,7 +19,7 @@
         </Style> -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source=".\Validation\ValidationStyles.xaml" />
+                <ResourceDictionary Source=".\Styles\ValidationStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
