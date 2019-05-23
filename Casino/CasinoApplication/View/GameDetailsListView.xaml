@@ -7,6 +7,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Background="LightGreen" Grid.Row="0">
+            <Label FontSize="16" FontWeight="Bold">Games details</Label>
+        </Border>
+        <ListView ItemsSource="{Binding GamesDetailsList}" SelectedItem="{Binding SelectedGameDetails}" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="#ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Width="100" Header="Game" DisplayMemberBinding="{Binding Game}" />
+                    <GridViewColumn Width="100" Header="Start time" DisplayMemberBinding="{Binding StartTime}" />
+                    <GridViewColumn Width="100" Header="Minimal bet" DisplayMemberBinding="{Binding MinimalBet}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Content="Add game details" Command="{Binding AddGameDetailsCommand}" />
+            <Button Content="Edit game details" Command="{Binding EditGameDetailsCommand}" />
+            <Button Content="Delete game details" Command="{Binding RemoveGameDetailsCommand}" />
+        </StackPanel>
     </Grid>
 </UserControl>
