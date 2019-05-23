@@ -1,4 +1,6 @@
-﻿using CasinoApplication.ViewModel.Commands;
+﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Services;
+using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -62,7 +64,13 @@ namespace CasinoApplication.ViewModel
         //------------------- Action
         private void AddGameDetails()
         {
+            GameDetailsViewModel viewModel = new GameDetailsViewModel();
+            viewModel.Mode = Common.Mode.ADD;
 
+            IModalDialog dialog = GameDetailsProvider.Instance.Get<IModalDialog>();
+            viewModel.SetCloseAction(e => dialog.Close());
+            dialog.BindViewModel(viewModel);
+            dialog.ShowDialog();
         }
 
         private void EditGameDetails()
