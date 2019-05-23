@@ -23,6 +23,9 @@
         <DataTemplate x:Key="GamesListView" >
             <View:GamesListView/>
         </DataTemplate>
+        <DataTemplate x:Key="GamesDetailsListView">
+            <View:GamesDetailsListView/>
+        </DataTemplate>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="2" />
             <Setter Property="Padding" Value="6, 3" />
@@ -40,7 +43,9 @@
         <Border Grid.Column="1" BorderThickness="1" BorderBrush="LightCoral" Margin="5">
             <ContentControl Content="{Binding}" ContentTemplate="{StaticResource GamesListView}" />
         </Border>
-        <StackPanel Grid.Column="1"/>
+        <Border Grid.Column="2" BorderThickness="1" BorderBrush="LightGreen" Margin="5">
+            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource GamesDetailsListView}"/>
+        </Border>
         <StackPanel Grid.Column="2"/>
     </Grid>
 </Window>
