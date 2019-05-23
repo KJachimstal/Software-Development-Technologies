@@ -25,5 +25,10 @@ namespace CasinoApplication.View
         {
             throw new NotImplementedException();
         }
+
+        private GameDetailsView GetDialog()
+        {
+            return null;
+        }
     }
 }
