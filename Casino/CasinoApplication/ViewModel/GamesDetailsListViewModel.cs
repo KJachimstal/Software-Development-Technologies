@@ -32,8 +32,8 @@ namespace CasinoApplication.ViewModel
             get { return selectedGameDetails; }
             set {
                 selectedGameDetails = value;
-                EditClientCommand.RaiseCanExecuteChanged();
-                RemoveClientCommand.RaiseCanExecuteChanged();
+                EditGameDetailsCommand.RaiseCanExecuteChanged();
+                RemoveGameDetailsCommand.RaiseCanExecuteChanged();
             }
         }
 
