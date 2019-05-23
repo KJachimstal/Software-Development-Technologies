@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Xml.Serialization;
 namespace CasinoLibrary
 {
     [Serializable()]
-    public class Client
+    public class Client : INotifyPropertyChanged
     {
         private int clientNumber;
 
@@ -24,7 +25,11 @@ namespace CasinoLibrary
         [XmlElement("FirstName")]
         public string FirstName {
             get { return firstName; }
-            set { firstName = value; }
+            set 
+            {
+                firstName = value;
+                OnPropertyChanged("FirstName");
+            }
         }
 
         private string lastName;
@@ -32,7 +37,11 @@ namespace CasinoLibrary
         [XmlElement("LastName")]
         public string LastName {
             get { return lastName; }
-            set { lastName = value; }
+            set 
+            {
+                lastName = value;
+                OnPropertyChanged("LastName");
+            }
         }
 
         public Client(int clientNumber, string firstName, string lastName)
@@ -56,6 +65,13 @@ namespace CasinoLibrary
         public override string ToString()
         {
             return firstName + " " + lastName;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

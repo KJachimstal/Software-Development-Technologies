@@ -27,7 +27,6 @@ namespace CasinoData
 
         public void UpdateClient(Client oldClient, Client newClient)
         {
-            oldClient.ClientNumber = newClient.ClientNumber;
             oldClient.FirstName = newClient.FirstName;
             oldClient.LastName = newClient.LastName;
         }
