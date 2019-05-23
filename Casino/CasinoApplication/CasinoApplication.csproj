@@ -68,7 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\GameDetailsView.xaml">
+    <Page Include="View\GamesDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,8 +131,8 @@
       <DependentUpon>ClientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ClientViewDialog.cs" />
-    <Compile Include="View\GameDetailsView.xaml.cs">
-      <DependentUpon>GameDetailsView.xaml</DependentUpon>
+    <Compile Include="View\GamesDetailsView.xaml.cs">
+      <DependentUpon>GamesDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GameDetailsViewDialog.cs" />
     <Compile Include="View\GamesDetailsListView.xaml.cs">

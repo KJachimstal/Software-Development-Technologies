@@ -9,7 +9,7 @@ namespace CasinoApplication.View
 {
     public class GameDetailsViewDialog : IModalDialog
     {
-        private GameDetailsView view;
+        private GamesDetailsView view;
 
         public void BindViewModel<TViewModel>(TViewModel viewModel)
         {
@@ -26,11 +26,11 @@ namespace CasinoApplication.View
             GetDialog().Show();
         }
 
-        private GameDetailsView GetDialog()
+        private GamesDetailsView GetDialog()
         {
             if (view == null)
             {
-                view = new GameDetailsView();
+                view = new GamesDetailsView();
                 view.Closed += new EventHandler(view_Closed);
             }
             return view;
