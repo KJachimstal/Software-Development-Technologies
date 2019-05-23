@@ -28,7 +28,12 @@ namespace CasinoApplication.View
 
         private GameDetailsView GetDialog()
         {
-            return null;
+            if (view == null)
+            {
+                view = new GameDetailsView();
+                view.Closed += new EventHandler(view_Closed);
+            }
+            return view;
         }
 
         void view_Closed(object sender, EventArgs e)
