@@ -15,6 +15,13 @@ namespace CasinoApplication.ViewModel
 {
     class ClientViewModel : ViewModel
     {
+        private int clientNumber = 0;
+
+        public int ClientNumber {
+            get { return clientNumber; }
+            set { clientNumber = value; }
+        }
+
         private string firstName;
 
         public string FirstName {
@@ -28,6 +35,15 @@ namespace CasinoApplication.ViewModel
             get { return lastName; }
             set { lastName = value; }
         }
+
+        public ClientViewModel(Client client)
+        {
+            ClientNumber = client.ClientNumber;
+            FirstName = client.FirstName;
+            LastName = client.LastName;
+        }
+
+        public ClientViewModel() { }
 
         private ICommand saveCommand;
 

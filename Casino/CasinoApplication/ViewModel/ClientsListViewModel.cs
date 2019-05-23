@@ -86,7 +86,13 @@ namespace CasinoApplication.ViewModel
 
         public void EditClient(Client client)
         {
-            MessageBox.Show(client.ToString());
+            ClientViewModel viewModel = new ClientViewModel(client);
+            viewModel.Mode = Common.Mode.EDIT;
+
+            IModalDialog dialog = ServiceProvider.Instance.Get<IModalDialog>();
+            viewModel.SetCloseAction(e => dialog.Close());
+            dialog.BindViewModel(viewModel);
+            dialog.ShowDialog();
         }
 
         public void RemoveClient(Client client)
