@@ -13,7 +13,7 @@ namespace CasinoApplication.View
 
         public void BindViewModel<TViewModel>(TViewModel viewModel)
         {
-            throw new NotImplementedException();
+            GetDialog().DataContext = viewModel;
         }
 
         public void Close()
