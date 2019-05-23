@@ -26,9 +26,9 @@ namespace CasinoApplication.ViewModel
             set { game = value; }
         }
 
-        private DateTimeOffset startTime;
+        private string startTime;
 
-        public DateTimeOffset StartTime {
+        public string StartTime {
             get { return startTime; }
             set { startTime = value; }
         }
@@ -40,5 +40,12 @@ namespace CasinoApplication.ViewModel
             set { minimalBet = value; }
         }
             
+        public GameDetailsViewModel(Game game, GameDetails gameDetails)
+        {
+            this.game = game;
+            this.id = gameDetails.Id;
+            this.startTime = gameDetails.StartTime;
+            this.minimalBet = gameDetails.MinimalBet;
+        }
     }
 }
