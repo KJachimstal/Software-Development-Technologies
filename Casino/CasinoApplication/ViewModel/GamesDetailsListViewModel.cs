@@ -19,15 +19,22 @@ namespace CasinoApplication.ViewModel
         private ObservableCollection<GameDetails> gamesDetails;
 
         public ObservableCollection<GameDetails> GamesDetailsList {
-            get { return gamesDetails; }
-            set { gamesDetails = value; }
+            get => gamesDetails; 
+            set {
+                gamesDetails = value;
+                OnPropertyChanged("GamesDetailsList");
+            }
         }
 
-        private GameDetails gameDetails;
+        private GameDetails selectedGameDetails;
 
         public GameDetails SelectedGameDetails {
-            get { return gameDetails; }
-            set { gameDetails = value; }
+            get { return selectedGameDetails; }
+            set {
+                selectedGameDetails = value;
+                EditClientCommand.RaiseCanExecuteChanged();
+                RemoveClientCommand.RaiseCanExecuteChanged();
+            }
         }
 
         // ---------------------------- Commands
@@ -48,7 +55,7 @@ namespace CasinoApplication.ViewModel
             get {
                 if (editGameDetailsCommand == null)
                 {
-                    editGameDetailsCommand = new EditCommand(e => EditGameDetails(), e => SelectedGameDetails != null);
+                    editGameDetailsCommand = new EditCommand(e => EditGameDetails(SelectedGameDetails), e => SelectedGameDetails != null);
                 }
                 return editGameDetailsCommand; }
         }
@@ -59,7 +66,7 @@ namespace CasinoApplication.ViewModel
             get {
                 if (removeGameDetailsCommand == null)
                 {
-                    removeGameDetailsCommand = new RemoveCommand(e => RemoveGameDetails(), e => SelectedGameDetails != null);
+                    removeGameDetailsCommand = new RemoveCommand(e => RemoveGameDetails(SelectedGameDetails), e => SelectedGameDetails != null);
                 }
                 return removeGameDetailsCommand; } 
         }
@@ -76,7 +83,7 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void EditGameDetails()
+        private void EditGameDetails(GameDetails gameDetails)
         {
             GameDetailsViewModel viewModel = new GameDetailsViewModel(game, gameDetails);
             viewModel.Mode = Common.Mode.EDIT;
@@ -87,7 +94,7 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void RemoveGameDetails()
+        private void RemoveGameDetails(GameDetails gameDetails)
         {
             MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.Cancel)
