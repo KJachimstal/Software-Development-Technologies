@@ -29,8 +29,12 @@ namespace CasinoApplication.ViewModel
         private AddCommand addGameDetailsCommand;
 
         public AddCommand AddGameDetailsCommand {
-            get { return addGameDetailsCommand; }
-            set { addGameDetailsCommand = value; }
+            get {
+                if (addGameDetailsCommand == null)
+                {
+                    addGameDetailsCommand = new AddCommand(e => AddGame());
+                }
+                return addGameDetailsCommand; }
         }
 
         private EditCommand editGameDetailsCommand;
