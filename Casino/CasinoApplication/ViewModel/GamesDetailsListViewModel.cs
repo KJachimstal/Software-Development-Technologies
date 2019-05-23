@@ -17,5 +17,13 @@ namespace CasinoApplication.ViewModel
             set { gamesDetails = value; }
         }
 
+        private GameDetails gameDetails;
+
+        public GameDetails SelectedGameDetails {
+            get { return gameDetails; }
+            set { gameDetails = value; }
+        }
+
+
     }
 }
