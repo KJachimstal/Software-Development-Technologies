@@ -40,8 +40,14 @@ namespace CasinoApplication.ViewModel
             set { editGameDetailsCommand = value; }
         }
 
+        private RemoveCommand removeGameDetailsCommand;
 
-            
+        public RemoveCommand RemoveGameDetailsCommand {
+            get { return removeGameDetailsCommand; }
+            set { removeGameDetailsCommand = value; }   
+        }
+
+
 
     }
 }
