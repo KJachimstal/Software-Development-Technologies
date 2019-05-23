@@ -1,7 +1,9 @@
-﻿using CasinoApplication.ViewModel.Commands;
+﻿using CasinoApplication.Model;
+using CasinoApplication.ViewModel.Commands;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,16 @@ namespace CasinoApplication.ViewModel
 {
     class GameDetailsViewModel : ViewModel
     {
+        private ObservableCollection<Game> games;
+
+        public ObservableCollection<Game> Games {
+            get {
+                games = Data.DataRepository.GetAllGames();
+                return games;
+            }
+
+        }
+
         private int id;
 
         public int Id {
