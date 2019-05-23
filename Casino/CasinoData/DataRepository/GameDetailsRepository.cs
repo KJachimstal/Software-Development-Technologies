@@ -36,9 +36,14 @@ namespace CasinoData
             }
         }
 
-        public void DeleteGameDetails(GameDetails gameDetails)
+        public bool DeleteGameDetails(GameDetails gameDetails)
         {
-            dataContext.GameDetails.Remove(gameDetails);
+            if (dataContext.GameDetails.Remove(gameDetails))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
