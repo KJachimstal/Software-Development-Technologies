@@ -82,8 +82,9 @@
                             </DataTrigger>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding ElementName=Name, Path=(Validation.HasError)}" Value="false"/>
-                                    <Condition Binding="{Binding ElementName=Type, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=Game, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=StartTime, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=MinimalBet, Path=(Validation.HasError)}" Value="false"/>
                                 </MultiDataTrigger.Conditions>
                                 <Setter Property="IsEnabled" Value="True"/>
                             </MultiDataTrigger>
