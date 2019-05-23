@@ -69,7 +69,7 @@ namespace CasinoApplication.ViewModel
                     {
                         return "Game name is required";
                     }
-                } else if (columnName == "GameType")
+                } else if (columnName == "Type")
                 {
                     if (Type == Game.GameType.EMPTY)
                     {
