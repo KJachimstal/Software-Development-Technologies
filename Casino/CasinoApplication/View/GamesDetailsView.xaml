@@ -54,7 +54,7 @@
         <TextBox Text="{Binding Id}" Width="100" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False" Margin="15,0" />
 
         <Label Content="Game" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
-        <ComboBox Name="Game" Text="{Binding Path=Game, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource validationComboBoxStyles}" Width="200" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0"></ComboBox>
+        <ComboBox Name="Game" ItemsSource="{Binding Games}" SelectedValue="{Binding Path=Game, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource validationComboBoxStyles}" Width="200" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0"></ComboBox>
 
         <Label Content="Start time" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
         <DatePicker Name="StartTime" SelectedDate="{Binding Path=StartTime, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Width="200" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0"></DatePicker> 
