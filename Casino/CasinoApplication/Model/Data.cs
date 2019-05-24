@@ -24,8 +24,6 @@ namespace CasinoApplication.Model
         public static void RegisterDataRepository(DataRepository _dataRepository)
         {
             dataRepository = _dataRepository;
-            dataRepository.DataContext = new DataContext();
-            dataRepository.Fill();
             dataService = new DataService(dataRepository);
         }
     }

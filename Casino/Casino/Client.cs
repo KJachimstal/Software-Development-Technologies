@@ -11,12 +11,11 @@ namespace CasinoLibrary
     [Serializable()]
     public class Client : INotifyPropertyChanged
     {
-        private int clientNumber;
+        private int id;
 
-        [XmlElement("ClientNumber")]
-        public int ClientNumber {
-            get { return clientNumber; }
-            set { clientNumber = value; }
+        public int Id {
+            get { return id; }
+            set { id = value; }
         }
 
 
@@ -44,9 +43,9 @@ namespace CasinoLibrary
             }
         }
 
-        public Client(int clientNumber, string firstName, string lastName)
+        public Client(int id, string firstName, string lastName)
         {
-            this.clientNumber = clientNumber;
+            this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
         }
@@ -57,7 +56,7 @@ namespace CasinoLibrary
         {
             var state = obj as Client;
             return state != null &&
-                clientNumber == state.ClientNumber &&
+                id == state.id &&
                 firstName == state.FirstName &&
                 lastName == state.LastName;
         }

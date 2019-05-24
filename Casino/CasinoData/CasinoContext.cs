@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace CasinoData
 {
-    public class DbContext
+    public class CasinoContext : DbContext
     {
+        public CasinoContext() : base() { }
+
        public DbSet<Client> Clients { get; set; }
        public DbSet<Game> Games { get; set; }
        public DbSet<GameDetails> GamesDetails { get; set; }

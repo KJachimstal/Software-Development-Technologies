@@ -8,15 +8,15 @@ namespace CasinoData
 {
     public partial class DataRepository
     {
-        private DbContext dataContext;
+        private CasinoContext dataContext;
 
-        public DbContext DataContext {
+        public CasinoContext DataContext {
             set => dataContext = value; 
         }
 
         public DataRepository()
         {
-            dataContext = new DbContext();
+            dataContext = new CasinoContext();
         }
     }
 }

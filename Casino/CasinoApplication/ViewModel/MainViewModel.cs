@@ -5,7 +5,6 @@ using CasinoApplication.View;
 using CasinoApplication.ViewModel.Commands;
 using CasinoData;
 using CasinoLibrary;
-using CasionSources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +19,7 @@ namespace CasinoApplication.ViewModel
     {
         public MainViewModel()
         {
-            XMLDataSource dataSource = new XMLDataSource();
-            Data.RegisterDataRepository(new DataRepository(dataSource));
+            Data.RegisterDataRepository(new DataRepository());
 
             DataRepository dataRepository = Data.DataRepository;
             ClientsList = dataRepository.GetAllClients();

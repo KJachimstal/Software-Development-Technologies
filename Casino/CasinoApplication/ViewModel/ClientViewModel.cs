@@ -18,11 +18,11 @@ namespace CasinoApplication.ViewModel
     {
         private Client client;
 
-        private int clientNumber = 0;
+        private int id = 0;
 
-        public int ClientNumber {
-            get { return clientNumber; }
-            set { clientNumber = value; }
+        public int Id {
+            get { return id; }
+            set { id = value; }
         }
 
         private string firstName;
@@ -42,7 +42,7 @@ namespace CasinoApplication.ViewModel
         public ClientViewModel(Client client)
         {
             this.client = client;
-            ClientNumber = client.ClientNumber;
+            Id = client.Id;
             FirstName = client.FirstName;
             LastName = client.LastName;
         }
@@ -99,7 +99,6 @@ namespace CasinoApplication.ViewModel
             {
                 Client modified = new Client()
                 {
-                    ClientNumber = ClientNumber,
                     FirstName = FirstName,
                     LastName = LastName,
                 };

@@ -15,9 +15,9 @@ namespace CasinoData
             dataContext.Clients.Add(client);
         }
 
-        public Client GetClient(int clientNumber)
+        public Client GetClient(int id)
         {
-            return dataContext.Clients.FirstOrDefault(c => c.ClientNumber == clientNumber);
+            return dataContext.Clients.FirstOrDefault(c => c.Id == id);
         }
 
         public ObservableCollection<Client> GetAllClients()
