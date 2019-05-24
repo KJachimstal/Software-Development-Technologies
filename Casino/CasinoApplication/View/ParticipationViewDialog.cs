@@ -28,7 +28,12 @@ namespace CasinoApplication.View
 
         private ParticipationView GetDialog()
         {
-            return null;
+            if (view == null)
+            {
+                view = new ParticipationView();
+                view.Closed += new EventHandler(view_Closed);
+            }
+            return view;
         }
 
         void view_Closed(object sender, EventArgs e)
