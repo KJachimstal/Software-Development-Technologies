@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CasinoApplication.Common;
+using System.Windows;
 
 namespace CasinoApplication.ViewModel
 {
@@ -59,10 +60,10 @@ namespace CasinoApplication.ViewModel
         public GameDetailsViewModel(Game game, GameDetails gameDetails)
         {
             this.gameDetails = gameDetails;
-            this.game = game;
-            this.id = gameDetails.Id;
-            this.startTime = gameDetails.StartTime;
-            this.minimalBet = gameDetails.MinimalBet;
+            Game = game;
+            Id = gameDetails.Id;
+            StartTime = gameDetails.StartTime;
+            MinimalBet = gameDetails.MinimalBet;
         }
 
         public GameDetailsViewModel() { }
@@ -147,16 +148,14 @@ namespace CasinoApplication.ViewModel
                     {
                         return "Please choose start time";
                     }
-                    else if (true)
+                    try
                     {
-                        try
-                        {
-                            DateTimeOffset.Parse(StartTime);
-                        } catch
-                        {
-                            return "Correct date format";
-                        }
+                        DateTimeOffset.Parse(StartTime);
+                    } catch
+                    {
+                        return "Inorrect date format";
                     }
+                    
                 }
                 else if (columnName == "MinimalBet")
                 {
