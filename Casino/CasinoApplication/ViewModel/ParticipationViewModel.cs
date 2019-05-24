@@ -20,5 +20,15 @@ namespace CasinoApplication.ViewModel
             }
 
         }
+
+        private ObservableCollection<Client> clients;
+
+        public ObservableCollection<Client> Clients {
+            get {
+                clients = Data.DataRepository.GetAllClients();
+                return clients;
+            }
+        }
+
     }
 }
