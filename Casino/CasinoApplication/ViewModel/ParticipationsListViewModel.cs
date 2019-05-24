@@ -26,16 +26,16 @@ namespace CasinoApplication.ViewModel
             }
         }
 
-        //private Participation selectedParticipation;
+        private Participation selectedParticipation;
 
-        //public Participation SelectedParticipation {
-        //    get { return selectedParticipation; }
-        //    set {
-        //        selectedParticipation = value;
-        //        EditParticipationCommand.RaiseCanExecuteChanged();
-        //        RemoveParticipationCommand.RaiseCanExecuteChanged();
-        //    }
-        //}
+        public Participation SelectedParticipation {
+            get { return selectedParticipation; }
+            set {
+                selectedParticipation = value;
+                EditParticipationCommand.RaiseCanExecuteChanged();
+                RemoveParticipationCommand.RaiseCanExecuteChanged();
+            }
+        }
 
         // ------------------------ Comands
         private AddCommand addParticipationCommand;
@@ -44,35 +44,35 @@ namespace CasinoApplication.ViewModel
             get {
                 if (addParticipationCommand == null)
                 {
-                    addParticipationCommand = new AddCommand(e => AddParticipations());
+                    addParticipationCommand = new AddCommand(e => AddParticipation());
                 }
                 return addParticipationCommand;
             }
         }
 
-        //private EditCommand editParticipationCommand;
+        private EditCommand editParticipationCommand;
 
-        //public EditCommand EditParticipationCommand {
-        //    get {
-        //        if (editParticipationCommand == null)
-        //        {
-        //            editParticipationCommand = new EditCommand(e => EditGameDetails(SelectedParticipation), e => SelectedParticipation != null);
-        //        }
-        //        return editParticipationCommand;
-        //    }
-        //}
+        public EditCommand EditParticipationCommand {
+            get {
+                if (editParticipationCommand == null)
+                {
+                    editParticipationCommand = new EditCommand(e => EditParticipation(SelectedParticipation), e => SelectedParticipation != null);
+                }
+                return editParticipationCommand;
+            }
+        }
 
-        //private RemoveCommand removeParticipationCommand;
+        private RemoveCommand removeParticipationCommand;
 
-        //public RemoveCommand RemoveParticipationCommand {
-        //    get {
-        //        if (removeParticipationCommand == null)
-        //        {
-        //            removeParticipationCommand = new RemoveCommand(e => RemoveGameDetails(SelectedParticipation), e => SelectedParticipation != null);
-        //        }
-        //        return removeParticipationCommand;
-        //    }
-        //}
+        public RemoveCommand RemoveParticipationCommand {
+            get {
+                if (removeParticipationCommand == null)
+                {
+                    removeParticipationCommand = new RemoveCommand(e => RemoveParticipation(SelectedParticipation), e => SelectedParticipation != null);
+                }
+                return removeParticipationCommand;
+            }
+        }
 
         //----------------- Action
         private void AddParticipation()
