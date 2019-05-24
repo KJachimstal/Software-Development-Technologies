@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         xmlns:View="clr-namespace:CasinoApplication.View"
         xmlns:ViewModel="clr-namespace:CasinoApplication.ViewModel"
-        Title="Casino" Height="500" Width="1000" Icon="/CasinoApplication;component/Resources/roulette.png">
+        Title="Casino" Height="500" Width="1200" Icon="/CasinoApplication;component/Resources/roulette.png">
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
@@ -26,6 +26,9 @@
         <DataTemplate x:Key="GamesDetailsListView">
             <View:GamesDetailsListView/>
         </DataTemplate>
+        <DataTemplate x:Key="ParticipationsListView">
+            <View:ParticipationsListView/>
+        </DataTemplate>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="2" />
             <Setter Property="Padding" Value="6, 3" />
@@ -33,6 +36,7 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -45,6 +49,9 @@
         </Border>
         <Border Grid.Column="2" BorderThickness="1" BorderBrush="LightGreen" Margin="5">
             <ContentControl Content="{Binding}" ContentTemplate="{StaticResource GamesDetailsListView}"/>
+        </Border>
+        <Border Grid.Column="3" BorderThickness="1" BorderBrush="LightGreen" Margin="5">
+            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ParticipationsListView}"/>
         </Border>
         <StackPanel Grid.Column="2"/>
     </Grid>
