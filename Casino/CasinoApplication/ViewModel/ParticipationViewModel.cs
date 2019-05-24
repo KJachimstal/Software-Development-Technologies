@@ -140,14 +140,14 @@ namespace CasinoApplication.ViewModel
                 {
                     if (GameDetails == null)
                     {
-                        return "Please select GameDetails";
+                        return "Please select game details";
                     }
                 }
                 else if (columnName == "Client")
                 {
                     if (Client == null)
                     {
-                        return "Please select Client";
+                        return "Please select client";
                     }
                 }
                 else if (columnName == "Bet")
@@ -155,6 +155,14 @@ namespace CasinoApplication.ViewModel
                     if (Bet == 0)
                     {
                         return "Please enter bet";
+                    }
+                    else if (GameDetails == null)
+                    {
+                        return "Please select first game details.";
+                    }
+                    else if (Bet < GameDetails.MinimalBet)
+                    {
+                        return "Bet must be greather than minimal bet.";
                     }
                 }
                 return null;
