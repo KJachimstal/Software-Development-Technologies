@@ -51,29 +51,17 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContextTest.cs" />
-    <Compile Include="DataRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConstantSourceTest.cs" />
-    <Compile Include="RandomDataSourceTests.cs" />
-    <Compile Include="XMLDataSourceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CasinoData\CasinoData.csproj">
       <Project>{e404317f-73e6-4581-8189-d67427dbc7d2}</Project>
       <Name>CasinoData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CasinoSources\CasinoSources.csproj">
-      <Project>{906cac55-5932-464a-977c-693f4e1e0625}</Project>
-      <Name>CasinoSources</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Casino\CasinoLibrary.csproj">
       <Project>{6a6c07dc-fbb8-42ff-8c56-e4978491f06f}</Project>
       <Name>CasinoLibrary</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SerializedData.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
