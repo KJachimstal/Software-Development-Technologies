@@ -1,6 +1,7 @@
 ﻿using System;
 using CasinoData;
 using CasinoLibrary;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CasinoTests.DataRepositoryTests
@@ -63,6 +64,13 @@ namespace CasinoTests.DataRepositoryTests
 
             // Assertion
             Assert.AreEqual(gameDetails, dataRepository.GetGameDetails(1));
+        }
+
+        [TestMethod]
+        public void GetAllGameDetailsTest()
+        {
+            // Assertion
+            Assert.AreEqual(2, dataRepository.GetAllGameDetails().Count());
         }
 
     }
