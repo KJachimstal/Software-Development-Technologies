@@ -111,7 +111,7 @@ namespace CasinoApplication.ViewModel
                     GameDetails = GameDetails,
                     Bet = Bet,
                 };
-                dataRepository.AddGameDetails(participation);
+                dataRepository.AddParticipation(participation);
             }
             else
             {
