@@ -44,7 +44,11 @@ namespace CasinoApplication.ViewModel
             }
 
 
-            ParticipationsList = dataRepository.GetAllParticipations();
+            ParticipationsList = new ObservableCollection<Participation>();
+            foreach (Participation participation in dataRepository.GetAllParticipations())
+            {
+                ParticipationsList.Add(participation);
+            }
 
             ClientProvider.RegisterServiceLocator(new UnityServiceLocator());
             ClientProvider.Instance.Register<IModalDialog, ClientViewDialog>();

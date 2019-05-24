@@ -13,6 +13,7 @@ namespace CasinoData
         public void AddParticipation(Participation participation)
         {
             dataContext.Participations.Add(participation);
+            dataContext.SaveChanges();
         }
 
         public Participation GetParticipation(Client client)
@@ -20,15 +21,9 @@ namespace CasinoData
             return dataContext.Participations.FirstOrDefault(p => p.Client.Equals(client));
         }
 
-        public ObservableCollection<Participation> GetAllParticipations()
+        public IEnumerable<Participation> GetAllParticipations()
         {
-            List<Participation> participations = dataContext.Participations.ToList();
-            ObservableCollection<Participation> collection = new ObservableCollection<Participation>();
-            foreach (Participation participation in participations)
-            {
-                collection.Add(participation);
-            }
-            return collection;
+            return dataContext.Participations;
         }
 
         public void UpdateParticipation(Participation oldParticipation, Participation newParticipation)
@@ -36,11 +31,13 @@ namespace CasinoData
             oldParticipation.Client = newParticipation.Client;
             oldParticipation.GameDetails = newParticipation.GameDetails;
             oldParticipation.Bet = newParticipation.Bet;
+            dataContext.SaveChanges();
         }
 
         public bool DeleteParticipation(Participation participation)
         {
             dataContext.Participations.Remove(participation);
+            dataContext.SaveChanges();
             return true;
         }
     }
