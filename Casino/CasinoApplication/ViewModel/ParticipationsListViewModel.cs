@@ -106,7 +106,14 @@ namespace CasinoApplication.ViewModel
                 return;
             }
             DataRepository dataRepository = Data.DataRepository;
-            if (dataRepository.DeleteParticipation(participation))
+
+            bool state = false;
+            Task.Run(() =>
+            {
+                state = dataRepository.DeleteParticipation(participation);
+            });
+
+            if (state)
             {
                 MessageBox.Show(string.Format("Participation {0} successfully removed.", participation), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 ParticipationsList.Remove(participation);

@@ -107,7 +107,14 @@ namespace CasinoApplication.ViewModel
                 return;
             }
             DataRepository dataRepository = Data.DataRepository;
-            if (dataRepository.DeleteGame(game))
+
+            bool state = false;
+            Task.Run(() =>
+            {
+                state = dataRepository.DeleteGame(game);
+            });
+
+            if (state)
             {
                 GamesList.Remove(game);
                 MessageBox.Show(string.Format("Game {0} successfully removed.", game), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
