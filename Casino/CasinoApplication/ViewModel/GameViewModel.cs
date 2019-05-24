@@ -67,6 +67,13 @@ namespace CasinoApplication.ViewModel
             this.closeDelegate = closeDelegate;
         }
 
+        private Action<object> addDelegate;
+
+        public void SetAddAction(Action<object> addDelegate)
+        {
+            this.addDelegate = addDelegate;
+        }
+
         private ICommand saveCommand;
 
         public ICommand SaveCommand {
@@ -103,6 +110,7 @@ namespace CasinoApplication.ViewModel
                     Type = Type,
                 };
                 dataRepository.AddGame(game);
+                addDelegate(game);
             }
             else
             {

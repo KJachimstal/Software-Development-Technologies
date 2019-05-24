@@ -83,6 +83,7 @@ namespace CasinoApplication.ViewModel
 
             IModalDialog dialog = GameProvider.Instance.Get<IModalDialog>();
             viewModel.SetCloseAction(e => dialog.Close());
+            viewModel.SetAddAction(e => GamesList.Add((Game) e));
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }
@@ -108,6 +109,7 @@ namespace CasinoApplication.ViewModel
             DataRepository dataRepository = Data.DataRepository;
             if (dataRepository.DeleteGame(game))
             {
+                GamesList.Remove(game);
                 MessageBox.Show(string.Format("Game {0} successfully removed.", game), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else

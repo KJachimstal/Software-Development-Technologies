@@ -17,11 +17,11 @@ namespace CasinoApplication.ViewModel
 {
     class GameDetailsViewModel : ViewModel, IDataErrorInfo
     {
-        private ObservableCollection<Game> games;
+        private List<Game> games;
 
-        public ObservableCollection<Game> Games {
+        public List<Game> Games {
             get {
-                games = Data.DataRepository.GetAllGames();
+                games = Data.DataRepository.GetAllGames().ToList();
                 return games;
             }
 

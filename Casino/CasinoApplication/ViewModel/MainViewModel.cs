@@ -31,7 +31,12 @@ namespace CasinoApplication.ViewModel
                 ClientsList.Add(client);
             }
 
-            GamesList = dataRepository.GetAllGames();
+            GamesList = new ObservableCollection<Game>(); 
+            foreach (Game game in dataRepository.GetAllGames())
+            {
+                GamesList.Add(game);
+            }
+
             GamesDetailsList = dataRepository.GetAllGameDetails();
             ParticipationsList = dataRepository.GetAllParticipations();
 
