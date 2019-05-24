@@ -50,8 +50,6 @@ namespace CasinoData
             {
                 throw new Exception("GameDetails does not exists!");
             }
-
-            return false;
         }
 
         public void UpdateGameDetails(GameDetails oldGameDetails, GameDetails newGameDetails)
