@@ -37,11 +37,12 @@ namespace CasinoData
             }
         }
 
-        public void DeleteParticipation(Participation participation)
+        public bool DeleteParticipation(Participation participation)
         {
             if (dataRepository.GetAllParticipations().Contains(participation))
             {
                 dataRepository.DeleteParticipation(participation);
+                return true;
             }
             else
             {
