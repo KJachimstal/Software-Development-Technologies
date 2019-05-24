@@ -58,6 +58,7 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationTests\ClientViewModelTests.cs" />
     <Compile Include="DataRepositoryTests\GameRepositoryTests.cs" />
     <Compile Include="DataRepositoryTests\GameDetailsRepositoryTests.cs" />
     <Compile Include="DataRepositoryTests\ParticipationsRepositoryTests.cs" />
@@ -84,7 +85,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ApplicationTests\" />
     <Folder Include="DataServiceTests\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
