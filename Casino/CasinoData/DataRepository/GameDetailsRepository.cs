@@ -18,7 +18,7 @@ namespace CasinoData
 
         public GameDetails GetGameDetails(Game game)
         {
-            return dataContext.GamesDetails.FirstOrDefault(gd => gd.Game.Equals(game));
+            return dataContext.GamesDetails.FirstOrDefault(gd => gd.Game.Id == game.Id);
         }
 
         public IEnumerable<GameDetails> GetAllGameDetails()

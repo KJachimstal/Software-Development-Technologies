@@ -1,8 +1,9 @@
 ﻿using System;
 using CasinoData;
+using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CasinoTests.DataRepositoryTests
+namespace CasinoTests
 {
     [TestClass]
     public class GameDetailsRepositoryTest
@@ -17,8 +18,17 @@ namespace CasinoTests.DataRepositoryTests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void GameDetailsAddTest()
         {
+            Game game = new Game(3, "Russian", Game.GameType.ROULETTE);
+            DateTime localTime1 = new DateTime(2019, 05, 24, 12, 30, 15);
+            DateTimeOffset dateTimeOffset1 = new DateTimeOffset(localTime1, TimeZoneInfo.Local.GetUtcOffset(localTime1));
+            GameDetails gameDetails = new GameDetails(game, localTime1, 100);
+            dataRepository.AddGameDetails(gameDetails);
+
+
+            // Assertion
+            Assert.AreEqual(gameDetails, dataRepository.GetGameDetails(game));
         }
     }
 }
