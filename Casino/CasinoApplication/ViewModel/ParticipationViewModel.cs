@@ -30,6 +30,8 @@ namespace CasinoApplication.ViewModel
             }
         }
 
+        private Participation participation;
+
         private double bet;
 
         public double Bet {
@@ -51,5 +53,12 @@ namespace CasinoApplication.ViewModel
             set { gameDetails = value; }
         }
 
-    }
+        public ParticipationViewModel(Client client, GameDetails gameDetails, Participation participation)
+        {
+            this.participation = participation;
+            this.gameDetails = GameDetails;
+            this.client = Client;
+            this.bet = participation.Bet;
+        }
+    }   
 }
