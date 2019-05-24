@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CasinoData;
 using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -29,13 +30,17 @@ namespace CasinoTests.DataRepositoryTests
 
             dataRepository.AddParticipation(participation);
 
-            // Assertions
+            // Assertion
             Assert.AreEqual(participation, dataRepository.GetParticipation(3));
         }
 
         [TestMethod]
         public void ParticipationDeleteTest()
         {
+            dataRepository.DeleteParticipation(dataRepository.GetParticipation(1));
+
+            // Assertion
+            Assert.AreEqual(1, dataRepository.GetAllParticipations().Count());
         }
 
         [TestMethod]
