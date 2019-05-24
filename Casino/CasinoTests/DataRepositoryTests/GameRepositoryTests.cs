@@ -26,5 +26,14 @@ namespace CasinoTests.DataRepositoryTests
             // Assertion
             Assert.AreEqual(game, dataRepository.GetGame(3));
         }
+
+        [TestMethod]
+        public void GameDeleteTest()
+        {
+            dataRepository.DeleteGame(dataRepository.GetGame(2));
+
+            // Assertion
+            Assert.IsNull(dataRepository.GetGame(2));
+        }
     }
 }
