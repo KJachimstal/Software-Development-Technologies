@@ -53,6 +53,19 @@ namespace CasinoTests.DataRepositoryTests
         [TestMethod]
         public void ParticipationUpdateTest()
         {
+            Participation oldParticipation = dataRepository.GetParticipation(1);
+
+            Client client = new Client(1, "One", "One");
+            Game game = new Game(1, "GameOne", Game.GameType.BRIDGE);
+            DateTime localTime = new DateTime(2019, 05, 24, 12, 30, 15);
+            DateTimeOffset dateTimeOffset = new DateTimeOffset(localTime, TimeZoneInfo.Local.GetUtcOffset(localTime));
+            GameDetails gameDetails = new GameDetails(game, dateTimeOffset, 100);
+            Participation newParticipation = new Participation(client, gameDetails, 200);
+
+            dataRepository.UpdateParticipation(oldParticipation, newParticipation);
+
+            // Assertion
+            Assert.AreEqual(200, dataRepository.GetParticipation(1).Bet);
         }
 
         [TestMethod]
