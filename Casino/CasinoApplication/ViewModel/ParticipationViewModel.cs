@@ -101,30 +101,30 @@ namespace CasinoApplication.ViewModel
 
         public void OnSave()
         {
-            //    DataRepository dataRepository = Data.DataRepository;
+            DataRepository dataRepository = Data.DataRepository;
 
-            //    if (Mode == Mode.ADD)
-            //    {
-            //        Participation participation = new Participation()
-            //        {
-            //            Client = Client,
-            //            GameDetails = GameDetails,
-            //            Bet = Bet,                    
-            //        };
-            //        dataRepository.AddGameDetails(participation);
-            //    }
-            //    else
-            //    {
-            //        Participation participationModified = new Participation()
-            //        {
-            //            Client = Client,
-            //            GameDetails = GameDetails,
-            //            Bet = Bet, 
-            //        };
-            //        dataRepository.UpdateParticipation(participation, participationModified);
-            //    }
+            if (Mode == Mode.ADD)
+            {
+                Participation participation = new Participation()
+                {
+                    Client = Client,
+                    GameDetails = GameDetails,
+                    Bet = Bet,
+                };
+                dataRepository.AddGameDetails(participation);
+            }
+            else
+            {
+                Participation participationModified = new Participation()
+                {
+                    Client = Client,
+                    GameDetails = GameDetails,
+                    Bet = Bet,
+                };
+                dataRepository.UpdateParticipation(participation, participationModified);
+            }
 
-            //    closeDelegate(this);
+            closeDelegate(this);
         }
 
         private void OnCancel()
