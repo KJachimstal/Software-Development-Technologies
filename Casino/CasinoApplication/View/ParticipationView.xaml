@@ -54,7 +54,7 @@
         <TextBox Text="{Binding Id}" Width="100" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False" Margin="15,0" />
 
         <Label Content="Game details" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
-        <ComboBox Name="GameDetails" ItemsSource="{Binding GameDetails}" SelectedValue="{Binding Path=GameDetails, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource validationComboBoxStyles}" Width="200" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0"></ComboBox>
+        <ComboBox Name="GameDetails" ItemsSource="{Binding GameDetailsList}" SelectedValue="{Binding Path=GameDetails, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource validationComboBoxStyles}" Width="200" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0"></ComboBox>
 
         <Label Content="Client" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
         <ComboBox Name="Client" ItemsSource="{Binding Clients}" SelectedValue="{Binding Path=Client, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource validationComboBoxStyles}" Width="200" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0"></ComboBox>
