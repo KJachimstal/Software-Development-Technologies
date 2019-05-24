@@ -80,6 +80,7 @@ namespace CasinoApplication.ViewModel
 
             IModalDialog dialog = ClientProvider.Instance.Get<IModalDialog>();
             viewModel.SetCloseAction(e => dialog.Close());
+            viewModel.SetAddAction(e => ClientsList.Add((Client) e));
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }
@@ -105,6 +106,7 @@ namespace CasinoApplication.ViewModel
             DataRepository dataRepository = Data.DataRepository;
             if (dataRepository.DeleteClient(client))
             {
+                ClientsList.Remove(client);
                 MessageBox.Show(string.Format("Client {0} successfully removed.", client), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else

@@ -7,6 +7,7 @@ using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,14 @@ namespace CasinoApplication.ViewModel
             Data.RegisterDataRepository(new DataRepository());
 
             DataRepository dataRepository = Data.DataRepository;
-            ClientsList = dataRepository.GetAllClients();
+
+
+            ClientsList = new ObservableCollection<Client>();
+            foreach (Client client in dataRepository.GetAllClients())
+            {
+                ClientsList.Add(client);
+            }
+
             GamesList = dataRepository.GetAllGames();
             GamesDetailsList = dataRepository.GetAllGameDetails();
             ParticipationsList = dataRepository.GetAllParticipations();

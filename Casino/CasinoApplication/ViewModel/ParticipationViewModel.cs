@@ -17,21 +17,21 @@ namespace CasinoApplication.ViewModel
 {
     class ParticipationViewModel : ViewModel, IDataErrorInfo
     {
-        private ObservableCollection<GameDetails> gameDetailsList;
+        private List<GameDetails> gameDetailsList;
 
-        public ObservableCollection<GameDetails> GameDetailsList {
+        public List<GameDetails> GameDetailsList {
             get {
-                gameDetailsList = Data.DataRepository.GetAllGameDetails();
+                gameDetailsList = Data.DataRepository.GetAllGameDetails().ToList();
                 return gameDetailsList;
             }
 
         }
 
-        private ObservableCollection<Client> clients;
+        private List<Client> clients;
 
-        public ObservableCollection<Client> Clients {
+        public List<Client> Clients {
             get {
-                clients = Data.DataRepository.GetAllClients();
+                clients = Data.DataRepository.GetAllClients().ToList();
                 return clients;
             }
         }

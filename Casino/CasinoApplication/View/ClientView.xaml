@@ -58,8 +58,8 @@
             </Label.Style>
         </Label>
 
-        <Label Content="Client number" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
-        <TextBox Text="{Binding ClientNumber}" Width="100" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False" Margin="15,0" />
+        <Label Content="ID" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
+        <TextBox Text="{Binding Id}" Width="100" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False" Margin="15,0" />
         
         <Label Content="First name" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2,0" />
         <TextBox Name="FirstName" Text="{Binding Path=FirstName, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource validationStyles}" Width="200" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0" />
