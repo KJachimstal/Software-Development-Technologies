@@ -65,6 +65,18 @@ namespace CasinoApplication.ViewModel
 
         public ParticipationViewModel() { }
 
+        private ICommand saveCommand;
+
+        public ICommand SaveCommand {
+            get {
+                if (saveCommand == null)
+                {
+                    saveCommand = new DefaultCommand(e => OnSave(), null);
+                }
+                return saveCommand;
+            }
+        }
+
         public void OnSave()
         {
             
