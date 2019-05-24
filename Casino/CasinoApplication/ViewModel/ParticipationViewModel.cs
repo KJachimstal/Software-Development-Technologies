@@ -1,5 +1,7 @@
-﻿using CasinoApplication.Model;
+﻿using CasinoApplication.Common;
+using CasinoApplication.Model;
 using CasinoApplication.ViewModel.Commands;
+using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -98,12 +100,35 @@ namespace CasinoApplication.ViewModel
 
         public void OnSave()
         {
-            
+            //    DataRepository dataRepository = Data.DataRepository;
+
+            //    if (Mode == Mode.ADD)
+            //    {
+            //        Participation participation = new Participation()
+            //        {
+            //            Client = Client,
+            //            GameDetails = GameDetails,
+            //            Bet = Bet,                    
+            //        };
+            //        dataRepository.AddGameDetails(gameDetails);
+            //    }
+            //    else
+            //    {
+            //        Participation participationModified = new Participation()
+            //        {
+
+            //        };
+            //        dataRepository.UpdateParticipation(participation, participationModified);
+            //    }
+
+            //    closeDelegate(this);
         }
 
         private void OnCancel()
         {
-
+            closeDelegate(this);
         }
+
+
     }   
 }
