@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Xml.Serialization;
 namespace CasinoLibrary
 {
     [Serializable()]
-    public class Participation
+    public class Participation : INotifyPropertyChanged
     {
 
         private int id;
@@ -24,7 +25,11 @@ namespace CasinoLibrary
         [XmlIgnore]
         public Client Client {
             get { return client; }
-            set { client = value; }
+            set 
+            {
+                client = value;
+                OnPropertyChanged("Client");
+            }
         }
 
         private GameDetails gameDetail;
@@ -32,21 +37,23 @@ namespace CasinoLibrary
         [XmlIgnore]
         public GameDetails GameDetails {
             get { return gameDetail; }
-            set { gameDetail = value; }
+            set 
+            {
+                gameDetail = value;
+                OnPropertyChanged("GameDetails");
+            }
         }
-
-        [XmlAttribute("ClientNumber")]
-        public int ClientNumber { get; set; }
-
-        [XmlAttribute("GameDetailsId")]
-        public int GameDetailsId { get; set; }
 
         private double bet;
 
         [XmlElement("Bet")]
         public double Bet {
             get { return bet; } 
-            set { bet = value; }
+            set 
+            {
+                bet = value;
+                OnPropertyChanged("Bet");
+            }
         }
 
         public Participation(Client client, GameDetails gameDetail, double bet)
@@ -65,6 +72,13 @@ namespace CasinoLibrary
                 client == state.Client &&
                 gameDetail == state.GameDetails &&
                 bet == state.Bet;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
