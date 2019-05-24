@@ -18,7 +18,7 @@ namespace CasinoApplication.View
 
         public void Close()
         {
-            throw new NotImplementedException();
+            GetDialog().Close();
         }
 
         public void ShowDialog()
