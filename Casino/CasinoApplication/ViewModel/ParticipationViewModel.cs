@@ -100,6 +100,13 @@ namespace CasinoApplication.ViewModel
             this.closeDelegate = closeDelegate;
         }
 
+        private Action<object> addDelegate;
+
+        public void SetAddAction(Action<object> addDelegate)
+        {
+            this.addDelegate = addDelegate;
+        }
+
         public void OnSave()
         {
             DataRepository dataRepository = Data.DataRepository;
@@ -113,6 +120,7 @@ namespace CasinoApplication.ViewModel
                     Bet = Bet,
                 };
                 dataRepository.AddParticipation(participation);
+                addDelegate(participation);
             }
             else
             {

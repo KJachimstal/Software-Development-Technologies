@@ -16,5 +16,11 @@ namespace CasinoData
        public DbSet<Game> Games { get; set; }
        public DbSet<GameDetails> GamesDetails { get; set; }
        public DbSet<Participation> Participations { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<CasinoContext>(null);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

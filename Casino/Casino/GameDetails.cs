@@ -31,14 +31,6 @@ namespace CasinoLibrary
             }
         }
 
-        private int gameId;
-
-        [XmlAttribute("GameId")]
-        public int GameId {
-            get { return gameId; }
-            set { gameId = value; }
-        }
-
         public DateTimeOffset startTime;
 
         [XmlElement("StartTime")]

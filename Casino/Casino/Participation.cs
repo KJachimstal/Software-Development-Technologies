@@ -11,7 +11,6 @@ namespace CasinoLibrary
     [Serializable()]
     public class Participation : INotifyPropertyChanged
     {
-
         private int id;
 
         [XmlElement("Id")]

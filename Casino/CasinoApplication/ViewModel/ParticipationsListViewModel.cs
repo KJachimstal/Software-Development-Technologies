@@ -82,6 +82,7 @@ namespace CasinoApplication.ViewModel
 
             IModalDialog dialog = ParticipationProvider.Instance.Get<IModalDialog>();
             viewModel.SetCloseAction(e => dialog.Close());
+            viewModel.SetAddAction(e => ParticipationsList.Add((Participation) e));
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }
@@ -108,6 +109,7 @@ namespace CasinoApplication.ViewModel
             if (dataRepository.DeleteParticipation(participation))
             {
                 MessageBox.Show(string.Format("Participation {0} successfully removed.", participation), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                ParticipationsList.Remove(participation);
             }
             else
             {
