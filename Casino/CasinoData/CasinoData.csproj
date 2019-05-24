@@ -59,6 +59,7 @@
     <Compile Include="DataService\GameService.cs" />
     <Compile Include="DataService\ParticipationService.cs" />
     <Compile Include="CasinoContext.cs" />
+    <Compile Include="IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

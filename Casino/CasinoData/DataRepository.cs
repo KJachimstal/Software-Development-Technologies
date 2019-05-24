@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,15 @@ namespace CasinoData
 {
     public partial class DataRepository
     {
-        private CasinoContext dataContext;
+        private IDbContext dataContext;
 
-        public CasinoContext DataContext {
+        public IDbContext DataContext {
             set => dataContext = value; 
         }
 
-        public DataRepository()
+        public DataRepository(IDbContext dbContext)
         {
-            dataContext = new CasinoContext();
+            dataContext = dbContext;
         }
     }
 }

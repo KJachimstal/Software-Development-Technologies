@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CasinoData
 {
-    public class CasinoContext : DbContext
+    public class CasinoContext : DbContext, IDbContext
     {
         public CasinoContext() : base() { }
 
@@ -22,5 +22,7 @@ namespace CasinoData
             Database.SetInitializer<CasinoContext>(null);
             base.OnModelCreating(modelBuilder);
         }
+
+        public void SaveChanges() => base.SaveChanges();
     }
 }
