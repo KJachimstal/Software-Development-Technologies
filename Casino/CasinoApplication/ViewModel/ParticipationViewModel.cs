@@ -6,6 +6,7 @@ using CasinoLibrary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
-    class ParticipationViewModel
+    class ParticipationViewModel : ViewModel, IDataErrorInfo
     {
         private ObservableCollection<GameDetails> gameDetailsList;
 
@@ -110,13 +111,15 @@ namespace CasinoApplication.ViewModel
             //            GameDetails = GameDetails,
             //            Bet = Bet,                    
             //        };
-            //        dataRepository.AddGameDetails(gameDetails);
+            //        dataRepository.AddGameDetails(participation);
             //    }
             //    else
             //    {
             //        Participation participationModified = new Participation()
             //        {
-
+            //            Client = Client,
+            //            GameDetails = GameDetails,
+            //            Bet = Bet, 
             //        };
             //        dataRepository.UpdateParticipation(participation, participationModified);
             //    }
@@ -129,6 +132,37 @@ namespace CasinoApplication.ViewModel
             closeDelegate(this);
         }
 
+        #region IDataErrorInfo Members
+        string IDataErrorInfo.this[string columnName] {
+            get {
+                if (columnName == "GameDetails")
+                {
+                    if (GameDetails == null)
+                    {
+                        return "Please select GameDetails";
+                    }
+                }
+                else if (columnName == "Client")
+                {
+                    if (Client == null)
+                    {
+                        return "Please select Client";
+                    }
+                }
+                else if (columnName == "Bet")
+                {
+                    if (Bet == 0)
+                    {
+                        return "Please enter bet";
+                    }
+                }
+                return null;
+            }
+        }
 
-    }   
+        string IDataErrorInfo.Error {
+            get { return string.Empty; }
+        }
+        #endregion
+    }
 }
