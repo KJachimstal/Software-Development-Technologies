@@ -30,11 +30,13 @@ namespace CasinoData
         {
             oldClient.FirstName = newClient.FirstName;
             oldClient.LastName = newClient.LastName;
+            dataContext.SaveChanges();
         }
 
         public bool DeleteClient(Client client)
         {
             dataContext.Clients.Remove(client);
+            dataContext.SaveChanges();
             return true;
         }
     }
