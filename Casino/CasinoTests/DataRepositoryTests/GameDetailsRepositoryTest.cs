@@ -50,5 +50,20 @@ namespace CasinoTests.DataRepositoryTests
             Assert.AreEqual(1, dataRepository.GetGameDetails(1).Id);
         }
 
+        [TestMethod]
+        public void GameDetailsUpdateTest()
+        {
+            GameDetails oldGameDetails = dataRepository.GetGameDetails(1);
+
+            Game game = new Game(3, "Russian", Game.GameType.ROULETTE);
+            DateTime localTime1 = new DateTime(2019, 05, 24, 12, 30, 15);
+            DateTimeOffset dateTimeOffset1 = new DateTimeOffset(localTime1, TimeZoneInfo.Local.GetUtcOffset(localTime1));
+            GameDetails gameDetails = new GameDetails(game, localTime1, 100);
+            dataRepository.UpdateGameDetails(oldGameDetails, gameDetails);
+
+            // Assertion
+            Assert.AreEqual(gameDetails, dataRepository.GetGameDetails(1));
+        }
+
     }
 }
