@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataRepositoryTests\GameRepositoryTests.cs" />
+    <Compile Include="DataRepositoryTests\GameDetailsRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataRepositoryTests\ClientRepositoryTests.cs" />
     <Compile Include="TestContext.cs" />
