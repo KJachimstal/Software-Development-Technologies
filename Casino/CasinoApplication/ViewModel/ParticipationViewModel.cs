@@ -60,5 +60,7 @@ namespace CasinoApplication.ViewModel
             this.client = Client;
             this.bet = participation.Bet;
         }
+
+        public ParticipationViewModel() { }
     }   
 }
