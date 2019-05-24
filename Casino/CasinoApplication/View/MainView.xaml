@@ -50,7 +50,7 @@
         <Border Grid.Column="2" BorderThickness="1" BorderBrush="LightGreen" Margin="5">
             <ContentControl Content="{Binding}" ContentTemplate="{StaticResource GamesDetailsListView}"/>
         </Border>
-        <Border Grid.Column="3" BorderThickness="1" BorderBrush="LightGreen" Margin="5">
+        <Border Grid.Column="3" BorderThickness="1" BorderBrush="#FFA487CF" Margin="5">
             <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ParticipationsListView}"/>
         </Border>
         <StackPanel Grid.Column="2"/>
