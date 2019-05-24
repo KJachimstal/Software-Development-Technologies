@@ -38,17 +38,17 @@ namespace CasinoApplication.ViewModel
         //}
 
         // ------------------------ Comands
-        //private AddCommand addParticipationCommand;
+        private AddCommand addParticipationCommand;
 
-        //public AddCommand AddParticipationCommand {
-        //    get {
-        //        if (addParticipationCommand == null)
-        //        {
-        //            addParticipationCommand = new AddCommand(e => AddParticipations());
-        //        }
-        //        return addParticipationCommand;
-        //    }
-        //}
+        public AddCommand AddParticipationCommand {
+            get {
+                if (addParticipationCommand == null)
+                {
+                    addParticipationCommand = new AddCommand(e => AddParticipations());
+                }
+                return addParticipationCommand;
+            }
+        }
 
         //private EditCommand editParticipationCommand;
 
