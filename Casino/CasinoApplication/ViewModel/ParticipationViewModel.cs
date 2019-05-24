@@ -30,5 +30,14 @@ namespace CasinoApplication.ViewModel
             }
         }
 
+        private double bet;
+
+        public double Bet {
+            get {return bet; }
+            set { bet = value; }
+        }
+
+
+
     }
 }
