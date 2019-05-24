@@ -16,9 +16,9 @@ namespace CasinoData
             dataContext.SaveChanges();
         }
 
-        public Participation GetParticipation(Client client)
+        public Participation GetParticipation(int id)
         {
-            return dataContext.Participations.FirstOrDefault(p => p.Client.Equals(client));
+            return dataContext.Participations.FirstOrDefault(p => p.Id == id);
         }
 
         public IEnumerable<Participation> GetAllParticipations()

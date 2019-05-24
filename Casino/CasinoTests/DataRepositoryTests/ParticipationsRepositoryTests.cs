@@ -1,5 +1,6 @@
 ﻿using System;
 using CasinoData;
+using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CasinoTests.DataRepositoryTests
@@ -17,7 +18,38 @@ namespace CasinoTests.DataRepositoryTests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void ParticipationAddTest()
+        {
+            Client client = new Client(1, "One", "One");
+            Game game = new Game(1, "GameOne", Game.GameType.BRIDGE);
+            DateTime localTime = new DateTime(2019, 05, 24, 12, 30, 15);
+            DateTimeOffset dateTimeOffset = new DateTimeOffset(localTime, TimeZoneInfo.Local.GetUtcOffset(localTime));
+            GameDetails gameDetails = new GameDetails(game, dateTimeOffset, 100);
+            Participation participation = new Participation(client, gameDetails, 110);
+
+            dataRepository.AddParticipation(participation);
+
+            // Assertions
+            Assert.AreEqual(participation, dataRepository.GetParticipation(3));
+        }
+
+        [TestMethod]
+        public void ParticipationDeleteTest()
+        {
+        }
+
+        [TestMethod]
+        public void ParticipationGetTest()
+        {
+        }
+
+        [TestMethod]
+        public void ParticipationUpdateTest()
+        {
+        }
+
+        [TestMethod]
+        public void GetAllParticipationsTest()
         {
         }
     }
