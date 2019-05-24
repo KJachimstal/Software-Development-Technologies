@@ -16,9 +16,9 @@ namespace CasinoApplication.ViewModel
 {
     public partial class MainViewModel : ViewModel
     {
-        private ObservableCollection<Participation> participations;
+        private List<Participation> participations;
 
-        public ObservableCollection<Participation> Participations {
+        public List<Participation> ParticipationsList {
             get => participations;
             set {
                 participations = value;
