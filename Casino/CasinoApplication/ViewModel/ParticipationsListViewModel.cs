@@ -1,6 +1,8 @@
 ﻿using CasinoApplication.Interfaces;
+using CasinoApplication.Model;
 using CasinoApplication.Services;
 using CasinoApplication.ViewModel.Commands;
+using CasinoData;
 using CasinoLibrary;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CasinoApplication.ViewModel
 {
@@ -92,6 +95,24 @@ namespace CasinoApplication.ViewModel
             viewModel.SetCloseAction(e => dialog.Close());
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
+        }
+
+        private void RemoveParticipation(Participation participation)
+        {
+            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (result == MessageBoxResult.Cancel)
+            {
+                return;
+            }
+            DataRepository dataRepository = Data.DataRepository;
+            if (dataRepository.DeleteParticipation(participation))
+            {
+                MessageBox.Show(string.Format("Participation {0} successfully removed.", participation), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Couldn't remove participation {0}.", participation), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
