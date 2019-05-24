@@ -100,7 +100,12 @@ namespace CasinoApplication.ViewModel
                     FirstName = FirstName,
                     LastName = LastName,
                 };
-                dataRepository.AddClient(client);
+
+                Task.Run(() =>
+                {
+                    dataRepository.AddClient(client);
+                });
+                
                 addDelegate(client);
             } 
             else
@@ -110,7 +115,12 @@ namespace CasinoApplication.ViewModel
                     FirstName = FirstName,
                     LastName = LastName,
                 };
-                dataRepository.UpdateClient(client, modified);
+
+                Task.Run(() =>
+                {
+                    dataRepository.UpdateClient(client, modified);
+                });
+
             }
 
             closeDelegate(this);
