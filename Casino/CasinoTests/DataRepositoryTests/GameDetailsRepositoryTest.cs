@@ -43,6 +43,12 @@ namespace CasinoTests.DataRepositoryTests
             Assert.IsNull(dataRepository.GetGameDetails(2));
         }
 
+        [TestMethod]
+        public void GameDetailsGetTest()
+        {
+            // Assertion
+            Assert.AreEqual(1, dataRepository.GetGameDetails(1).Id);
+        }
 
     }
 }
