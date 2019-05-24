@@ -12,23 +12,29 @@ namespace CasinoData
     {
         public void AddGameDetails(GameDetails gameDetails)
         {
-            dataContext.GameDetails.Add(gameDetails);
+            dataContext.GamesDetails.Add(gameDetails);
         }
 
         public GameDetails GetGameDetails(Game game)
         {
-            return dataContext.GameDetails.Single(gd => gd.Game.Equals(game));
+            return dataContext.GamesDetails.FirstOrDefault(gd => gd.Game.Equals(game));
         }
 
         public ObservableCollection<GameDetails> GetAllGameDetails()
         {
-            return dataContext.GameDetails;
+            List<GameDetails> gamesDetails = dataContext.GamesDetails.ToList();
+            ObservableCollection<GameDetails> collection = new ObservableCollection<GameDetails>();
+            foreach (GameDetails gameDetails in gamesDetails)
+            {
+                collection.Add(gameDetails);
+            }
+            return collection;
         }
 
         public void UpdateGameDetails(GameDetails oldGameDetails, GameDetails newGameDetails)
         {
             GameDetails gameDetails = oldGameDetails;
-            var item = dataContext.GameDetails.FirstOrDefault(gd => gd.Equals(oldGameDetails));
+            var item = dataContext.GamesDetails.FirstOrDefault(gd => gd.Equals(oldGameDetails));
             if (item != null)
             {
                 item.Game = newGameDetails.Game;
@@ -39,12 +45,8 @@ namespace CasinoData
 
         public bool DeleteGameDetails(GameDetails gameDetails)
         {
-            if (dataContext.GameDetails.Remove(gameDetails))
-            {
-                return true;
-            }
-
-            return false;
+            dataContext.GamesDetails.Remove(gameDetails);
+            return true;
         }
     }
 }
