@@ -35,5 +35,14 @@ namespace CasinoTests.DataRepositoryTests
             // Assertion
             Assert.IsNull(dataRepository.GetGame(2));
         }
+
+        [TestMethod]
+        public void GameGetTest()
+        {
+            Game game = new Game(2, "GameTwo", Game.GameType.POKER);
+
+            // Assertion
+            Assert.AreEqual(game, dataRepository.GetGame(2));
+        }
     }
 }

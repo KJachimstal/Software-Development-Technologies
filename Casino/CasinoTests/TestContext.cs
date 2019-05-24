@@ -22,7 +22,7 @@ namespace CasinoTests
             Clients.Add(client2);
 
             Game game1 = new Game(1, "GameOne", Game.GameType.BRIDGE);
-            Game game2 = new Game(1, "GameTwo", Game.GameType.POKER);
+            Game game2 = new Game(2, "GameTwo", Game.GameType.POKER);
             Games.Add(game1);
             Games.Add(game2);
 
