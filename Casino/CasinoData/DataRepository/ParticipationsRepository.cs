@@ -31,9 +31,14 @@ namespace CasinoData
             oldParticipation.Bet = newParticipation.Bet;
         }
 
-        public void DeleteParticipation(Participation participation)
+        public bool DeleteParticipation(Participation participation)
         {
-            dataContext.Participations.Remove(participation);
+            if (dataContext.Participations.Remove(participation))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
