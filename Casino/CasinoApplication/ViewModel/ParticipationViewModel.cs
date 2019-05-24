@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
@@ -61,8 +62,8 @@ namespace CasinoApplication.ViewModel
         public ParticipationViewModel(Client client, GameDetails gameDetails, Participation participation)
         {
             this.participation = participation;
-            this.gameDetails = GameDetails;
-            this.client = Client;
+            this.gameDetails = participation.GameDetails;
+            this.client = participation.Client;
             this.bet = participation.Bet;
         }
 
@@ -151,7 +152,7 @@ namespace CasinoApplication.ViewModel
                 }
                 else if (columnName == "Bet")
                 {
-                    if (Bet >= participation.GameDetails.MinimalBet)
+                    if (Bet == 0)
                     {
                         return "Please enter bet";
                     }
