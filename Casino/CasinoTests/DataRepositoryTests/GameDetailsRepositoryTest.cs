@@ -3,7 +3,7 @@ using CasinoData;
 using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CasinoTests
+namespace CasinoTests.DataRepositoryTests
 {
     [TestClass]
     public class GameDetailsRepositoryTest
@@ -28,7 +28,21 @@ namespace CasinoTests
 
 
             // Assertion
-            Assert.AreEqual(gameDetails, dataRepository.GetGameDetails(game));
+            Assert.AreEqual(gameDetails, dataRepository.GetGameDetails(3));
         }
+
+        [TestMethod]
+        public void GameDetailsDeleteTest()
+        {
+
+            GameDetails gameDetails1 = dataRepository.GetGameDetails(2);
+            dataRepository.DeleteGameDetails(gameDetails1);
+
+
+            // Assertion
+            Assert.IsNull(dataRepository.GetGameDetails(2));
+        }
+
+
     }
 }

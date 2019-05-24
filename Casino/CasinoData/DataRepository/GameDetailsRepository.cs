@@ -16,9 +16,9 @@ namespace CasinoData
             dataContext.SaveChanges();
         }
 
-        public GameDetails GetGameDetails(Game game)
+        public GameDetails GetGameDetails(int id)
         {
-            return dataContext.GamesDetails.FirstOrDefault(gd => gd.Game.Id == game.Id);
+            return dataContext.GamesDetails.FirstOrDefault(gd => gd.Id == id);
         }
 
         public IEnumerable<GameDetails> GetAllGameDetails()

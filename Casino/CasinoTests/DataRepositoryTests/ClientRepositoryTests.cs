@@ -5,7 +5,7 @@ using CasinoData;
 using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CasinoTests
+namespace CasinoTests.DataRepositoryTests
 {
     [TestClass]
     public class ClientRepositoryTests
