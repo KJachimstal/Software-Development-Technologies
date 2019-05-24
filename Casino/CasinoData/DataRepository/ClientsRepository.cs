@@ -22,7 +22,12 @@ namespace CasinoData
 
         public ObservableCollection<Client> GetAllClients()
         {
-            return dataContext.Clients;
+            List<Client> clients = dataContext.Clients.ToList();
+            ObservableCollection<Client> collection = new ObservableCollection<Client>();
+            foreach (Client client in clients) {
+                collection.Add(client);
+            }
+            return collection;
         }
 
         public void UpdateClient(Client oldClient, Client newClient)
@@ -33,7 +38,8 @@ namespace CasinoData
 
         public bool DeleteClient(Client client)
         {
-            return dataContext.Clients.Remove(client);
+            dataContext.Clients.Remove(client);
+            return true;
         }
     }
 }
