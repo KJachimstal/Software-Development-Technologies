@@ -10,7 +10,7 @@ namespace CasinoApplication.View
 {
     public class ParticipationViewDialog : IModalDialog
     {
-        Participation participation;
+        ParticipationView view;
         public void BindViewModel<TViewModel>(TViewModel viewModel)
         {
             throw new NotImplementedException();
@@ -29,6 +29,11 @@ namespace CasinoApplication.View
         private ParticipationView GetDialog()
         {
             return null;
+        }
+
+        void view_Closed(object sender, EventArgs e)
+        {
+            view = null;
         }
     }
 }
