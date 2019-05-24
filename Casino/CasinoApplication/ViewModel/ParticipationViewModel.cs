@@ -77,6 +77,18 @@ namespace CasinoApplication.ViewModel
             }
         }
 
+        private ICommand cancelCommand;
+
+        public ICommand CancelCommand {
+            get {
+                if (cancelCommand == null)
+                {
+                    cancelCommand = new DefaultCommand(e => OnCancel(), null);
+                }
+                return cancelCommand;
+            }
+        }
+
         public void OnSave()
         {
             
