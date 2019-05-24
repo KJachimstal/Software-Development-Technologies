@@ -11,12 +11,12 @@ namespace CasinoApplication.ViewModel
 {
     class ParticipationViewModel
     {
-        private ObservableCollection<GameDetails> gameDetails;
+        private ObservableCollection<GameDetails> gameDetailsList;
 
-        public ObservableCollection<GameDetails> GameDetails {
+        public ObservableCollection<GameDetails> GameDetailsList {
             get {
-                gameDetails = Data.DataRepository.GetAllGameDetails();
-                return gameDetails;
+                gameDetailsList = Data.DataRepository.GetAllGameDetails();
+                return gameDetailsList;
             }
 
         }
@@ -42,8 +42,14 @@ namespace CasinoApplication.ViewModel
         public Client Client {
             get { return client; }
             set { client = value; }
-        }   
+        }
 
+        private GameDetails gameDetails;
+
+        public GameDetails GameDetails {
+            get { return gameDetails; }
+            set { gameDetails = value; }
+        }
 
     }
 }
