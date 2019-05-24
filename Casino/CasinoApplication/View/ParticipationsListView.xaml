@@ -7,6 +7,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Background="LightGreen" Grid.Row="0">
+            <Label FontSize="16" FontWeight="Bold">Participations</Label>
+        </Border>
+        <ListView ItemsSource="{Binding ParticipationsList}" SelectedItem="{Binding SelectedParticipation}" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="#ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Width="100" Header="Client" DisplayMemberBinding="{Binding Client}" />
+                    <GridViewColumn Width="100" Header="Game details" DisplayMemberBinding="{Binding GameDetails}" />
+                    <GridViewColumn Width="100" Header="Bet" DisplayMemberBinding="{Binding Bet}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Content="Add participation" Command="{Binding AddParticipationCommand}" />
+            <Button Content="Edit participation" Command="{Binding EditParticipationCommand}" />
+            <Button Content="Delete participation" Command="{Binding RemoveParticipationCommand}" />
+        </StackPanel>
     </Grid>
 </UserControl>
