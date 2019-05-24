@@ -82,5 +82,16 @@ namespace CasinoApplication.ViewModel
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }
+
+        private void EditParticipation(Participation participation)
+        {
+            ParticipationViewModel viewModel = new ParticipationViewModel(participation.Client, participation.GameDetails, participation);
+            viewModel.Mode = Common.Mode.EDIT;
+
+            IModalDialog dialog = ParticipationProvider.Instance.Get<IModalDialog>();
+            viewModel.SetCloseAction(e => dialog.Close());
+            dialog.BindViewModel(viewModel);
+            dialog.ShowDialog();
+        }
     }
 }
