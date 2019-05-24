@@ -44,5 +44,15 @@ namespace CasinoTests.DataRepositoryTests
             // Assertion
             Assert.AreEqual(game, dataRepository.GetGame(2));
         }
+
+        [TestMethod]
+        public void GameUpdateTest()
+        {
+            Game newgame = new Game(2, "Russian", Game.GameType.ROULETTE);
+            dataRepository.UpdateGame(dataRepository.GetGame(2), newgame);
+
+            // Assertion
+            Assert.AreEqual(newgame, dataRepository.GetGame(2));
+        }
     }
 }
