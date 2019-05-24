@@ -13,8 +13,6 @@ namespace CasinoData
         public DataService(DataRepository dataRepository)
         {
             this.dataRepository = dataRepository;
-            // Handler in DataService/GameDetailsService.cs
-            this.dataRepository.GetAllGameDetails().CollectionChanged += HandleGameDetailsChange;
         }
     }
 }

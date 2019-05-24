@@ -20,15 +20,9 @@ namespace CasinoData
             return dataContext.GamesDetails.FirstOrDefault(gd => gd.Game.Equals(game));
         }
 
-        public ObservableCollection<GameDetails> GetAllGameDetails()
+        public IEnumerable<GameDetails> GetAllGameDetails()
         {
-            List<GameDetails> gamesDetails = dataContext.GamesDetails.ToList();
-            ObservableCollection<GameDetails> collection = new ObservableCollection<GameDetails>();
-            foreach (GameDetails gameDetails in gamesDetails)
-            {
-                collection.Add(gameDetails);
-            }
-            return collection;
+            return dataContext.GamesDetails;
         }
 
         public void UpdateGameDetails(GameDetails oldGameDetails, GameDetails newGameDetails)

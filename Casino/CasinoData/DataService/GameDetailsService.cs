@@ -78,27 +78,5 @@ namespace CasinoData
 
             return gameDetailsList;
         }
-
-        public void HandleGameDetailsChange(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            Console.WriteLine("Game details list was changed!");
-
-            if (e.NewItems != null)
-            {
-                Console.WriteLine(string.Format("|- Game details added: {0}", e.NewItems.Count));
-                foreach (GameDetails gameDetails in e.NewItems)
-                {
-                    Console.WriteLine(string.Format("|-- {0}", gameDetails));
-                }
-            }
-            if (e.OldItems != null)
-            {
-                Console.WriteLine(string.Format("|- Game details removed: {0}", e.OldItems.Count));
-                foreach (GameDetails gameDetails in e.OldItems)
-                {
-                    Console.WriteLine(string.Format("|-- {0}", gameDetails));
-                }
-            }
-        }
     }
 }

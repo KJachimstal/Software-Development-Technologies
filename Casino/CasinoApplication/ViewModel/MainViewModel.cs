@@ -37,7 +37,13 @@ namespace CasinoApplication.ViewModel
                 GamesList.Add(game);
             }
 
-            GamesDetailsList = dataRepository.GetAllGameDetails();
+            GamesDetailsList = new ObservableCollection<GameDetails>();
+            foreach (GameDetails gameDetails in dataRepository.GetAllGameDetails())
+            {
+                GamesDetailsList.Add(gameDetails);
+            }
+
+
             ParticipationsList = dataRepository.GetAllParticipations();
 
             ClientProvider.RegisterServiceLocator(new UnityServiceLocator());
