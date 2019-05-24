@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ParticipationsList>
   <Participation ClientNumber="1213" GameDetailsId="1">
+    <Id>1</Id>
     <Bet>15.2</Bet>
   </Participation>
 </ParticipationsList>

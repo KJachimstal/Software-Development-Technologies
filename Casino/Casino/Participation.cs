@@ -10,6 +10,15 @@ namespace CasinoLibrary
     [Serializable()]
     public class Participation
     {
+
+        private int id;
+
+        [XmlAttribute("Id")]
+        public int Id {
+            get { return id; }
+            set { id = value; }
+        }
+
         private Client client;
 
         [XmlIgnore]
