@@ -13,7 +13,7 @@ namespace CasinoLibrary
 
         private int id;
 
-        [XmlAttribute("Id")]
+        [XmlElement("Id")]
         public int Id {
             get { return id; }
             set { id = value; }
