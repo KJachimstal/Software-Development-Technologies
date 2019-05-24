@@ -119,7 +119,12 @@ namespace CasinoApplication.ViewModel
                     GameDetails = GameDetails,
                     Bet = Bet,
                 };
-                dataRepository.AddParticipation(participation);
+                
+                Task.Run(() =>
+                {
+                    dataRepository.AddParticipation(participation);
+                });
+
                 addDelegate(participation);
             }
             else
@@ -130,7 +135,11 @@ namespace CasinoApplication.ViewModel
                     GameDetails = GameDetails,
                     Bet = Bet,
                 };
-                dataRepository.UpdateParticipation(participation, participationModified);
+                
+                Task.Run(() =>
+                {
+                    dataRepository.UpdateParticipation(participation, participationModified);
+                });
             }
 
             closeDelegate(this);
