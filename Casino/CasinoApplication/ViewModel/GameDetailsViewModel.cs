@@ -43,7 +43,7 @@ namespace CasinoApplication.ViewModel
             set { game = value; }
         }
 
-        private DateTime startTime;
+        private DateTime startTime = DateTime.Now;
 
         public DateTime StartTime {
             get { return startTime; }
@@ -98,6 +98,13 @@ namespace CasinoApplication.ViewModel
             this.closeDelegate = closeDelegate;
         }
 
+        private Action<object> addDelegate;
+
+        public void SetAddAction(Action<object> addDelegate)
+        {
+            this.addDelegate = addDelegate;
+        }
+
         public void OnSave()
         {
             DataRepository dataRepository = Data.DataRepository;
@@ -111,6 +118,7 @@ namespace CasinoApplication.ViewModel
                     StartTime = StartTime.ToString("o"),
                 };
                 dataRepository.AddGameDetails(gameDetails);
+                addDelegate(gameDetails);
             }
             else
             {

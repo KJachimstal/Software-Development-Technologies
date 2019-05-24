@@ -79,6 +79,7 @@ namespace CasinoApplication.ViewModel
 
             IModalDialog dialog = GameDetailsProvider.Instance.Get<IModalDialog>();
             viewModel.SetCloseAction(e => dialog.Close());
+            viewModel.SetAddAction(e => GamesDetailsList.Add((GameDetails)e));
             dialog.BindViewModel(viewModel);
             dialog.ShowDialog();
         }
@@ -97,6 +98,7 @@ namespace CasinoApplication.ViewModel
         private void RemoveGameDetails(GameDetails gameDetails)
         {
             MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            string message = gameDetails.ToString();
             if (result == MessageBoxResult.Cancel)
             {
                 return;
@@ -104,11 +106,12 @@ namespace CasinoApplication.ViewModel
             DataRepository dataRepository = Data.DataRepository;
             if (dataRepository.DeleteGameDetails(gameDetails))
             {
-                MessageBox.Show(string.Format("Game details {0} successfully removed.", gameDetails), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(string.Format("Game details {0} successfully removed.", message), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                GamesDetailsList.Remove(gameDetails);
             }
             else
             {
-                MessageBox.Show(string.Format("Couldn't remove game details {0}.", gameDetails), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(string.Format("Couldn't remove game details {0}.", message), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

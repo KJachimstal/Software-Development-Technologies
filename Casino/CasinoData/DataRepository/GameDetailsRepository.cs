@@ -13,6 +13,7 @@ namespace CasinoData
         public void AddGameDetails(GameDetails gameDetails)
         {
             dataContext.GamesDetails.Add(gameDetails);
+            dataContext.SaveChanges();
         }
 
         public GameDetails GetGameDetails(Game game)
@@ -27,19 +28,16 @@ namespace CasinoData
 
         public void UpdateGameDetails(GameDetails oldGameDetails, GameDetails newGameDetails)
         {
-            GameDetails gameDetails = oldGameDetails;
-            var item = dataContext.GamesDetails.FirstOrDefault(gd => gd.Equals(oldGameDetails));
-            if (item != null)
-            {
-                item.Game = newGameDetails.Game;
-                item.StartTime = newGameDetails.StartTime;
-                item.MinimalBet = newGameDetails.MinimalBet;
-            }
+            oldGameDetails.Game = newGameDetails.Game;
+            oldGameDetails.StartTime = newGameDetails.StartTime;
+            oldGameDetails.MinimalBet = newGameDetails.MinimalBet;
+            dataContext.SaveChanges();
         }
 
         public bool DeleteGameDetails(GameDetails gameDetails)
         {
             dataContext.GamesDetails.Remove(gameDetails);
+            dataContext.SaveChanges();
             return true;
         }
     }
