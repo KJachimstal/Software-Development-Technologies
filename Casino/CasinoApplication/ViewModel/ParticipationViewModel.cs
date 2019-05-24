@@ -37,6 +37,12 @@ namespace CasinoApplication.ViewModel
             set { bet = value; }
         }
 
+        private Client client;
+
+        public Client Client {
+            get { return client; }
+            set { client = value; }
+        }   
 
 
     }
