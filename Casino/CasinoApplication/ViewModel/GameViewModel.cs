@@ -109,7 +109,12 @@ namespace CasinoApplication.ViewModel
                     Name = Name,
                     Type = Type,
                 };
-                dataRepository.AddGame(game);
+                
+                Task.Run(() =>
+                {
+                    dataRepository.AddGame(game);
+                });
+
                 addDelegate(game);
             }
             else
@@ -120,7 +125,12 @@ namespace CasinoApplication.ViewModel
                     Name = Name,
                     Type = Type,
                 };
-                dataRepository.UpdateGame(game, modified);
+
+                Task.Run(() =>
+                {
+                    dataRepository.UpdateGame(game, modified);
+                });
+                
             }
 
             closeDelegate(this);
