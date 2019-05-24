@@ -13,6 +13,7 @@ namespace CasinoData
         public void AddGame(Game game)
         {
             dataContext.Games.Add(game);
+            dataContext.SaveChanges();
         }
 
         public Game GetGame(int id)
@@ -20,15 +21,9 @@ namespace CasinoData
             return dataContext.Games.FirstOrDefault(g => g.Id == id);
         }
 
-        public ObservableCollection<Game> GetAllGames()
+        public IEnumerable<Game> GetAllGames()
         {
-            List<Game> games = dataContext.Games.ToList();
-            ObservableCollection<Game> collection = new ObservableCollection<Game>();
-            foreach (Game game in games)
-            {
-                collection.Add(game);
-            }
-            return collection;
+            return dataContext.Games;
         }
 
         public void UpdateGame(Game oldGame, Game newGame)
@@ -36,11 +31,13 @@ namespace CasinoData
             oldGame.Id = newGame.Id;
             oldGame.Name = newGame.Name;
             oldGame.Type = newGame.Type;
+            dataContext.SaveChanges();
         }
 
         public bool DeleteGame(Game game)
         {
             dataContext.Games.Remove(game);
+            dataContext.SaveChanges();
             return true;
         }
     }
