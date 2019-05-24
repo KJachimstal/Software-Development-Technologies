@@ -31,6 +31,7 @@ namespace CasinoData
             var item = dataContext.GameDetails.FirstOrDefault(gd => gd.Equals(oldGameDetails));
             if (item != null)
             {
+                item.Game = newGameDetails.Game;
                 item.StartTime = newGameDetails.StartTime;
                 item.MinimalBet = newGameDetails.MinimalBet;
             }

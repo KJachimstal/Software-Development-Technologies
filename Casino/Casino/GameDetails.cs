@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Xml.Serialization;
 namespace CasinoLibrary
 {
     [Serializable()]
-    public class GameDetails
+    public class GameDetails : INotifyPropertyChanged
     {
         private int id;
 
@@ -23,7 +24,11 @@ namespace CasinoLibrary
         [XmlIgnore]
         public Game Game {
             get { return game; }
-            set { game = value; }
+            set 
+            {
+                game = value;
+                OnPropertyChanged("Game");
+            }
         }
 
         private int gameId;
@@ -39,7 +44,11 @@ namespace CasinoLibrary
         [XmlElement("StartTime")]
         public string StartTime {
             get { return startTime.ToString("o"); }
-            set { startTime = DateTimeOffset.Parse(value); }
+            set 
+            {
+                startTime = DateTimeOffset.Parse(value);
+                OnPropertyChanged("StartTime");
+            }
         }
 
         private double minimalBet;
@@ -47,7 +56,11 @@ namespace CasinoLibrary
         [XmlElement("MinimalBet")]
         public double MinimalBet {
             get { return minimalBet; }
-            set { minimalBet = value; }
+            set 
+            {
+                minimalBet = value;
+                OnPropertyChanged("MinimalBet");
+            }
         }
 
         public GameDetails(Game game, DateTimeOffset startTime, double minimalBet)
@@ -71,6 +84,13 @@ namespace CasinoLibrary
         public override string ToString()
         {
             return game.Name + " " + startTime.ToString() + " [min-bet: " + minimalBet + "]";
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
