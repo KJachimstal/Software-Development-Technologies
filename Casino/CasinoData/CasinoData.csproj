@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContext.cs" />
     <Compile Include="DataRepository.cs" />
     <Compile Include="DataRepository\ClientsRepository.cs" />
     <Compile Include="DataRepository\GameDetailsRepository.cs" />
@@ -60,7 +59,6 @@
     <Compile Include="DataService\GameService.cs" />
     <Compile Include="DataService\ParticipationService.cs" />
     <Compile Include="DbContext.cs" />
-    <Compile Include="IDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
