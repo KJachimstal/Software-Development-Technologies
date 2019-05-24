@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\ParticipationsListViewModel.cs" />
+    <Compile Include="ViewModel\ParticipationViewModel.cs" />
     <Compile Include="View\ParticipationsListView.xaml.cs">
       <DependentUpon>ParticipationsListView.xaml</DependentUpon>
     </Compile>
