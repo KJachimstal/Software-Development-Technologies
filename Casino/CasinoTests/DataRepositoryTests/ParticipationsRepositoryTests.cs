@@ -71,6 +71,8 @@ namespace CasinoTests.DataRepositoryTests
         [TestMethod]
         public void GetAllParticipationsTest()
         {
+            // Assertions
+            Assert.AreEqual(2, dataRepository.GetAllParticipations().Count());
         }
     }
 }
