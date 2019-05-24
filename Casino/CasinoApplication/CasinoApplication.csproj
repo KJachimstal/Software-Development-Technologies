@@ -73,6 +73,7 @@
     <Compile Include="View\ParticipationsListView.xaml.cs">
       <DependentUpon>ParticipationsListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ParticipationViewDialog.cs" />
     <Page Include="View\GamesDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
