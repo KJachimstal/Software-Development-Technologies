@@ -43,9 +43,9 @@ namespace CasinoApplication.ViewModel
             set { game = value; }
         }
 
-        private string startTime;
+        private DateTime startTime;
 
-        public string StartTime {
+        public DateTime StartTime {
             get { return startTime; }
             set { startTime = value; }
         }
@@ -62,7 +62,7 @@ namespace CasinoApplication.ViewModel
             this.gameDetails = gameDetails;
             Game = game;
             Id = gameDetails.Id;
-            StartTime = gameDetails.StartTime;
+            StartTime = DateTime.Parse(gameDetails.StartTime);
             MinimalBet = gameDetails.MinimalBet;
         }
 
@@ -108,7 +108,7 @@ namespace CasinoApplication.ViewModel
                 {
                     Game = Game,
                     MinimalBet = MinimalBet,
-                    StartTime = StartTime,
+                    StartTime = StartTime.ToString("o"),
                 };
                 dataRepository.AddGameDetails(gameDetails);
             }
@@ -119,7 +119,7 @@ namespace CasinoApplication.ViewModel
                     Id = Id,
                     Game = Game,
                     MinimalBet = MinimalBet,
-                    StartTime = StartTime,
+                    StartTime = StartTime.ToString("o"),
                 };
                 dataRepository.UpdateGameDetails(gameDetails, gameDetailsModified);
             }
@@ -148,14 +148,6 @@ namespace CasinoApplication.ViewModel
                     {
                         return "Please choose start time";
                     }
-                    try
-                    {
-                        DateTimeOffset.Parse(StartTime);
-                    } catch
-                    {
-                        return "Inorrect date format";
-                    }
-                    
                 }
                 else if (columnName == "MinimalBet")
                 {
