@@ -151,7 +151,7 @@ namespace CasinoApplication.ViewModel
                 }
                 else if (columnName == "Bet")
                 {
-                    if (Bet == 0)
+                    if (Bet >= participation.GameDetails.MinimalBet)
                     {
                         return "Please enter bet";
                     }
