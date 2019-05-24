@@ -8,26 +8,15 @@ namespace CasinoData
 {
     public partial class DataRepository
     {
-        private DataContext dataContext;
-        private IDataSource dataSource;
+        private DbContext dataContext;
 
-        public DataContext DataContext {
+        public DbContext DataContext {
             set => dataContext = value; 
         }
 
-        public IDataSource DataSource {
-            get { return dataSource; }
-            set { dataSource = value; }
-        }
-
-        public DataRepository(IDataSource dataSource)
+        public DataRepository()
         {
-            this.dataSource = dataSource;
-        }
-
-        public void Fill()
-        {
-            dataSource.Fill(dataContext);
+            dataContext = new DbContext();
         }
     }
 }
