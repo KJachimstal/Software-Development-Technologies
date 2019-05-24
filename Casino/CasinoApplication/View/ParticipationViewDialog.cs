@@ -1,4 +1,5 @@
 ﻿using CasinoApplication.Interfaces;
+using CasinoLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace CasinoApplication.View
 {
     public class ParticipationViewDialog : IModalDialog
     {
+        Participation participation;
         public void BindViewModel<TViewModel>(TViewModel viewModel)
         {
             throw new NotImplementedException();
@@ -22,6 +24,11 @@ namespace CasinoApplication.View
         public void ShowDialog()
         {
             throw new NotImplementedException();
+        }
+
+        private ParticipationView GetDialog()
+        {
+            return null;
         }
     }
 }
