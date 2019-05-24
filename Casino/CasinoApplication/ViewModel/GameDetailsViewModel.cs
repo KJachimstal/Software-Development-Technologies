@@ -117,7 +117,12 @@ namespace CasinoApplication.ViewModel
                     MinimalBet = MinimalBet,
                     StartTime = StartTime.ToString("o"),
                 };
-                dataRepository.AddGameDetails(gameDetails);
+                
+                Task.Run(() =>
+                {
+                    dataRepository.AddGameDetails(gameDetails);
+                });
+
                 addDelegate(gameDetails);
             }
             else
@@ -129,7 +134,11 @@ namespace CasinoApplication.ViewModel
                     MinimalBet = MinimalBet,
                     StartTime = StartTime.ToString("o"),
                 };
-                dataRepository.UpdateGameDetails(gameDetails, gameDetailsModified);
+
+                Task.Run(() =>
+                {
+                    dataRepository.UpdateGameDetails(gameDetails, gameDetailsModified);
+                });
             }
 
             closeDelegate(this);
