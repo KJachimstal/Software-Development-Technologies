@@ -85,7 +85,7 @@ namespace CasinoApplication.ViewModel
 
         private void EditGameDetails(GameDetails gameDetails)
         {
-            GameDetailsViewModel viewModel = new GameDetailsViewModel(game, gameDetails);
+            GameDetailsViewModel viewModel = new GameDetailsViewModel(gameDetails.Game, gameDetails);
             viewModel.Mode = Common.Mode.EDIT;
 
             IModalDialog dialog = GameDetailsProvider.Instance.Get<IModalDialog>();
