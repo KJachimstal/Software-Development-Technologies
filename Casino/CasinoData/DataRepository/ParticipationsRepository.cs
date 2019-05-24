@@ -1,6 +1,7 @@
 ﻿using CasinoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace CasinoData
             return dataContext.Participations.Single(p => p.Client.Equals(client));
         }
 
-        public List<Participation> GetAllParticipations()
+        public ObservableCollection<Participation> GetAllParticipations()
         {
             return dataContext.Participations;
         }

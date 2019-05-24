@@ -81,7 +81,7 @@ namespace CasionSources
 
         private void FillParticipations()
         {
-            dataContext.Participations = new List<Participation>();
+            dataContext.Participations = new ObservableCollection<Participation>();
             for (int i = 1; i <= 800; i++)
             {
                 Client client = dataContext.Clients[random.Next(1, 500 * multiplier)];

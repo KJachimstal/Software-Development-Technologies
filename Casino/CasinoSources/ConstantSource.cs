@@ -16,7 +16,7 @@ namespace CasinoSources
             ObservableCollection<Client> clients = new ObservableCollection<Client>();
             ObservableCollection<Game> games = new ObservableCollection<Game>();
             ObservableCollection<GameDetails> gameDetails = new ObservableCollection<GameDetails>();
-            List<Participation> participations = new List<Participation>();
+            ObservableCollection<Participation> participations = new ObservableCollection<Participation>();
 
 
             Client client1 = new Client(1, "Jennifer", "Bender");

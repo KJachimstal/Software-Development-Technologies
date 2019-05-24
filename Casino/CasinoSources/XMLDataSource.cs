@@ -71,7 +71,7 @@ namespace CasionSources
             object obj = deserializer.Deserialize(reader);
             ParticipationsList participations = (ParticipationsList)obj;
 
-            dataContext.Participations = new List<Participation>();
+            dataContext.Participations = new ObservableCollection<Participation>();
             foreach (Participation participation in participations.Participations)
             {
                 Client client = dataContext.Clients.FirstOrDefault(e => e.ClientNumber == participation.ClientNumber);
