@@ -23,7 +23,7 @@ namespace CasinoApplication.View
 
         public void ShowDialog()
         {
-            GetDialog().Show()
+            GetDialog().Show();
         }
 
         private ParticipationView GetDialog()
