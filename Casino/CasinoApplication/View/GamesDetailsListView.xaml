@@ -26,9 +26,9 @@
             </ListView.View>
         </ListView>
         <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <Button Content="Add game details" Command="{Binding AddGameDetailsCommand}" />
-            <Button Content="Edit game details" Command="{Binding EditGameDetailsCommand}" />
-            <Button Content="Delete game details" Command="{Binding RemoveGameDetailsCommand}" />
+            <Button Content="Add details" Command="{Binding AddGameDetailsCommand}" />
+            <Button Content="Edit details" Command="{Binding EditGameDetailsCommand}" />
+            <Button Content="Delete details" Command="{Binding RemoveGameDetailsCommand}" />
         </StackPanel>
     </Grid>
 </UserControl>
