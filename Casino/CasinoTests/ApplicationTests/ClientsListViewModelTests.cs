@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Linq;
 using CasinoApplication.Model;
+using CasinoApplication.ViewModel;
+using CasinoApplication.ViewModel.Commands;
 using CasinoData;
+using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CasinoTests.ApplicationTests
@@ -19,18 +23,16 @@ namespace CasinoTests.ApplicationTests
         }
 
         [TestMethod]
-        public void ClientsListAddTest()
-        {
-        }
-
-        [TestMethod]
-        public void ClientsListUpdateTest()
-        {
-        }
-
-        [TestMethod]
         public void ClientsListRemoveTest()
         {
+            Client client = Data.DataRepository.GetClient(1);
+            MainViewModel mainViewModel = new MainViewModel();
+            mainViewModel.RemoveClient(client);
+            
+
+
+            // Assertion
+            Assert.IsNull(Data.DataRepository.GetClient(1));
         }
     }
 }
