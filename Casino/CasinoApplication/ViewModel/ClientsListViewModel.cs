@@ -98,7 +98,8 @@ namespace CasinoApplication.ViewModel
 
         public void RemoveClient(Client client)
         {
-            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            IMessage messageService = MessagesProvider.GetService();
+            MessageBoxResult result = messageService.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.Cancel)
             {
                 return;
@@ -114,11 +115,11 @@ namespace CasinoApplication.ViewModel
             if (state)
             {
                 ClientsList.Remove(client);
-                MessageBox.Show(string.Format("Client {0} successfully removed.", client), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                messageService.Show(string.Format("Client {0} successfully removed.", client), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show(string.Format("Couldn't remove client {0}.", client), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                messageService.Show(string.Format("Couldn't remove client {0}.", client), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
