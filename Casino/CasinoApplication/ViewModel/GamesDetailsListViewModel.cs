@@ -72,7 +72,7 @@ namespace CasinoApplication.ViewModel
         }
 
         //------------------- Action
-        private void AddGameDetails()
+        public void AddGameDetails()
         {
             GameDetailsViewModel viewModel = new GameDetailsViewModel();
             viewModel.Mode = Common.Mode.ADD;
@@ -84,7 +84,7 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void EditGameDetails(GameDetails gameDetails)
+        public void EditGameDetails(GameDetails gameDetails)
         {
             GameDetailsViewModel viewModel = new GameDetailsViewModel(gameDetails.Game, gameDetails);
             viewModel.Mode = Common.Mode.EDIT;
@@ -95,9 +95,10 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void RemoveGameDetails(GameDetails gameDetails)
+        public void RemoveGameDetails(GameDetails gameDetails)
         {
-            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            IMessage messageService = MessagesProvider.GetService();
+            MessageBoxResult result = messageService.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             string message = gameDetails.ToString();
             if (result == MessageBoxResult.Cancel)
             {
@@ -113,12 +114,12 @@ namespace CasinoApplication.ViewModel
             
             if (state)
             {
-                MessageBox.Show(string.Format("Game details {0} successfully removed.", message), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                messageService.Show(string.Format("Game details {0} successfully removed.", message), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 GamesDetailsList.Remove(gameDetails);
             }
             else
             {
-                MessageBox.Show(string.Format("Couldn't remove game details {0}.", message), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                messageService.Show(string.Format("Couldn't remove game details {0}.", message), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

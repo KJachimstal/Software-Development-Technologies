@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using CasinoApplication.Model;
 using CasinoApplication.Services;
 using CasinoApplication.ViewModel;
-using CasinoApplication.ViewModel.Commands;
 using CasinoData;
 using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CasinoTests.ApplicationTests
 {
     [TestClass]
-    public class ClientsListViewModelTests
+    public class GameDetailsListViewModelTests
     {
         DataRepository dataRepository;
 
@@ -26,13 +24,13 @@ namespace CasinoTests.ApplicationTests
         [TestMethod]
         public void ClientsListRemoveTest()
         {
-            Client client = Data.DataRepository.GetClient(1);
+            GameDetails gameDetails = Data.DataRepository.GetGameDetails(1);
             MainViewModel mainViewModel = new MainViewModel();
             MessagesProvider.RegisterMessageService(new TestMessage());
-            mainViewModel.RemoveClient(client);
-            
+            mainViewModel.RemoveGameDetails(gameDetails);
+
             // Assertion
-            Assert.IsNull(Data.DataRepository.GetClient(1));
+            Assert.IsNull(Data.DataRepository.GetGameDetails(1));
         }
     }
 }
