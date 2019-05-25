@@ -28,7 +28,7 @@ namespace CasinoTests.ApplicationTests
         {
             Client client = Data.DataRepository.GetClient(1);
             MainViewModel mainViewModel = new MainViewModel();
-
+            MessagesProvider.RegisterMessageService(new TestMessage());
             mainViewModel.RemoveClient(client);
             
 
