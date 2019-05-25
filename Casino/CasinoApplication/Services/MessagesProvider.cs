@@ -16,5 +16,10 @@ namespace CasinoApplication.Services
             messageService = _messageService;
         }
 
+        public static IMessage getService()
+        {
+            return messageService;
+        }
+
     }
 }
