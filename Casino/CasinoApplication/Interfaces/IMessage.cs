@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace CasinoApplication.Interfaces
 {
-    interface IMessage
+    public interface IMessage
     {
         void Show(string title, string message, MessageBoxButton buttons, MessageBoxImage image);
     }
