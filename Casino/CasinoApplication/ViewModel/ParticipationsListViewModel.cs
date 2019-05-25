@@ -75,7 +75,7 @@ namespace CasinoApplication.ViewModel
         }
 
         //----------------- Action
-        private void AddParticipation()
+        public void AddParticipation()
         {
             ParticipationViewModel viewModel = new ParticipationViewModel();
             viewModel.Mode = Common.Mode.ADD;
@@ -87,7 +87,7 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void EditParticipation(Participation participation)
+        public void EditParticipation(Participation participation)
         {
             ParticipationViewModel viewModel = new ParticipationViewModel(participation.Client, participation.GameDetails, participation);
             viewModel.Mode = Common.Mode.EDIT;
@@ -98,9 +98,10 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void RemoveParticipation(Participation participation)
+        public void RemoveParticipation(Participation participation)
         {
-            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            IMessage messageService = MessagesProvider.GetService();
+            MessageBoxResult result = messageService.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.Cancel)
             {
                 return;
@@ -115,12 +116,12 @@ namespace CasinoApplication.ViewModel
 
             if (state)
             {
-                MessageBox.Show(string.Format("Participation {0} successfully removed.", participation), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                messageService.Show(string.Format("Participation {0} successfully removed.", participation), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 ParticipationsList.Remove(participation);
             }
             else
             {
-                MessageBox.Show(string.Format("Couldn't remove participation {0}.", participation), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                messageService.Show(string.Format("Couldn't remove participation {0}.", participation), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }
