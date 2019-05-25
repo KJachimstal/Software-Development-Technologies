@@ -76,7 +76,7 @@ namespace CasinoApplication.ViewModel
 
 
         // ------------------------ Action
-        private void AddGame()
+        public void AddGame()
         {
             GameViewModel viewModel = new GameViewModel();
             viewModel.Mode = Common.Mode.ADD;
@@ -88,7 +88,7 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void EditGame(Game game)
+        public void EditGame(Game game)
         {
             GameViewModel viewModel = new GameViewModel(game);
             viewModel.Mode = Common.Mode.EDIT;
@@ -99,9 +99,10 @@ namespace CasinoApplication.ViewModel
             dialog.ShowDialog();
         }
 
-        private void RemoveGame(Game game)
+        public void RemoveGame(Game game)
         {
-            MessageBoxResult result = MessageBox.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            IMessage messageService = MessagesProvider.GetService();
+            MessageBoxResult result = messageService.Show("Do You want to delete?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.Cancel)
             {
                 return;
@@ -117,11 +118,11 @@ namespace CasinoApplication.ViewModel
             if (state)
             {
                 GamesList.Remove(game);
-                MessageBox.Show(string.Format("Game {0} successfully removed.", game), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                messageService.Show(string.Format("Game {0} successfully removed.", game), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show(string.Format("Couldn't remove game {0}.", game), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                messageService.Show(string.Format("Couldn't remove game {0}.", game), "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

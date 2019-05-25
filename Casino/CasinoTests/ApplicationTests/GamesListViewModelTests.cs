@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CasinoTests.ApplicationTests
 {
     [TestClass]
-    public class GameDetailsListViewModelTests
+    public class GamesListViewModelTests
     {
         DataRepository dataRepository;
 
@@ -22,15 +22,15 @@ namespace CasinoTests.ApplicationTests
         }
 
         [TestMethod]
-        public void GameDetailsListRemoveTest()
+        public void GameListRemoveTest()
         {
-            GameDetails gameDetails = Data.DataRepository.GetGameDetails(1);
+            Game game = Data.DataRepository.GetGame(1);
             MainViewModel mainViewModel = new MainViewModel();
             MessagesProvider.RegisterMessageService(new TestMessage());
-            mainViewModel.RemoveGameDetails(gameDetails);
+            mainViewModel.RemoveGame(game);
 
             // Assertion
-            Assert.IsNull(Data.DataRepository.GetGameDetails(1));
+            Assert.IsNull(Data.DataRepository.GetGame(1));
         }
     }
 }

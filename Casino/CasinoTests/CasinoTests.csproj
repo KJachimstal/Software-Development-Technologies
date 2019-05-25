@@ -65,6 +65,7 @@
     <Compile Include="ApplicationTests\ParticipationViewModelTests.cs" />
     <Compile Include="ApplicationTests\ClientsListViewModelTests.cs" />
     <Compile Include="ApplicationTests\GameDetailsListViewModelTests.cs" />
+    <Compile Include="ApplicationTests\GamesListViewModelTests.cs" />
     <Compile Include="DataRepositoryTests\GameRepositoryTests.cs" />
     <Compile Include="DataRepositoryTests\GameDetailsRepositoryTests.cs" />
     <Compile Include="DataRepositoryTests\ParticipationsRepositoryTests.cs" />
