@@ -36,5 +36,22 @@ namespace CasinoTests.ApplicationTests
             Assert.AreEqual(3, Data.DataRepository.GetAllClients().Count());
 
         }
+
+        [TestMethod]
+        public void ClientUpdateViewModelTest()
+        {
+            Client client = Data.DataRepository.GetClient(1);
+            client.FirstName = "Wilhelm";
+            ClientViewModel clientViewModel = new ClientViewModel(client);
+            clientViewModel.Mode = CasinoApplication.Common.Mode.EDIT;
+
+            clientViewModel.SetAddAction(e => { });
+            clientViewModel.SetCloseAction(e => { });
+            clientViewModel.OnSave();
+
+            // Assertion
+            Assert.AreEqual("Wilhelm", Data.DataRepository.GetClient(1).FirstName);
+
+        }
     }
 }
