@@ -75,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interfaces\IMessage.cs" />
     <Compile Include="Services\MessagesProvider.cs" />
     <Compile Include="Services\ParticipationProvider.cs" />
     <Compile Include="ViewModel\ParticipationsListViewModel.cs" />
