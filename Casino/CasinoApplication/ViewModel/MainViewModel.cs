@@ -1,4 +1,5 @@
-﻿using CasinoApplication.Interfaces;
+﻿using CasinoApplication.Common;
+using CasinoApplication.Interfaces;
 using CasinoApplication.Model;
 using CasinoApplication.Services;
 using CasinoApplication.View;
@@ -26,6 +27,8 @@ namespace CasinoApplication.ViewModel
             Data.RegisterDataRepository(new DataRepository(dbContext));
 
             DataRepository dataRepository = Data.DataRepository;
+
+            MessagesProvider.RegisterMessageService(new DefaultMessage());
 
 
             ClientsList = new ObservableCollection<Client>();

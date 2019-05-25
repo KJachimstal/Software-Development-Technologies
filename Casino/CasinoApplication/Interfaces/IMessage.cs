@@ -9,6 +9,6 @@ namespace CasinoApplication.Interfaces
 {
     public interface IMessage
     {
-        void Show(string title, string message, MessageBoxButton buttons, MessageBoxImage image);
+        MessageBoxResult Show(string title, string message, MessageBoxButton buttons, MessageBoxImage image);
     }
 }

@@ -10,9 +10,9 @@ namespace CasinoApplication.Common
 {
     class DefaultMessage : IMessage
     {
-        public void Show(string message, string title, MessageBoxButton buttons, MessageBoxImage image)
+        public MessageBoxResult Show(string message, string title, MessageBoxButton buttons, MessageBoxImage image)
         {
-            MessageBox.Show(message, title, buttons, image);
+            return MessageBox.Show(message, title, buttons, image);
         }
     }
 }
