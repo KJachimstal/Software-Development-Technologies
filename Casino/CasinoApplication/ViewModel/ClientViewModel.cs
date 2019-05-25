@@ -14,7 +14,7 @@ using System.Windows.Input;
 
 namespace CasinoApplication.ViewModel
 {
-    class ClientViewModel : ViewModel, IDataErrorInfo
+    public class ClientViewModel : ViewModel, IDataErrorInfo
     {
         private Client client;
 

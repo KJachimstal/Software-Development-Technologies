@@ -22,7 +22,7 @@ namespace CasinoApplication.ViewModel
         public MainViewModel()
         {
             IDbContext dbContext = new CasinoContext();
-
+            
             Data.RegisterDataRepository(new DataRepository(dbContext));
 
             DataRepository dataRepository = Data.DataRepository;

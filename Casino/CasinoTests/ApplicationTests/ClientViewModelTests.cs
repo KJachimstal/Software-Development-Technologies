@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq;
 using CasinoApplication.Model;
+using CasinoApplication.ViewModel;
 using CasinoData;
+using CasinoLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CasinoTests.ApplicationTests
@@ -19,8 +22,19 @@ namespace CasinoTests.ApplicationTests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void ClientAddViewModelTest()
         {
+            Client client = new Client(4, "Wilhelm", "Pa");
+            ClientViewModel clientViewModel = new ClientViewModel(client);
+            clientViewModel.Mode = CasinoApplication.Common.Mode.ADD;
+
+            clientViewModel.SetAddAction(e => { });
+            clientViewModel.SetCloseAction(e => { });
+            clientViewModel.OnSave();
+
+            // Assertion
+            Assert.AreEqual(3, Data.DataRepository.GetAllClients().Count());
+
         }
     }
 }
