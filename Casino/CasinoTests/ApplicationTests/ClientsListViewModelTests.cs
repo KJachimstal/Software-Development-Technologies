@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using CasinoApplication.Model;
+using CasinoApplication.Services;
 using CasinoApplication.ViewModel;
 using CasinoApplication.ViewModel.Commands;
 using CasinoData;
@@ -27,6 +28,7 @@ namespace CasinoTests.ApplicationTests
         {
             Client client = Data.DataRepository.GetClient(1);
             MainViewModel mainViewModel = new MainViewModel();
+
             mainViewModel.RemoveClient(client);
             
 
