@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="ApplicationTests\ClientViewModelTests.cs" />
     <Compile Include="ApplicationTests\GameViewModelTests.cs" />
+    <Compile Include="ApplicationTests\GameDetailsViewModelTests.cs" />
     <Compile Include="DataRepositoryTests\GameRepositoryTests.cs" />
     <Compile Include="DataRepositoryTests\GameDetailsRepositoryTests.cs" />
     <Compile Include="DataRepositoryTests\ParticipationsRepositoryTests.cs" />
